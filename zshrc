@@ -2,6 +2,7 @@ source $HOME/.antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle git
+antigen bundle git-extras
 antigen bundle git-flow
 antigen bundle git-prompt
 antigen bundle git-remote-branch
