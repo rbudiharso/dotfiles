@@ -1,4 +1,5 @@
 source $HOME/.antigen.zsh
+source ~/.iterm2_shell_integration.zsh
 
 antigen use oh-my-zsh
 antigen bundle git
@@ -26,3 +27,5 @@ antigen theme refined
 antigen apply
 export PATH=~/.local/bin:$PATH
 export EDITOR='vim'
+
+. $HOME/.asdf/completions/asdf.bash
