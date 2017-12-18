@@ -24,3 +24,5 @@ antigen bundle asdf
 antigen theme refined
 
 antigen apply
+export PATH=~/.local/bin:$PATH
+export EDITOR='vim'
