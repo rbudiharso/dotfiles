@@ -11,3 +11,4 @@ ZSH with [Antigen](https://github.com/zsh-users/antigen)
 1. git clone git@github.com:rbudiharso/dotfiles.git ~/.dotfiles
 3. `curl -L git.io/antigen > .antigen.zsh`
 4. ln -s ~/.dotfiles/zshrc ~/.zshrc
+4. ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
