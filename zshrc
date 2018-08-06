@@ -22,10 +22,13 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle greymd/docker-zsh-completion
 antigen bundle asdf
 
-antigen theme refined
+# antigen theme refined
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 
 antigen apply
 export PATH=~/.local/bin:$PATH
 export EDITOR='vim'
 
 . $HOME/.asdf/completions/asdf.bash
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
