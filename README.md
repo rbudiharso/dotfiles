@@ -13,3 +13,4 @@ ZSH with [Antigen](https://github.com/zsh-users/antigen)
 4. `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.1`
 5. ln -s ~/.dotfiles/zshrc ~/.zshrc
 6. ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+6. ln -s ~/.dotfiles/asdfrc ~/.asdfrc
