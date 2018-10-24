@@ -38,3 +38,7 @@ export EDITOR='vim'
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
+export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
+
+# add alias file
+. $HOME/.dotfiles/alias
