@@ -1,3 +1,4 @@
 alias md5sum=md5
 alias envsubst=/usr/local/opt/gettext/bin/envsubst
+alias vim=nvim
 
