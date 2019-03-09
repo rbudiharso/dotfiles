@@ -86,6 +86,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle greymd/docker-zsh-completion
+antigen bundle dbz/kube-aliases
 antigen bundle asdf
 
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
