@@ -1,4 +1,4 @@
-# my dotfiles
+# My dotfiles
 ZSH with [Antigen](https://github.com/zsh-users/antigen)
 
 ## Prequesities
@@ -17,5 +17,14 @@ ZSH with [Antigen](https://github.com/zsh-users/antigen)
 7. `ln -s ~/.dotfiles/default-npm-packages ~/.default-npm-packages`
 
 ## Install Fira Code font
-`cd ~/.local/share/fonts && curl -fLo "Fura Code Retina Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.ttf`
-`sudo fc-cache -f -v`
+```
+cd ~/.local/share/fonts && curl -fLo "Fura Code Retina Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.ttf
+sudo fc-cache -f -v
+```
+
+## Install kubectx and kubens
+```
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+```
