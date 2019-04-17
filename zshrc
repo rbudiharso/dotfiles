@@ -70,7 +70,6 @@ antigen bundle dbz/kube-aliases
 antigen bundle asdf
 
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
-
 antigen apply
 
 export EDITOR='vim'
