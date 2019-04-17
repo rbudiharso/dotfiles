@@ -1,25 +1,5 @@
 source $HOME/.antigen.zsh
 
-# POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(\
-  context \
-  dir \
-  vcs \
-  newline \
-)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(\
-  node_version \
-  go_version \
-  php_version \
-  pyenv \
-  chruby \
-  aws \
-  aws_eb_env \
-  kubecontext \
-  battery \
-)
-
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
@@ -90,31 +70,28 @@ antigen bundle dbz/kube-aliases
 antigen bundle asdf
 
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
-# antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
-export PATH=~/.local/bin:$PATH
-export PATH=~/Bin:$PATH
-export PATH=$PATH:$HOME/.linkerd2/bin
 
 export EDITOR='vim'
+export PATH=~/.local/bin:$PATH
+export PATH=~/Bin:$PATH
 
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# workaround for tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-	source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
-export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
+# export PATH=/usr/local/opt/v8@3.15/bin:$PATH
 
 # add alias file
 . $HOME/.dotfiles/alias
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-# [[ -f /home/rbudiharso/.asdf/installs/nodejs/10.13.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/rbudiharso/.asdf/installs/nodejs/10.13.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-# [[ -f /home/rbudiharso/.asdf/installs/nodejs/10.13.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/rbudiharso/.asdf/installs/nodejs/10.13.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+if [ $ASDF_DIR ]; then
+  export PATH=$(asdf where golang)/packages/bin:$PATH
+fi
