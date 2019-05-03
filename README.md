@@ -71,6 +71,7 @@ python3 /tmp/get-pip.py --user
 pip install awscli --upgrade --user
 pip3 install awscli --upgrade --user
 
+mkdir $HOME/Bin
 chsh -s $(which zsh)
 git clone git@github.com:rbudiharso/dotfiles.git ~/.dotfiles
 curl -L git.io/antigen > .antigen.zsh
@@ -79,11 +80,46 @@ ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/asdfrc ~/.asdfrc
 ln -s ~/.dotfiles/default-npm-packages ~/.default-npm-packages
-
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/local_init.vim ~/.config/nvim/local_init.vim
+ln -s ~/.dotfiles/local_bundles.vim ~/.config/nvim/local_bundles.vim
 ```
 
 ## Install Fira Code font
 ```
 cd ~/.local/share/fonts && curl -fLo "Fura Code Retina Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.ttf
 sudo fc-cache -f -v
+```
+
+# Fedora
+
+```
+# docker
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+# for fedora 30 while no repo exists
+sudo sed -i 's/$releasever/29/' /etc/yum/repos.d/docker-ce.repo
+# kubectl
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+sudo dnf install -y kubectl
+# vscodium
+sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg 
+sudo dnf config-manager --add-repo https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/
+sudo dnf install vscodium
+# insomnia
+wget -O ~/Bin/insomnia.AppImage https://updates.insomnia.rest/downloads/linux/latest
+# Google Chrome
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install google-chrome-beta
+# Yarn
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+sudo dnf install yarn
 ```
