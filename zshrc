@@ -1,16 +1,28 @@
-source $HOME/.antigen.zsh
+export EDITOR='nvim'
+export PATH=$HOME/.local/bin:$HOME/Bin:$PATH
+
+[ -f ~/.dotfiles/alias ] && source ~/.dotfiles/alias
+
+if [ $ASDF_DIR ]; then
+  export PATH=$(asdf where golang)/packages/bin:$PATH
+fi
+
+# workaround for tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
 
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
+  # time          # Time stamps section
+  # user          # Username section
   dir           # Current directory section
-  host          # Hostname section
+  # host          # Hostname section
   git           # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
   node          # Node.js section
-  ruby          # Ruby section
-  elixir        # Elixir section
+  # ruby          # Ruby section
+  # elixir        # Elixir section
   # xcode         # Xcode section
   # swift         # Swift section
   golang        # Go section
@@ -39,58 +51,21 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_CHAR_SYMBOL=" "
 SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_NODE_SYMBOL=" "
-SPACESHIP_RUBY_SYMBOL=" "
 SPACESHIP_DOCKER_SYMBOL=" "
-SPACESHIP_BATTERY_SYMBOL_CHARGING=""
-SPACESHIP_BATTERY_SYMBOL_DISCHARGING=""
 SPACESHIP_AWS_SYMBOL=" "
 SPACESHIP_PACKAGE_SYMBOL=" "
 SPACESHIP_KUBECONTEXT_SYMBOL=" "
 
+source $HOME/.antigen.zsh
+
 antigen use oh-my-zsh
 antigen bundle git
-antigen bundle git-extras
-antigen bundle git-flow
-antigen bundle git-prompt
-antigen bundle git-remote-branch
-antigen bundle github
-antigen bundle gitignore
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle command-not-found
-antigen bundle history
 antigen bundle safe-paste
-antigen bundle screen
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle greymd/docker-zsh-completion
-antigen bundle dbz/kube-aliases
-antigen bundle asdf
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+antigen theme denysdovhan/spaceship-prompt
 antigen apply
-
-export EDITOR='vim'
-export PATH=~/.local/bin:$PATH
-export PATH=~/Bin:$PATH
-
-. $HOME/.asdf/completions/asdf.bash
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# workaround for tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
-# export PATH=/usr/local/opt/v8@3.15/bin:$PATH
-
-# add alias file
-. $HOME/.dotfiles/alias
-
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-if [ $ASDF_DIR ]; then
-  export PATH=$(asdf where golang)/packages/bin:$PATH
-fi
