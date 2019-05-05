@@ -61,6 +61,7 @@ source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle safe-paste
+antigen bundle diff-so-fancy
 antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search

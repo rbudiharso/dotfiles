@@ -40,7 +40,7 @@ echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ v
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 # google chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -97,7 +97,7 @@ sudo fc-cache -f -v
 # docker
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 # for fedora 30 while no repo exists
-sudo sed -i 's/$releasever/29/' /etc/yum/repos.d/docker-ce.repo
+sudo sed -i 's/$releasever/29/' /etc/yum.repos.d/docker-ce.repo
 # kubectl
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -110,7 +110,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 EOF
 sudo dnf install -y kubectl
 # vscodium
-sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg 
+sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
 sudo dnf config-manager --add-repo https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/
 sudo dnf install vscodium
 # insomnia
