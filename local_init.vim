@@ -6,9 +6,6 @@ set termguicolors
 set cursorline
 set relativenumber
 
-"" Map leader to ,
-let mapleader='\'
-
 " vim-airline/vim-airline
 " vim-airline/vim-airline-themes
 " turn on powerline fonts
@@ -17,7 +14,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts = 1
 let g:airline_symbols.branch = ''
-let g:airline_symbols.dirty = ' '
+let g:airline_symbols.dirty = ' *'
 let g:airline_symbols.readonly = ''
 let g:airline_theme = 'gruvbox'
 

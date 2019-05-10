@@ -1,5 +1,5 @@
 export EDITOR='nvim'
-export PATH=$HOME/.local/bin:$HOME/Bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/Bin:$HOME/Bin/alacritty:$PATH
 
 [ -f ~/.dotfiles/alias ] && source ~/.dotfiles/alias
 
@@ -63,10 +63,14 @@ antigen bundle git
 antigen bundle safe-paste
 antigen bundle diff-so-fancy
 antigen bundle asdf
+antigen bundle clipboard
+antigen bundle docker
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle Dbz/kube-aliases
 
 antigen theme denysdovhan/spaceship-prompt
 antigen apply
