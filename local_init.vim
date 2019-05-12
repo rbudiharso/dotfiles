@@ -1,3 +1,5 @@
+let g:python_host_prog = "~/.asdf/shims/python"
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2

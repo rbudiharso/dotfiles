@@ -93,33 +93,92 @@ sudo fc-cache -f -v
 
 # Fedora
 
+Download and install nerd font
+Get dotfiles from Google drive (.ssh, .kube, .aws)
+
 ```
-# docker
+git config --global user.email "rbudiharso@gmail.com"
+git config --global user.name "Rahmat Budiharso"
+
+sudo dnf install -y zsh util-linux-user gnome-tweaks make zlib-devel openssl-devel bzip2-devel readline-devel sqlite-devel jq tlp tlp-rdw tilix
+
+git clone git@github.com:rbudiharso/dotfiles.git ~/.dotfiles
+curl -L git.io/antigen > .antigen.zsh
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+chsh -s $(which zsh)
+
+ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/asdfrc ~/.asdfrc
+ln -s ~/.dotfiles/default-npm-packages ~/.default-npm-packages
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/local_init.vim ~/.config/nvim/local_init.vim
+ln -s ~/.dotfiles/local_bundles.vim ~/.config/nvim/local_bundles.vim
+
+Logout
+
+asdf plugin-add nodejs
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 10.15.3
+asdf global nodejs 10.15.3
+
+asdf plugin-add python
+asdf install python 2.7.16
+asdf global python 2.7.16
+
+asdf plugin-add golang
+asdf install golang 1.12.5
+asdf global golang 1.12.5
+
+asdf plugin-add ruby
+asdf install ruby 2.6.3
+asdf global ruby 2.6.3
+
+asdf plugin-add kubectl
+asdf install kubectl 1.14.1
+asdf global kubectl 1.14.1
+
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-# for fedora 30 while no repo exists
 sudo sed -i 's/$releasever/29/' /etc/yum.repos.d/docker-ce.repo
-# kubectl
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOF
-sudo dnf install -y kubectl
-# vscodium
 sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
 sudo dnf config-manager --add-repo https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/
-sudo dnf install vscodium
-# insomnia
-wget -O ~/Bin/insomnia.AppImage https://updates.insomnia.rest/downloads/linux/latest
-# Google Chrome
-sudo dnf install fedora-workstation-repositories
+sudo dnf install -y fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
-sudo dnf install google-chrome-beta
-# Yarn
-curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-sudo dnf install yarn
+sudo dnf install -y google-chrome-beta docker-ce docker-ce-cli containerd.io vscodium yarn neovim python3-neovim
+
+pip install --upgrade --user pip
+pip install --user awscli
+pip install --user awsebcli
+pip3 install --user awscli
+pip3 install --user awsebcli
+pip install --user pynvim
+pip install --user neovim
+gem install neovim
+npm install -g neovim
+
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+Logout
+
+
+# gruvbox (for gnome-terminal, tilix)
+bash -c  "$(wget -qO- https://git.io/vQgMr)"
+select 56 (gruvbox dark)
+# gedit
+https://raw.githubusercontent.com/morhetz/gruvbox-contrib/master/gedit/gruvbox-dark.xml
+# gruvbox for tilix, use this if the step above does not work
+git clone git@github.com:MichaelThessel/tilix-gruvbox.git
+cd tilix-gruvbox
+sudo cp gruvbox-* /usr/share/tilix/schemes
+cd ..
+rm -rf tilix-gruvbox
+
+
+# vimix GTK theme
+git clone git@github.com:vinceliuice/vimix-gtk-themes.git ~/Downloads/vimix-gtk-themes
+cd ~/Downloads/vimix-gtk-themes
+./Install -c dark -t beryl -s laptop
+
 ```
