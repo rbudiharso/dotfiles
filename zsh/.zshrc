@@ -1,7 +1,6 @@
 export EDITOR='nvim'
-export PATH=$HOME/.local/bin:$HOME/Bin:$HOME/Bin/alacritty:$PATH
 
-[ -f ~/.dotfiles/alias ] && source ~/.dotfiles/alias
+[ -f ~/.alias ] && source ~/.alias
 
 if [ $ASDF_DIR ]; then
   export PATH=$(asdf where golang)/packages/bin:$PATH

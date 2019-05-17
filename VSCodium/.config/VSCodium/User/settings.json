@@ -1,0 +1,16 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'FuraCode Nerd Font Retina', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "\"FuraCode Nerd Font\"",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorBlinking": true,
+    "window.menuBarVisibility": "toggle",
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path": "/home/rbudiharso/.vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vs-kubernetes.minikube-path": "/home/rbudiharso/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.draft-path": "/home/rbudiharso/.vs-kubernetes/tools/draft/linux-amd64/draft"
+    },
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Gruvbox Dark (Hard)"
+}
