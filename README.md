@@ -93,10 +93,12 @@ sudo fc-cache -f -v
 
 # Fedora
 
-Download and install nerd font
-Get dotfiles from Google drive (.ssh, .kube, .aws)
+- Download and install nerd font
+- Get dotfiles from Google drive (.ssh, .kube, .aws)
 
 ```
+mkdir -p ~/Bin
+
 git config --global user.email "rbudiharso@gmail.com"
 git config --global user.name "Rahmat Budiharso"
 
@@ -160,6 +162,10 @@ npm install -g neovim
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker $USER
+
+# insomnia
+wget -O ~/Bin/insomnia.AppImage https://updates.insomnia.rest/downloads/linux/latest
+
 Logout
 
 
@@ -181,4 +187,10 @@ git clone git@github.com:vinceliuice/vimix-gtk-themes.git ~/Downloads/vimix-gtk-
 cd ~/Downloads/vimix-gtk-themes
 ./Install -c dark -t beryl -s laptop
 
+```
+
+## grv text-based git client
+```
+wget -O ~/Bin/grv https://github.com/rgburke/grv/releases/download/v0.3.2/grv_v0.3.2_linux64
+chmod +x ~/Bin/grv
 ```

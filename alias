@@ -2,3 +2,5 @@
 # alias envsubst=/usr/local/opt/gettext/bin/envsubst
 alias vim=nvim
 alias code=vscodium
+
+unalias grv 2&>1 /dev/null

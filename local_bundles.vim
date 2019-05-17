@@ -13,3 +13,6 @@ Plug 'morhetz/gruvbox'
 
 " highlight part of text that goes beyond textwidth
 Plug 'whatyouhide/vim-lengthmatters'
+
+" operate on visual selection
+Plug 'vim-scripts/vis'
