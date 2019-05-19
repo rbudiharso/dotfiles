@@ -1,3 +1,6 @@
+# uncoment if you want to profile zsh startup time
+# dont forget to uncomment zprof at the bottom of this file
+# zmodload zsh/zprof
 export EDITOR='nvim'
 
 [ -f ~/.alias ] && source ~/.alias
@@ -73,3 +76,6 @@ antigen bundle Dbz/kube-aliases
 
 antigen theme denysdovhan/spaceship-prompt
 antigen apply
+
+# uncomment this to profile zsh startup time
+# zprof
