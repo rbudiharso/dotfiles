@@ -14,6 +14,14 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
 
+SPACESHIP_CHAR_SYMBOL=" "
+SPACESHIP_GIT_SYMBOL=" "
+SPACESHIP_NODE_SYMBOL=" "
+SPACESHIP_DOCKER_SYMBOL=" "
+SPACESHIP_AWS_SYMBOL=" "
+SPACESHIP_PACKAGE_SYMBOL=" "
+SPACESHIP_KUBECONTEXT_SYMBOL=" "
+
 SPACESHIP_PROMPT_ORDER=(
   # time          # Time stamps section
   # user          # Username section
@@ -49,14 +57,6 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
-
-SPACESHIP_CHAR_SYMBOL=" "
-SPACESHIP_GIT_SYMBOL=" "
-SPACESHIP_NODE_SYMBOL=" "
-SPACESHIP_DOCKER_SYMBOL=" "
-SPACESHIP_AWS_SYMBOL=" "
-SPACESHIP_PACKAGE_SYMBOL=" "
-SPACESHIP_KUBECONTEXT_SYMBOL=" "
 
 source $HOME/.antigen.zsh
 

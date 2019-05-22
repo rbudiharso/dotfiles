@@ -18,7 +18,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans 11, FuraCode Nerd Font 11
+font pango:Noto Sans 11, Fira Code retina Nerd Font 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -198,9 +198,10 @@ client.urgent           $red $red $white $red $red
 # finds out, if available)
 bar {
 #         # status_command i3status
-        status_command polybar example
-        mode hide
-        modifier none
+  font pango:Noto Sans 11, Fira Code Retina Nerd Font 11
+  status_command polybar example
+  mode hide
+  modifier none
 }
 # exec_always polybar example
 
@@ -229,7 +230,7 @@ default_floating_border pixel 2
 
 exec kitty
 exec firefox
-exec flatpak run com.spotify.Client
+# exec flatpak run com.spotify.Client
 exec_always feh --bg-scale $wallpaper
 exec_always xrdb ~/.Xdefaults
 

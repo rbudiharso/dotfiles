@@ -3,4 +3,5 @@
 alias vim=nvim
 alias code=vscodium
 
-unalias grv 2&>1 /dev/null
+# remove oh-my-zsh grv alias for grv program
+unalias grv 2>/dev/null

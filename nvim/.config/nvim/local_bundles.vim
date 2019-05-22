@@ -5,6 +5,8 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'adelarsq/vim-matchit'
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
