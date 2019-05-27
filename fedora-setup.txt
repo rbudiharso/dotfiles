@@ -1,0 +1,80 @@
+Fedora
+
+download nerd fonts
+install fonts
+
+install zsh util-linux-user gnome-tweaks make zlib-devel openssl-devel bzip2-devel readline-devel sqlite-devel jq tlp tlp-rdw
+
+get dotfiles from gdrive (.ssh, .kube, .aws)
+
+git clone dotfiles
+curl -L git.io/antigen > .antigen.zsh
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+chsh -s $(which zsh)
+
+ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/asdfrc ~/.asdfrc
+ln -s ~/.dotfiles/default-npm-packages ~/.default-npm-packages
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/local_init.vim ~/.config/nvim/local_init.vim
+ln -s ~/.dotfiles/local_bundles.vim ~/.config/nvim/local_bundles.vim
+
+logout
+
+asdf plugin-add nodejs
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 10.15.3
+asdf global nodejs 10.15.3
+
+asdf plugin-add python
+asdf install python 2.7.16
+asdf global python 2.7.16
+
+asdf plugin-add golang
+asdf install golang 1.12.5
+asdf global golang 1.12.5
+
+asdf plugin-add ruby
+asdf install ruby 2.6.3
+asdf global ruby 2.6.3
+
+asdf plugin-add kubectl
+asdf install kubectl 1.14.1
+asdf global kubectl 1.14.1
+
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo sed -i 's/$releasever/29/' /etc/yum.repos.d/docker-ce.repo
+sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+sudo dnf config-manager --add-repo https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/
+sudo dnf install -y fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install -y google-chrome-beta docker-ce docker-ce-cli containerd.io vscodium yarn neovim python3-neovim
+
+pip install --upgrade --user pip
+pip install --user awscli
+pip install --user awsebcli
+pip3 install --user awscli
+pip3 install --user awsebcli
+pip install --user pynvim
+pip install --user neovim
+gem install neovim
+npm install -g neovim
+
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+logout
+
+
+# gruvbox
+bash -c  "$(wget -qO- https://git.io/vQgMr)"
+select 56 (gruvbox dark)
+# gedit
+https://raw.githubusercontent.com/morhetz/gruvbox-contrib/master/gedit/gruvbox-dark.xml
+
+# vimix GTK theme
+git clone git@github.com:vinceliuice/vimix-gtk-themes.git ~/Downloads/vimix-gtk-themes
+cd ~/Downloads/vimix-gtk-themes
+./Install -c dark -t beryl -s laptop
+
