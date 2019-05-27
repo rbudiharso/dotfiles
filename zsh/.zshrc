@@ -1,9 +1,14 @@
 # uncoment if you want to profile zsh startup time
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
+autoload -Uz compinit
+compinit
+
 export EDITOR='nvim'
+export PATH=~/.local/bin:$PATH
 
 [ -f ~/.alias ] && source ~/.alias
+[ -f ~/.kops-completion.zsh ] && source ~/.kops-completion.zsh
 
 if [ $ASDF_DIR ]; then
   export PATH=$(asdf where golang)/packages/bin:$PATH
@@ -58,24 +63,26 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-source $HOME/.antigen.zsh
+# source $HOME/.antigen.zsh
+export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
+source <(antibody init)
+antibody bundle < ~/.antibody-plugins.txt
 
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle safe-paste
-antigen bundle diff-so-fancy
-antigen bundle asdf
-antigen bundle clipboard
-antigen bundle docker
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle zdharma/fast-syntax-highlighting
-antigen bundle Dbz/kube-aliases
+# antigen use oh-my-zsh
+# antigen bundle git
+# antigen bundle safe-paste
+# antigen bundle diff-so-fancy
+# antigen bundle asdf
+# antigen bundle clipboard
+# antigen bundle docker
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-history-substring-search
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle Dbz/kube-aliases
 
-antigen theme denysdovhan/spaceship-prompt
-antigen apply
+# antigen theme denysdovhan/spaceship-prompt
+# antigen apply
 
 # uncomment this to profile zsh startup time
 # zprof

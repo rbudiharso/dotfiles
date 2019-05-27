@@ -13,3 +13,10 @@ VSCodium/.config/VSCodium/languagepacks.json
 VSCodium/.config/VSCodium/machineid
 VSCodium/.config/VSCodium/rapid_render.json
 VSCodium/.config/VSCodium/storage.json
+VSCodium/.config/VSCodium/Backups/
+VSCodium/.config/VSCodium/Cache/
+VSCodium/.config/VSCodium/CachedData/
+VSCodium/.config/VSCodium/GPUCache/
+VSCodium/.config/VSCodium/User/globalStorage/
+VSCodium/.config/VSCodium/User/workspaceStorage/
+VSCodium/.config/VSCodium/logs/
