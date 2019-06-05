@@ -12,5 +12,6 @@
         "vs-kubernetes.draft-path": "/home/rbudiharso/.vs-kubernetes/tools/draft/linux-amd64/draft"
     },
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Gruvbox Dark (Hard)"
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "terminal.integrated.rendererType": "dom"
 }
