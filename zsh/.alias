@@ -2,6 +2,8 @@
 # alias envsubst=/usr/local/opt/gettext/bin/envsubst
 alias vim=nvim
 alias code=vscodium
+alias kctx=kubectx
+alias kns=kubens
 
 # remove oh-my-zsh grv alias for grv program
 unalias grv 2>/dev/null

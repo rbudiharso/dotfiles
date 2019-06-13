@@ -1,3 +1,5 @@
 eslint
 eslint-cli
 neovim
+nodemon
+madge

@@ -1,23 +1,23 @@
 # uncoment if you want to profile zsh startup time
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
 
 [ -f ~/.alias ] && source ~/.alias
-[ -f ~/.kops-completion.zsh ] && source ~/.kops-completion.zsh
+# [ -f ~/.kops-completion.zsh ] && source ~/.kops-completion.zsh
 
 if [ $ASDF_DIR ]; then
   export PATH=$(asdf where golang)/packages/bin:$PATH
 fi
 
 # workaround for tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
+# if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#   source /etc/profile.d/vte.sh
+# fi
 
 SPACESHIP_CHAR_SYMBOL=" "
 SPACESHIP_GIT_SYMBOL=" "
@@ -35,38 +35,39 @@ SPACESHIP_PROMPT_ORDER=(
   git           # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
-  node          # Node.js section
+  # node          # Node.js section
   # ruby          # Ruby section
   # elixir        # Elixir section
   # xcode         # Xcode section
   # swift         # Swift section
-  golang        # Go section
+  # golang        # Go section
   # php           # PHP section
   # rust          # Rust section
   # haskell       # Haskell Stack section
   # julia         # Julia section
-  docker        # Docker section
-  aws           # Amazon Web Services section
+  # docker        # Docker section
+  # aws           # Amazon Web Services section
   # venv          # virtualenv section
   # conda         # conda virtualenv section
   # pyenv         # Pyenv section
   # dotnet        # .NET section
   # ember         # Ember.js section
-  kubecontext   # Kubectl context section
+  # kubecontext   # Kubectl context section
   # terraform     # Terraform workspace section
-  exec_time     # Execution time
+  # exec_time     # Execution time
   line_sep      # Line break
-  #battery       # Battery level and status
+  # battery       # Battery level and status
   # vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
+  # jobs          # Background jobs indicator
+  # exit_code     # Exit code section
   char          # Prompt character
 )
 
 # source $HOME/.antigen.zsh
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
-source <(antibody init)
-antibody bundle < ~/.antibody-plugins.txt
+# source <(antibody init)
+source ~/.dotfiles/antibody/.zsh_plugins.sh
+# antibody bundle < ~/.antibody-plugins.txt
 
 # antigen use oh-my-zsh
 # antigen bundle git
