@@ -2,10 +2,11 @@
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 # autoload -Uz compinit
-# compinit
+# compinit -i
 
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
+export PATH=~/Bin:$PATH
 
 [ -f ~/.alias ] && source ~/.alias
 # [ -f ~/.kops-completion.zsh ] && source ~/.kops-completion.zsh
@@ -65,9 +66,12 @@ SPACESHIP_PROMPT_ORDER=(
 
 # source $HOME/.antigen.zsh
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
+
 # source <(antibody init)
-source ~/.dotfiles/antibody/.zsh_plugins.sh
 # antibody bundle < ~/.antibody-plugins.txt
+
+# load antibody staticaly
+source ~/.dotfiles/antibody/.zsh_plugins.sh
 
 # antigen use oh-my-zsh
 # antigen bundle git
@@ -76,11 +80,12 @@ source ~/.dotfiles/antibody/.zsh_plugins.sh
 # antigen bundle asdf
 # antigen bundle clipboard
 # antigen bundle docker
+# antigen bundle kubectl
 # antigen bundle zsh-users/zsh-completions
 # antigen bundle zsh-users/zsh-history-substring-search
 # antigen bundle zsh-users/zsh-autosuggestions
 # antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle Dbz/kube-aliases
+# antigen bundle dbz/kube-aliases
 
 # antigen theme denysdovhan/spaceship-prompt
 # antigen apply
