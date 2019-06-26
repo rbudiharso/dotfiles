@@ -1,9 +1,11 @@
 let g:python_host_prog = "~/.asdf/shims/python"
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+" vim-javascript
+augroup vimrc-javascript
+  autocmd!
+  autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
+augroup END
+
 set termguicolors
 set cursorline
 set relativenumber
@@ -65,3 +67,5 @@ let g:hardtime_showmsg = 1
 " whatyouhide/vim-lengthmatters
 " highlight color for character past 80 column
 call lengthmatters#highlight_link_to('DiffDelete')
+
+set pastetoggle=<F5>
