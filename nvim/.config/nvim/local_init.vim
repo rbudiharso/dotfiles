@@ -69,3 +69,11 @@ let g:hardtime_showmsg = 1
 call lengthmatters#highlight_link_to('DiffDelete')
 
 set pastetoggle=<F5>
+
+" neoclide/coc.nvim
+" use <c-space>for trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
