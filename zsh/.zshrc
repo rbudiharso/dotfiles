@@ -20,6 +20,8 @@ fi
 #   source /etc/profile.d/vte.sh
 # fi
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+
 SPACESHIP_CHAR_SYMBOL=" "
 SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_NODE_SYMBOL=" "
@@ -67,12 +69,14 @@ SPACESHIP_PROMPT_ORDER=(
 # source $HOME/.antigen.zsh
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 
-# source <(antibody init)
-# antibody bundle < ~/.antibody-plugins.txt
+source <(antibody init)
+antibody bundle < ~/.antibody-plugins.txt
 
 # load antibody staticaly
-source ~/.dotfiles/antibody/.zsh_plugins.sh
+# source ~/.dotfiles/antibody/.zsh_plugins.sh
 
+# [[ $TERM == xterm* ]] || : ${PURE_POWER_MODE:=portable}
+source $HOME/.dotfiles/zsh/.purepower
 # antigen use oh-my-zsh
 # antigen bundle git
 # antigen bundle safe-paste

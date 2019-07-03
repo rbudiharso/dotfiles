@@ -8,5 +8,6 @@ greymd/docker-zsh-completion
 dbz/kube-aliases
 
 # prompt theme
-denysdovhan/spaceship-prompt
+# denysdovhan/spaceship-prompt
+romkatv/powerlevel10k
 
