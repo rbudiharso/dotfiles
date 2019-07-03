@@ -1,4 +1,3 @@
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'andrewstuart/vim-kubernetes'
@@ -8,10 +7,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
 
 " colorschemes
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 
 " highlight part of text that goes beyond textwidth
