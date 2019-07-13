@@ -78,3 +78,9 @@ git clone git@github.com:vinceliuice/vimix-gtk-themes.git ~/Downloads/vimix-gtk-
 cd ~/Downloads/vimix-gtk-themes
 ./Install -c dark -t beryl -s laptop
 
+
+# install stow
+sudo dnf install stow
+# use stow to create symlink on home directory
+cd .dotfiles
+stow <package> # example: stow nvim

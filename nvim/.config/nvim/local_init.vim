@@ -16,6 +16,10 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.dirty = ' *'
 let g:airline_symbols.readonly = ''
@@ -63,6 +67,7 @@ endif
 " VIM the hard way
 let g:hardtime_default_on = 1
 let g:hardtime_showmsg = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 
 " whatyouhide/vim-lengthmatters
 " highlight color for character past 80 column
