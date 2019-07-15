@@ -23,7 +23,13 @@ bindsym $mod+Shift+q kill
 # Open applications
 bindsym $mod+Return exec kitty
 bindsym $mod+Print exec scrot -q 100 "$HOME/Pictures/Screenshots/%Y-%m-%d-%s-screenshot.png"
-bindsym $mod+d exec rofi -show run -theme config -font "Fira Code Bold 10"
+bindsym $mod+d exec rofi -show run -theme config -font "Fira Code 15"
+
+# change window focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Change window focus
 bindsym $mod+Left focus left
@@ -31,17 +37,23 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
 # Move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Split window in horizontal
-bindsym $mod+h split h
+# split in horizontal orientation
+bindsym $mod+minus split h
 
-# Split window in vertical
-bindsym $mod+v split v
+# split in vertical orientation
+bindsym $mod+Shift+minus split v
 
 # Enter fullscreen mode for the focused window
 bindsym $mod+f fullscreen toggle
@@ -68,7 +80,8 @@ set $ws1 "Main"
 set $ws2 "Terminal"
 set $ws3 "Web"
 set $ws4 "Program"
-set $ws5 "Other"
+set $ws5 "Chat"
+set $ws6 "Other"
 
 # Switch to workspaces
 bindsym $mod+1 workspace $ws1
@@ -76,6 +89,7 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -83,12 +97,16 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
 # Restart i3 session inplace
 bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window
 mode "resize" {
@@ -114,7 +132,7 @@ client.urgent           #222b2e #222b2e #e25252 #222b2e #222b2e
 client.placeholder      #222b2e #222b2e #eeeeee #222b2e #222b2e
 
 # Run commands on startup
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh
+exec_always --no-startup-id KUBE_TMUX_BINARY=$HOME/.asdf/shims/kubectl bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/vw-wallpaper.png
 exec_always --no-startup-id compton -b
 
@@ -127,3 +145,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute alsa_input.p
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+# lock screen
+bindsym $mod+Shift+x exec i3lock -i $lock_paper
+
+# To find the class: use xprop and click on the window you want
+assign [class="Firefox"] $ws3
+assign [class="Slack"] $ws5
+assign [class="VSCodium"] $ws4

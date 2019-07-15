@@ -56,9 +56,9 @@ font-0 = Fira Code:style=Bold:size=10;3
 font-1 = Font Awesome 5 Free Solid:size=12;3
 
 ; Modlues
-modules-left   = nautilus kitty firefox vscode
+modules-left   = nautilus kitty firefox vscode chat
 modules-center = date
-modules-right  = wlan eth battery0 battery1 temperature pulseaudio
+modules-right  = wlan eth tlp temperature pulseaudio
 
 ; Cursor actions
 cursor-click  = pointer
@@ -109,7 +109,7 @@ font-1 = Font Awesome 5 Free Solid:size=12;3
 ; Modlues
 modules-left   = i3
 modules-center =
-modules-right  = lock logout reboot poweroff
+modules-right  = k8s lock logout reboot poweroff
 
 ; Cursor actions
 cursor-click  = pointer
@@ -135,7 +135,8 @@ ws-icon-0       = Main;
 ws-icon-1       = Terminal;
 ws-icon-2       = Web;
 ws-icon-3       = Program;
-ws-icon-4       = Other;
+ws-icon-4       = Chat;
+ws-icon-5       = Other;
 ws-icon-default = 
 
 ; Focused label
@@ -284,14 +285,14 @@ content-foreground = ${colors.foreground}
 content-padding    = 2
 
 ; Mouse click
-click-left = slock
+click-left = i3lock -i $HOME/Pictures/vw-wallpaper.png
 
 [module/logout]
 type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.purple}
+content-background = ${colors.yellow}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -303,7 +304,7 @@ type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.blue}
+content-background = ${colors.orange}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -345,6 +346,18 @@ content-padding    = 2
 
 ; Mouse click
 click-left = vscodium &
+
+[module/chat]
+type = custom/text
+
+; Label
+content            = 
+content-foreground = ${colors.white}
+content-background = ${colors.yellow}
+content-padding    = 2
+
+; Mouse click
+click-left = slack &
 
 [module/gimp]
 type = custom/text
@@ -388,11 +401,11 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-background = ${colors.green}
+format-connected-background = ${colors.teal}
 label-connected =  %essid%
 label-connected-padding = 2
 
-format-disconnected = 
+format-disconnected =
 ;format-disconnected = <label-disconnected>
 format-disconnected-background = ${colors.red}
 label-disconnected =  %ifname% disconnected
@@ -408,11 +421,41 @@ format-connected-background = ${colors.blue}
 label-connected =  %local_ip%
 label-connected-padding = 2
 
-format-disconnected = 
+format-disconnected =
 ;format-disconnected = <label-disconnected>
 format-disconnected-background = ${colors.red}
 label-disconnected =  %ifname% disconnected
 label-disconnected-padding = 2
+
+[module/tlp]
+type = custom/script
+
+; Script
+exec = $HOME/.config/polybar/scripts/battery-combined-tlp.sh
+
+; Update interval
+interval = 10
+
+; Label
+label            = %output%
+label-foreground = ${colors.white}
+label-background = ${colors.yellow}
+label-padding    = 2
+
+[module/k8s]
+type = custom/script
+
+; Script
+exec = $HOME/.config/polybar/scripts/kube.sh
+
+; Update interval
+interval = 5
+
+; Label
+label            = %output%
+label-foreground = ${colors.white}
+label-background = ${colors.indigo}
+label-padding    = 2
 
 [settings]
 screenchange-reload     = true

@@ -7,6 +7,7 @@
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
 export PATH=~/Bin:$PATH
+export PATH=~/.asdf/shims:$PATH
 
 [ -f ~/.alias ] && source ~/.alias
 # [ -f ~/.kops-completion.zsh ] && source ~/.kops-completion.zsh
