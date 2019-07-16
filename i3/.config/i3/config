@@ -23,7 +23,7 @@ bindsym $mod+Shift+q kill
 # Open applications
 bindsym $mod+Return exec kitty
 bindsym $mod+Print exec scrot -q 100 "$HOME/Pictures/Screenshots/%Y-%m-%d-%s-screenshot.png"
-bindsym $mod+d exec rofi -show run -theme config -font "Fira Code 15"
+bindsym $mod+d exec rofi -show drun -theme fullscreen -font "Fira Code 15"
 
 # change window focus
 bindsym $mod+h focus left
@@ -134,7 +134,8 @@ client.placeholder      #222b2e #222b2e #eeeeee #222b2e #222b2e
 # Run commands on startup
 exec_always --no-startup-id KUBE_TMUX_BINARY=$HOME/.asdf/shims/kubectl bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/vw-wallpaper.png
-exec_always --no-startup-id compton -b
+# exec_always --no-startup-id compton -b
+exec_always --no-startup-id xautolock -time 5 -locker "i3lock -i /home/rbudiharso/Pictures/vw-wallpaper.png"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10% #increase sound volume
@@ -147,9 +148,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # lock screen
-bindsym $mod+Shift+x exec i3lock -i $lock_paper
+# bindsym $mod+Shift+x exec i3lock -i $lock_paper
 
 # To find the class: use xprop and click on the window you want
+assign [class="kitty"] $ws2
 assign [class="Firefox"] $ws3
-assign [class="Slack"] $ws5
 assign [class="VSCodium"] $ws4
+assign [class="Slack"] $ws5
