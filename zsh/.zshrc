@@ -4,6 +4,9 @@
 # autoload -Uz compinit
 # compinit -i
 
+# set CAPSLOCK as Escape
+setxkbmap -option caps:escape
+
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
 export PATH=~/Bin:$PATH
