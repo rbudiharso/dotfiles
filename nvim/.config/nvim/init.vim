@@ -37,7 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
@@ -163,7 +163,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+" silent! colorscheme molokai
 
 set mousemodel=popup
 set t_Co=256
@@ -379,8 +379,8 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_linters = {}
 
 " Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+" nmap <silent> <F4> :TagbarToggle<CR>
+" let g:tagbar_autofocus = 1
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=

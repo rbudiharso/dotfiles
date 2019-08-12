@@ -100,3 +100,5 @@ source $HOME/.dotfiles/zsh/.purepower
 
 # uncomment this to profile zsh startup time
 # zprof
+
+# eval "$(starship init zsh)"

@@ -58,10 +58,10 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 
 " Use fd for ctrlp.
-if executable('fd')
-    let g:ctrlp_user_command = 'fd -c never "" %s'
-    let g:ctrlp_use_caching = 0
-endif
+" if executable('fd')
+"     let g:ctrlp_user_command = 'fd -c never "" %s'
+"     let g:ctrlp_use_caching = 0
+" endif
 
 " takac/vim-hardtime
 " VIM the hard way
@@ -88,3 +88,5 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:startify_lists = [
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ ]
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1

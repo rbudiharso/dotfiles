@@ -1,14 +1,14 @@
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'adelarsq/vim-matchit'
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ap/vim-css-color'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-vinegar'
 Plug 'mhinz/vim-startify'
 
