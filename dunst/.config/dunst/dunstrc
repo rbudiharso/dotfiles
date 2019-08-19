@@ -1,5 +1,6 @@
 [global]
-font = Fira Code 12
+# font = Fira Code 12
+font = Lexend Deca Regular 12
 
 # Allow a small subset of html markup:
 #   <b>bold</b>

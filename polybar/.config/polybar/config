@@ -1,17 +1,18 @@
 [colors]
-background = #222b2e
-foreground = #eeeeee
-red        = #e25252
-blue       = #5294e2
-teal       = #16a085
-green      = #87b158
-purple     = #7e57c2
-orange     = #ee923a
-indigo     = #5c6bc0
-black      = #4f4f4f
-white      = #e4e4e4
-yellow     = #e2b322
-brown      = #ae8e6c
+background = #282828
+foreground = #ebdbb2
+red        = #fb4934
+blue       = #83a598
+teal       = #8ec07c
+green      = #b8bb26
+purple     = #d3869b
+orange     = #fe8019
+indigo     = #076678
+black      = #282828
+white      = #ebdbb2
+yellow     = #fabd2f
+brown      = #b57614
+darkgray   = #504945
 
 [bar/top]
 ; Size
@@ -52,11 +53,12 @@ module-margin-left  = 0
 module-margin-right = 0
 
 ; Font
-font-0 = Fira Code:style=Bold:size=10;3
+; font-0 = Fira Code:style=Bold:size=10;3
+font-0 = Lexend Deca:style=Regular:size=11;3
 font-1 = Font Awesome 5 Free Solid:size=12;3
 
-; Modlues
-modules-left   = nautilus kitty firefox vscode chat
+; Modules
+modules-left   = nautilus kitty firefox chat vscode 
 modules-center = date
 modules-right  = wlan eth tlp temperature pulseaudio
 
@@ -103,10 +105,11 @@ module-margin-left  = 0
 module-margin-right = 0
 
 ; Font
-font-0 = Fira Code:style=Bold:size=10;3
+; font-0 = Fira Code:style=Bold:size=10;3
+font-0 = Lexend Deca:style=Regular:size=11;3
 font-1 = Font Awesome 5 Free Solid:size=12;3
 
-; Modlues
+; Modules
 modules-left   = i3
 modules-center =
 modules-right  = k8s lock logout reboot poweroff
@@ -134,14 +137,14 @@ fuzzy-match = true
 ws-icon-0       = Main;
 ws-icon-1       = Terminal;
 ws-icon-2       = Web;
-ws-icon-3       = Program;
-ws-icon-4       = Chat;
+ws-icon-3       = Chat;
+ws-icon-4       = Program;
 ws-icon-5       = Other;
 ws-icon-default = 
 
 ; Focused label
 label-focused            = %icon%
-label-focused-background = ${colors.teal}
+label-focused-background = ${colors.orange}
 label-focused-foreground = ${colors.foreground}
 label-focused-padding    = 2
 
@@ -171,7 +174,7 @@ interval = 600
 
 ; Label
 label            = %output%
-label-foreground = ${colors.foreground}
+label-foreground = ${colors.white}
 label-padding    = 1
 
 [module/battery0]
@@ -271,7 +274,7 @@ date = %d %b %Y
 time =  %H:%M
 
 ; Label
-label            =  %date%  %time%
+label            = %date% %time%
 label-foreground = ${colors.foreground}
 label-padding    = 1
 
@@ -280,7 +283,7 @@ type = custom/text
 
 ; Label
 content = 
-content-background = ${colors.teal}
+content-background = ${colors.blue}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -292,7 +295,7 @@ type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.yellow}
+content-background = ${colors.teal}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -328,7 +331,7 @@ type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.orange}
+content-background = ${colors.teal}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -340,7 +343,7 @@ type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.purple}
+content-background = ${colors.indigo}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -352,8 +355,8 @@ type = custom/text
 
 ; Label
 content            = 
-content-foreground = ${colors.white}
-content-background = ${colors.yellow}
+content-background = ${colors.blue}
+content-foreground = ${colors.foreground}
 content-padding    = 2
 
 ; Mouse click
@@ -376,7 +379,7 @@ type = custom/text
 
 ; Label
 content            = 
-content-background = ${colors.teal}
+content-background = ${colors.orange}
 content-foreground = ${colors.foreground}
 content-padding    = 2
 
@@ -401,7 +404,8 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-background = ${colors.teal}
+format-connected-background = ${colors.blue}
+format-connected-foreground = ${colors.foreground}
 label-connected =  %essid%
 label-connected-padding = 2
 
@@ -438,8 +442,8 @@ interval = 10
 
 ; Label
 label            = %output%
-label-foreground = ${colors.white}
-label-background = ${colors.yellow}
+label-background = ${colors.teal}
+label-foreground = ${colors.foreground}
 label-padding    = 2
 
 [module/k8s]

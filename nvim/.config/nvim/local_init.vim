@@ -3,7 +3,7 @@ let g:python_host_prog = "~/.asdf/shims/python"
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
+  autocmd FileType javascript,typescript setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
 augroup END
 
 set termguicolors
@@ -56,6 +56,14 @@ endif
 " morhetz/gruvbox
 let g:gruvbox_italic=1
 colorscheme gruvbox
+
+" Open ranger at current file with "-"
+nnoremap <silent> - :RangerCurrentFile<CR>
+
+" Open ranger in current working directory
+nnoremap <silent> <Leader>r :Ranger<CR>
+" makes ranger show hidden files by default
+let g:neoranger_opts='--cmd="set show_hidden true"'
 
 " Use fd for ctrlp.
 " if executable('fd')

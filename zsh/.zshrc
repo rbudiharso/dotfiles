@@ -24,9 +24,9 @@ fi
 #   source /etc/profile.d/vte.sh
 # fi
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 
-SPACESHIP_CHAR_SYMBOL=" "
+SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_NODE_SYMBOL=" "
 SPACESHIP_DOCKER_SYMBOL=" "
@@ -39,9 +39,9 @@ SPACESHIP_PROMPT_ORDER=(
   # user          # Username section
   dir           # Current directory section
   # host          # Hostname section
-  git           # Git section (git_branch + git_status)
+  # git           # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
+  # package       # Package version
   # node          # Node.js section
   # ruby          # Ruby section
   # elixir        # Elixir section
@@ -62,12 +62,17 @@ SPACESHIP_PROMPT_ORDER=(
   # kubecontext   # Kubectl context section
   # terraform     # Terraform workspace section
   # exec_time     # Execution time
-  line_sep      # Line break
+  # line_sep      # Line break
   # battery       # Battery level and status
   # vi_mode       # Vi-mode indicator
   # jobs          # Background jobs indicator
   # exit_code     # Exit code section
   char          # Prompt character
+)
+SPACESHIP_RPROMPT_ORDER=(
+  exit_code
+  git
+  package
 )
 
 # source $HOME/.antigen.zsh
@@ -80,7 +85,7 @@ antibody bundle < ~/.antibody-plugins.txt
 # source ~/.dotfiles/antibody/.zsh_plugins.sh
 
 # [[ $TERM == xterm* ]] || : ${PURE_POWER_MODE:=portable}
-source $HOME/.dotfiles/zsh/.purepower
+# source $HOME/.dotfiles/zsh/.purepower
 # antigen use oh-my-zsh
 # antigen bundle git
 # antigen bundle safe-paste

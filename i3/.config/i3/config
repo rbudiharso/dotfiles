@@ -79,8 +79,8 @@ bindsym $mod+a focus parent
 set $ws1 "Main"
 set $ws2 "Terminal"
 set $ws3 "Web"
-set $ws4 "Program"
-set $ws5 "Chat"
+set $ws4 "Chat"
+set $ws5 "Program"
 set $ws6 "Other"
 
 # Switch to workspaces
@@ -153,6 +153,6 @@ bindsym $mod+Shift+x exec i3lock -i $HOME/Pictures/vw-wallpaper.png && systemctl
 # To find the class: use xprop and click on the window you want
 assign [class="kitty"] $ws2
 assign [class="Firefox"] $ws3
-assign [class="VSCodium"] $ws4
-assign [class="Slack"] $ws5
-assign [class="spotify"] $ws4
+assign [class="Slack"] $ws4
+assign [class="VSCodium"] $ws5
+assign [class="spotify"] $ws5

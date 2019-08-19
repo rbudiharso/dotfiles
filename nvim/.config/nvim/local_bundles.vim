@@ -9,8 +9,9 @@ Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ap/vim-css-color'
 " Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 Plug 'mhinz/vim-startify'
+Plug 'Lokaltog/neoranger'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
