@@ -59,7 +59,7 @@ font-1 = Font Awesome 5 Free Solid:size=12;3
 
 ; Modules
 modules-left   = nautilus kitty firefox chat vscode 
-modules-center = date
+; modules-center = date
 modules-right  = wlan eth tlp temperature pulseaudio
 
 ; Cursor actions
@@ -112,7 +112,7 @@ font-1 = Font Awesome 5 Free Solid:size=12;3
 ; Modules
 modules-left   = i3
 modules-center =
-modules-right  = k8s lock logout reboot poweroff
+modules-right  = date k8s lock logout reboot poweroff
 
 ; Cursor actions
 cursor-click  = pointer
@@ -288,7 +288,7 @@ content-foreground = ${colors.foreground}
 content-padding    = 2
 
 ; Mouse click
-click-left = i3lock -i $HOME/Pictures/vw-wallpaper.png && systemctl suspend -i
+click-left = i3lock -i $HOME/Pictures/wallhaven-39ry9y.png && systemctl suspend -i
 
 [module/logout]
 type = custom/text
