@@ -151,6 +151,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 # lock screen
 bindsym $mod+Shift+x exec i3lock -i $lockwall && systemctl suspend -i
 
+# autorandr toggle
+bindsym $mod+Shift+m exec autorandr -c
+
 # To find the class: use xprop and click on the window you want
 assign [class="kitty"] $ws2
 assign [class="Firefox"] $ws3
