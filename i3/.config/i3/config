@@ -9,7 +9,7 @@ font pango:Fira Code Bold 10
 title_align center
 
 # Window rules
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 for_window [title="Library"] floating enable
 
 # Define gaps between windows
@@ -137,6 +137,7 @@ exec_always --no-startup-id KUBE_TMUX_BINARY=$HOME/.asdf/shims/kubectl bash ~/.c
 exec_always --no-startup-id feh --bg-fill $lockwall
 # exec_always --no-startup-id compton -b
 exec_always --no-startup-id xautolock -time 5 -locker "i3lock -i /home/rbudiharso/Pictures/wallhaven-39ry9y.png && systemctl suspend -i"
+# exec_always --no-startup-id ~/.local/bin/wal -i $lockwall
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10% #increase sound volume
