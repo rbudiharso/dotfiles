@@ -9,7 +9,7 @@ font pango:Fira Code Bold 10
 title_align center
 
 # Window rules
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 for_window [title="Library"] floating enable
 
 # Define gaps between windows
@@ -155,9 +155,13 @@ bindsym $mod+Shift+x exec i3lock -i $lockwall && systemctl suspend -i
 # autorandr toggle
 bindsym $mod+Shift+m exec autorandr -c
 
+bindsym $mod+Shift+n exec /usr/bin/firefox-x11
+
 # To find the class: use xprop and click on the window you want
 assign [class="kitty"] $ws2
 assign [class="Firefox"] $ws3
 assign [class="Slack"] $ws4
 assign [class="VSCodium"] $ws5
 assign [class="spotify"] $ws5
+
+border_radius 5

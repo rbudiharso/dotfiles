@@ -58,9 +58,11 @@ font-0 = Lexend Deca:style=Regular:size=11;3
 font-1 = Font Awesome 5 Free Solid:size=12;3
 
 ; Modules
-modules-left   = nautilus kitty firefox chat vscode 
-; modules-center = date
-modules-right  = wlan eth tlp temperature pulseaudio
+; modules-left   = nautilus kitty firefox chat vscode 
+modules-left   = i3
+modules-center = date k8s tlp
+; modules-right  = wlan eth tlp temperature pulseaudio
+modules-right  = wlan eth pulseaudio lock logout reboot poweroff
 
 ; Cursor actions
 cursor-click  = pointer
@@ -253,13 +255,13 @@ type = internal/pulseaudio
 
 ; Volume label
 label-volume            =  %percentage%%
-label-volume-background = ${colors.blue}
+; label-volume-background = ${colors.blue}
 label-volume-foreground = ${colors.foreground}
 label-volume-padding    = 2
 
 ; Muted label
 label-muted            =  Muted
-label-muted-background = ${colors.red}
+; label-muted-background = ${colors.red}
 label-muted-foreground = ${colors.foreground}
 label-muted-padding    = 2
 
@@ -404,14 +406,14 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-background = ${colors.blue}
+; format-connected-background = ${colors.blue}
 format-connected-foreground = ${colors.foreground}
 label-connected =  %essid%
 label-connected-padding = 2
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-format-disconnected-background = ${colors.red}
+; format-disconnected-background = ${colors.red}
 label-disconnected =  %ifname% disconnected
 label-disconnected-padding = 2
 
@@ -421,13 +423,13 @@ interface = enp0s31f6
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-background = ${colors.blue}
+; format-connected-background = ${colors.blue}
 label-connected =  %local_ip%
 label-connected-padding = 2
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-format-disconnected-background = ${colors.red}
+; format-disconnected-background = ${colors.red}
 label-disconnected =  %ifname% disconnected
 label-disconnected-padding = 2
 
@@ -442,7 +444,7 @@ interval = 10
 
 ; Label
 label            = %output%
-label-background = ${colors.teal}
+; label-background = ${colors.teal}
 label-foreground = ${colors.foreground}
 label-padding    = 2
 
@@ -458,7 +460,7 @@ interval = 5
 ; Label
 label            = %output%
 label-foreground = ${colors.white}
-label-background = ${colors.indigo}
+; label-background = ${colors.indigo}
 label-padding    = 2
 
 [settings]
