@@ -12,7 +12,9 @@ source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLA
 fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting )
 source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-greymd-SLASH-docker-zsh-completion/docker-zsh-completion.plugin.zsh
 fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-greymd-SLASH-docker-zsh-completion )
-source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-dbz-SLASH-kube-aliases/kube-aliases.plugin.zsh
-fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-dbz-SLASH-kube-aliases )
-source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-denysdovhan-SLASH-spaceship-prompt/spaceship.zsh
-fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-denysdovhan-SLASH-spaceship-prompt )
+source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-bonnefoa-SLASH-kubectl-fzf/kubectl_fzf.plugin.zsh
+fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-bonnefoa-SLASH-kubectl-fzf )
+source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-mafredri-SLASH-zsh-async/async.plugin.zsh
+fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-mafredri-SLASH-zsh-async )
+source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-sindresorhus-SLASH-pure/pure.plugin.zsh
+fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-sindresorhus-SLASH-pure )

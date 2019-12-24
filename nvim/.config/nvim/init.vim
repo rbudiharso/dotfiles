@@ -108,6 +108,10 @@ call minpac#add('vim-scripts/vis')
 call minpac#add('w0rp/ale')
 call minpac#add('xolox/vim-misc')
 call minpac#add('xolox/vim-session')
+call minpac#add('jacoborus/tender.vim')
+call minpac#add('mattn/gist-vim')
+call minpac#add('mattn/webapi-vim')
+call minpac#add('danro/rename.vim')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -146,6 +150,7 @@ set relativenumber
 
 let g:python_host_prog = "~/.asdf/shims/python"
 
+" enable true colors (24 bit color support)
 set termguicolors
 set cursorline
 set relativenumber
@@ -181,6 +186,7 @@ endif
 " morhetz/gruvbox
 let g:gruvbox_italic=1
 colorscheme gruvbox
+" colorscheme tender
 
 " Open ranger at current file with "-"
 nnoremap <silent> - :RangerCurrentFile<CR>
@@ -530,4 +536,5 @@ endif
 
 " vim-airline/vim-airline-themes
 let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'tender'
 

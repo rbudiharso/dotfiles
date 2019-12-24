@@ -1,4 +1,5 @@
-set $lockwall $HOME/Pictures/wallhaven-39ry9y.png
+# set $lockwall $HOME/Pictures/wallhaven-39ry9y.png
+set $lockwall $HOME/Pictures/wallhaven-j5v2gw.jpg
 # Set mod key
 set $mod Mod4
 
@@ -13,7 +14,7 @@ for_window [class="^.*"] border pixel 0
 for_window [title="Library"] floating enable
 
 # Define gaps between windows
-gaps inner 20
+gaps inner 15
 
 # Drag floating windows (Mouse + $mod)
 floating_modifier $mod
@@ -24,7 +25,10 @@ bindsym $mod+Shift+q kill
 # Open applications
 bindsym $mod+Return exec kitty
 bindsym $mod+Print exec scrot -q 100 "$HOME/Pictures/Screenshots/%Y-%m-%d-%s-screenshot.png"
+bindsym $mod+Shift+p exec flameshot gui
 bindsym $mod+d exec rofi -show drun -theme fullscreen -font "Fira Code 15"
+bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+w exec firefox
 
 # change window focus
 bindsym $mod+h focus left
@@ -135,8 +139,8 @@ client.placeholder      #222b2e #222b2e #eeeeee #222b2e #222b2e
 # Run commands on startup
 exec_always --no-startup-id KUBE_TMUX_BINARY=$HOME/.asdf/shims/kubectl bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill $lockwall
-# exec_always --no-startup-id compton -b
-exec_always --no-startup-id xautolock -time 5 -locker "i3lock -i /home/rbudiharso/Pictures/wallhaven-39ry9y.png && systemctl suspend -i"
+# exec_always --no-startup-id compton -bcfCG -D 17 --backend glx -i 0.9
+exec_always --no-startup-id xautolock -time 5 -locker "i3lock -i /home/rbudiharso/Pictures/wallhaven-j5v2gw.png && systemctl suspend -i"
 # exec_always --no-startup-id ~/.local/bin/wal -i $lockwall
 
 # Pulse Audio controls
@@ -164,4 +168,4 @@ assign [class="Slack"] $ws4
 assign [class="VSCodium"] $ws5
 assign [class="spotify"] $ws5
 
-border_radius 5
+border_radius 8

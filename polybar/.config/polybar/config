@@ -290,7 +290,7 @@ content-foreground = ${colors.foreground}
 content-padding    = 2
 
 ; Mouse click
-click-left = i3lock -i $HOME/Pictures/wallhaven-39ry9y.png && systemctl suspend -i
+click-left = i3lock -i $HOME/Pictures/wallhaven-j5v2gw.png && systemctl suspend -i
 
 [module/logout]
 type = custom/text
