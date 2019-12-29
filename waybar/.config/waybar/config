@@ -6,13 +6,13 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": ["sway/workspaces", "custom/sep", "sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock", "tray", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["custom/kubernetes", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock", "tray", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
       "disable-scroll": true,
       "format": "{icon}",
       "format-icons": {
         "Terminal": "",
-        "Web": "",
+        "Web": "",
         "Chat": "",
         "Program": "",
         "Other": "",
@@ -144,6 +144,11 @@
     "custom/poweroff": {
       "format": "",
       "on-click": "poweroff"
+    },
+    "custom/kubernetes": {
+      "format": "{}",
+      "exec": "PATH=$HOME/Bin:$PATH $HOME/.dotfiles/tmux/kubecontext.sh",
+      "interval": 10
     }
 }
 

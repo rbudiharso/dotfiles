@@ -53,9 +53,12 @@ set $gb0_s #32302f
 
 set $laptop "Unknown 0x0521 0x00000000"
 set $4kmonitor "Unknown BenQ EL2870U A3K00589SL0"
+set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
 
 set $laptop_keyboard "1:1:AT_Translated_Set_2_keyboard"
 set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
+set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
+set $laptop_trackpad "1739:0:Synaptics_TM3276-022"
 
 ### Output configuration
 #
@@ -81,6 +84,10 @@ output $4kmonitor {
   pos 1920 0
 }
 
+output $2kmonitor {
+  mode 2560x1440@74Hz
+  pos 1920 0
+}
 output * bg /home/rbudiharso/Pictures/wallhaven-j5v2gw.jpg fill
 
 ### Idle configuration
@@ -116,6 +123,14 @@ input $laptop_keyboard {
 }
 input $massdrop_ctrl {
   xkb_options caps:escape
+}
+input $akko_keyboard {
+  xkb_options caps:escape
+}
+input $laptop_trackpad {
+  tap enabled
+  tap_button_map lrm
+  dwt enabled
 }
 
 
@@ -281,6 +296,8 @@ bindsym XF86MonBrightnessDown exec light -U 10
 # for taking screenshot
 bindsym $mod+Print exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+bindsym $mod+p exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+bindsym $mod+Shift+p exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 
 #
 # Status Bar:
@@ -296,7 +313,7 @@ gaps outer 0
 gaps inner 10
 
 # class                 border    backgr.   text      indicator   child_border
-client.focused          $yellow0  $yellow0  $bg0      $red0       $yellow1
+client.focused          $yellow0  $yellow0  $bg0      $aqua0      $yellow1
 client.focused_inactive $gray1    $gray1    $bg4      $blue1      $gray1
 client.unfocused        $gray1    $gray1    $bg4      $blue1      $gray1
 client.urgent           $red1     $red0     $fg0      $red0       $red0
@@ -304,12 +321,12 @@ client.placeholder      $bg1      $bg1      $fg0      $bg0        $bg0
 
 client.background       $bg0
 
-# To find the class: use xprop and click on the window you want
+# To find the window attributes: use swaymsg -t get_tree
 assign [app_id="^kitty$"] $ws2
-assign [class="Firefox"] $ws3
+assign [app_id="firefox"] $ws3
 assign [class="Slack"] $ws4
 assign [class="VSCodium"] $ws5
-assign [class="spotify"] $ws5
+# assign [class="Spotify"] $ws5
 
 # inactive window transparency
 exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
