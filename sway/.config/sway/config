@@ -313,7 +313,7 @@ gaps outer 0
 gaps inner 10
 
 # class                 border    backgr.   text      indicator   child_border
-client.focused          $yellow0  $yellow0  $bg0      $aqua0      $yellow1
+client.focused          $yellow0  $yellow0  $bg0      $aqua0      $yellow0
 client.focused_inactive $gray1    $gray1    $bg4      $blue1      $gray1
 client.unfocused        $gray1    $gray1    $bg4      $blue1      $gray1
 client.urgent           $red1     $red0     $fg0      $red0       $red0
@@ -338,5 +338,8 @@ exec $HOME/Bin/cache_builder
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
 exec redshift-gtk
+
+# dunst notification daemon
+exec dunst
 
 # include /etc/sway/config.d/*
