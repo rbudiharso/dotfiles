@@ -98,6 +98,7 @@ window#waybar {
 #mode,
 #idle_inhibitor,
 #custom-media,
+#custom-weather,
 #custom-sep,
 #custom-lock,
 #custom-logout,
@@ -188,7 +189,8 @@ label:focus {
 }
 
 #custom-media.custom-spotify {
-  background-color: #66cc99;
+  background-color: #1ED760;
+  color: @bg0;
 }
 
 #custom-media.custom-vlc {
@@ -251,3 +253,5 @@ label:focus {
   border-right: solid 1px @yellow0;
 }
 
+#custom-weather {
+}
