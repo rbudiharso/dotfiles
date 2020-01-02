@@ -18,10 +18,12 @@ fi
 
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 # source <(antibody init)
-# antibody bundle < ~/.antibody-plugins.txt
+# antibody bundle < ~/.dotfiles/antibody/plugins.txt
 
+# https://github.com/bonnefoa/kubectl-fzf
+[ 'pgrep cache_builder' ] || cache_builder &>/dev/null &
 # load antibody staticaly
-source ~/.dotfiles/antibody/.zsh_plugins.sh
+source ~/.dotfiles/antibody/plugins.sh
 source ~/.dotfiles/zsh/alias
 # uncomment this to profile zsh startup time
 # zprof
