@@ -34,6 +34,7 @@ temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g')
 #echo ${weather[1]##*,}
 
 # https://fontawesome.com/icons?s=solid&c=weather
+# echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]'
 case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
 "clear" | "sunny")
     condition=""
@@ -67,6 +68,12 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 "thundery outbreaks possible" | "patchy light rain with thunder" | "moderate or heavy rain with thunder" | "patchy light snow with thunder")
     condition=""
+    ;;
+"how it looks like)." | "queries as soon as possible.")
+    condition="?? °C"
+    temperature=""
+    weather[0]="Sorry, we're run out of query"
+    weather[1]=":("
     ;;
 *)
     condition=""

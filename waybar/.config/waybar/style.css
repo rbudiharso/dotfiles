@@ -1,56 +1,60 @@
 /* gruvbox colors */
 /* https://github.com/morhetz/gruvbox */
 /* dark theme */
+@define-color bg_h0 #1d2021;
+@define-color bg_s0 #32302f;
 @define-color bg0 #282828;
 @define-color bg1 #3c3836;
 @define-color bg2 #504945;
 @define-color bg3 #665c54;
 @define-color bg4 #7c6f64;
-@define-color fg0 #fbf1c7;
-@define-color fg1 #ebdbb2;
+@define-color fg0 #a89984;
+@define-color fg1 #bdae93;
 @define-color fg2 #d5c4a1;
-@define-color fg3 #bdae93;
-@define-color fg4 #a89984;
-@define-color red0 #fb4934;
-@define-color red1 #cc241d;
-@define-color green0 #b8bb26;
-@define-color green1 #98971a;
-@define-color yellow0 #fabd2f;
-@define-color yellow1 #d79921;
-@define-color blue0 #83a598;
-@define-color blue1 #458588;
-@define-color purple0 #d3869b;
-@define-color purple1 #b16286;
-@define-color aqua0 #8ec07c;
-@define-color aqua1 #689d6a;
-@define-color orange0 #fe8019;
-@define-color orange1 #d65d0e;
-@define-color gray0 #a89984;
-@define-color gray1 #928374;
-@define-color bg0_h #1d2021;
-@define-color gb0_s #32302f;
+@define-color fg3 #ebdbb2;
+@define-color fg4 #fbf1c7;
+@define-color gray0 #928374;
+@define-color gray1 #a89984;
+@define-color red0 #cc241d;
+@define-color red1 #fb4934;
+@define-color green0 #98971a;
+@define-color green1 #b8bb26;
+@define-color yellow0 #d79921;
+@define-color yellow1 #fabd2f;
+@define-color blue0 #458588;
+@define-color blue1 #83a598;
+@define-color purple0 #b16286;
+@define-color purple1 #d3869b;
+@define-color aqua0 #689d6a;
+@define-color aqua1 #8ec07c;
+@define-color orange0 #d65d0e;
+@define-color orange1 #fe8019;
 
 * {
   border: none;
   border-radius: 0;
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: 'Fira Sans', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Fira Sans', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
   min-height: 0;
 }
 
 window#waybar {
   background-color: rgba(28, 28, 28, 0.9);
-  color: @fg0;
+  color: @fg4;
   transition-property: background-color;
   transition-duration: .5s;
   border: solid 1px @yellow0;
 }
 
+#window {
+  padding: 0 10px;
+}
+
 #workspaces button {
   padding: 0 10px;
   background-color: transparent;
-  color: @fg0;
+  color: @fg4;
   border-top: solid 1px @yellow0;
   border-bottom: solid 1px @yellow0;
 }
@@ -99,14 +103,13 @@ window#waybar {
 #idle_inhibitor,
 #custom-media,
 #custom-weather,
-#custom-sep,
 #custom-lock,
 #custom-logout,
 #custom-reboot,
 #custom-poweroff,
 #mpd {
   padding: 0 10px;
-  color: @fg0;
+  color: @fg4;
   border-top: solid 1px @yellow0;
   border-bottom: solid 1px @yellow0;
 }
@@ -133,13 +136,13 @@ window#waybar {
   to {
     background-color: @bg0;
     /* background-color: rgba(28, 28, 28, 0.9); */
-    color: @fg0;
+    color: @fg4;
   }
 }
 
 #battery.critical:not(.charging) {
   background-color: @red1;
-  color: @fg0;
+  color: @fg4;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;

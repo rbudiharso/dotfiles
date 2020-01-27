@@ -1,0 +1,7 @@
+margin=20
+font=Fira Sans
+background-color=#458588ee
+text-color=#fbf1c7ff
+border-color=#83a598dd
+default-timeout=10000
+group-by=app-name

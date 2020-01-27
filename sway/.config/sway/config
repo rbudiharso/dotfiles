@@ -88,7 +88,7 @@ output $2kmonitor {
   mode 2560x1440@74Hz
   pos 1920 0
 }
-output * bg /home/rbudiharso/Pictures/wallhaven-j5v2gw.jpg fill
+output * bg $HOME/Pictures/wallhaven-j5v2gw.jpg fill
 
 ### Idle configuration
 #
@@ -96,7 +96,7 @@ output * bg /home/rbudiharso/Pictures/wallhaven-j5v2gw.jpg fill
 #
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 600 'swaymsg "output * dpms off" && sleep 3 && systemctl suspend' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 #
@@ -148,7 +148,9 @@ bindsym $mod+Shift+q kill
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.9, resize set height 200, resize set width 600
 # set $menu kitty --class=launcher bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --height=25 | xargs -r swaymsg -t command exec'
 set $menu kitty --class=launcher $HOME/.dotfiles/sway/.config/sway/sway-launcher-desktop.sh
-bindsym $mod+d exec $menu
+# bindsym $mod+d exec $menu
+# bindsym $mod+d exec dmenu-wl_run -i
+bindsym $mod+d exec $HOME/.local/bin/gtkmenu --width 500 --height 260
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -162,6 +164,10 @@ bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and end your session?' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Lock and suspend sway
+# bindsym $mod+Shift+x exec swaylock -f && sleep 60 && systemctl suspend
+bindsym $mod+Shift+x exec wlogout
 #
 # Moving around:
 #

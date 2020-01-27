@@ -5,7 +5,7 @@
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
-    "modules-left": ["sway/workspaces", "custom/sep", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/window"],
     "modules-right": ["custom/media", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/weather", "clock", "tray", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
       "disable-scroll": true,
@@ -126,12 +126,9 @@
       "exec": "$HOME/.dotfiles/waybar/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-    "custom/sep": {
-      "format": "·"
-    },
     "custom/lock": {
       "format": "",
-      "on-click": "swaymsg -- exec swaylock -f"
+      "on-click": "swaylock -f && sleep 60 && systemctl suspend"
     },
     "custom/logout": {
       "format": "",

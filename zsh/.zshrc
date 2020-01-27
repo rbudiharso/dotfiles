@@ -1,6 +1,7 @@
 # uncoment if you want to profile zsh startup time
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
+
 autoload -Uz compinit
 compinit -i
 
@@ -22,8 +23,13 @@ export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robb
 
 # https://github.com/bonnefoa/kubectl-fzf
 [ 'pgrep cache_builder' ] || cache_builder &>/dev/null &
+
 # load antibody staticaly
 source ~/.dotfiles/antibody/plugins.sh
-source ~/.dotfiles/zsh/alias
+
+# additional files
+source ~/.dotfiles/zsh/aliases.zsh
+source ~/.dotfiles/zsh/helm-completion.zsh
+
 # uncomment this to profile zsh startup time
 # zprof

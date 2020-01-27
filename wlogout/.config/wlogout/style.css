@@ -1,0 +1,77 @@
+/* gruvbox colors */
+/* https://github.com/morhetz/gruvbox */
+/* dark theme */
+@define-color bg_h0 #1d2021;
+@define-color bg_s0 #32302f;
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color bg3 #665c54;
+@define-color bg4 #7c6f64;
+@define-color fg0 #a89984;
+@define-color fg1 #bdae93;
+@define-color fg2 #d5c4a1;
+@define-color fg3 #ebdbb2;
+@define-color fg4 #fbf1c7;
+@define-color gray0 #928374;
+@define-color gray1 #a89984;
+@define-color red0 #cc241d;
+@define-color red1 #fb4934;
+@define-color green0 #98971a;
+@define-color green1 #b8bb26;
+@define-color yellow0 #d79921;
+@define-color yellow1 #fabd2f;
+@define-color blue0 #458588;
+@define-color blue1 #83a598;
+@define-color purple0 #b16286;
+@define-color purple1 #d3869b;
+@define-color aqua0 #689d6a;
+@define-color aqua1 #8ec07c;
+@define-color orange0 #d65d0e;
+@define-color orange1 #fe8019;
+
+* {
+	background-image: none;
+}
+window {
+	background-color: rgba(28, 28, 28, 0.9);
+}
+button {
+  color: @fg4;
+	background-color: @blue0;
+	border-style: solid;
+	border-width: 5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+  margin: 10px;
+}
+
+button:focus, button:active, button:hover {
+	background-color: @orange0;
+	outline-style: none;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

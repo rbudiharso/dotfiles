@@ -89,6 +89,7 @@ call minpac#add('leafOfTree/vim-vue-plugin')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mhinz/vim-startify')
 call minpac#add('morhetz/gruvbox')
+call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('posva/vim-vue')
 call minpac#add('racer-rust/vim-racer')
@@ -112,6 +113,7 @@ call minpac#add('jacoborus/tender.vim')
 call minpac#add('mattn/gist-vim')
 call minpac#add('mattn/webapi-vim')
 call minpac#add('danro/rename.vim')
+call minpac#add('christoomey/vim-tmux-navigator')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -185,8 +187,12 @@ endif
 
 " morhetz/gruvbox
 let g:gruvbox_italic=1
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme tender
+let g:nord_cursor_line_number_background = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+colorscheme nord
 
 " Open ranger at current file with "-"
 nnoremap <silent> - :RangerCurrentFile<CR>
@@ -535,6 +541,84 @@ else
 endif
 
 " vim-airline/vim-airline-themes
-let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'tender'
+let g:airline_theme = 'nord'
 
+
+" Creates a floating window with a most recent buffer to be used
+function! CreateCenteredFloatingWindow()
+    let width = float2nr(&columns * 0.6)
+    let height = float2nr(&lines * 0.6)
+    let top = ((&lines - height) / 2) - 1
+    let left = (&columns - width) / 2
+    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+    let top = "╭" . repeat("─", width - 2) . "╮"
+    let mid = "│" . repeat(" ", width - 2) . "│"
+    let bot = "╰" . repeat("─", width - 2) . "╯"
+    let lines = [top] + repeat([mid], height - 2) + [bot]
+    let s:buf = nvim_create_buf(v:false, v:true)
+    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+    call nvim_open_win(s:buf, v:true, opts)
+    set winhl=Normal:Floating
+    let opts.row += 1
+    let opts.height -= 2
+    let opts.col += 2
+    let opts.width -= 4
+    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+    au BufWipeout <buffer> exe 'bw '.s:buf
+endfunction
+
+" Term handling
+
+" Set login shell for :terminal command so aliases work
+set shell=/usr/bin/zsh
+
+" When term starts, auto go into insert mode
+autocmd TermOpen * startinsert
+
+" Turn off line numbers etc
+autocmd TermOpen * setlocal listchars= nonumber norelativenumber
+
+function! OpenTerm(cmd)
+    call CreateCenteredFloatingWindow()
+    call termopen(a:cmd, { 'on_exit': function('OnTermExit') })
+endfunction
+
+let s:scratch_open = 0
+function! ToggleScratchTerm()
+    if s:scratch_open
+        bd!
+        let s:scratch_open = 0
+    else
+        call OpenTerm('bash')
+        let s:scratch_open = 1
+    endif
+endfunction
+
+let s:lazygit_open = 0
+function! ToggleLazyGit()
+    if s:lazygit_open
+        bd!
+        let s:lazygit_open = 0
+    else
+        call OpenTerm('lazygit')
+        let s:lazygit_open = 1
+    endif
+endfunction
+
+function! OnTermExit(job_id, code, event) dict
+    if a:code == 0
+        bd!
+    endif
+endfunction
+
+" Escape out of terminal mode
+tnoremap <Esc> <C-\><C-n><cr>
+
+" Open scratch term
+nnoremap <silent> <Leader>s :call ToggleScratchTerm()<CR>
+
+" Open lazygit
+nnoremap <silent> <Leader>' :call ToggleLazyGit()<CR>
