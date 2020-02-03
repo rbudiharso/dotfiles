@@ -145,9 +145,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # Application launcher
-for_window [app_id="^launcher$"] floating enable, border none, opacity 0.9, resize set height 200, resize set width 600
+# for_window [app_id="^launcher$"] floating enable, border none, opacity 0.9, resize set height 200, resize set width 600
 # set $menu kitty --class=launcher bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --height=25 | xargs -r swaymsg -t command exec'
-set $menu kitty --class=launcher $HOME/.dotfiles/sway/.config/sway/sway-launcher-desktop.sh
+# set $menu kitty --class=launcher $HOME/.dotfiles/sway/.config/sway/sway-launcher-desktop.sh
 # bindsym $mod+d exec $menu
 # bindsym $mod+d exec dmenu-wl_run -i
 # bindsym $mod+d exec $HOME/.local/bin/gtkmenu --width 500 --height 260
@@ -348,8 +348,5 @@ exec $HOME/Bin/cache_builder
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
 exec redshift-gtk
-
-# dunst notification daemon
-exec dunst
 
 # include /etc/sway/config.d/*

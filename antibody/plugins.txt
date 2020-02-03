@@ -3,8 +3,8 @@ robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/asdf
 robbyrussell/oh-my-zsh path:plugins/kubectl
 zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
 # greymd/docker-zsh-completion
 # dbz/kube-aliases
 bonnefoa/kubectl-fzf
@@ -13,4 +13,5 @@ mafredri/zsh-async
 # prompt theme
 # denysdovhan/spaceship-prompt
 # romkatv/powerlevel10k
-sindresorhus/pure
+# sindresorhus/pure
+reobin/typewritten

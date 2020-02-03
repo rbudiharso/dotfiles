@@ -2,8 +2,8 @@
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 
-autoload -Uz compinit
-compinit -i
+# autoload -Uz compinit
+# compinit -i
 
 # set CAPSLOCK as Escape
 setxkbmap -option caps:escape
@@ -20,9 +20,6 @@ fi
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 # source <(antibody init)
 # antibody bundle < ~/.dotfiles/antibody/plugins.txt
-
-# https://github.com/bonnefoa/kubectl-fzf
-[ 'pgrep cache_builder' ] || cache_builder &>/dev/null &
 
 # load antibody staticaly
 source ~/.dotfiles/antibody/plugins.sh
