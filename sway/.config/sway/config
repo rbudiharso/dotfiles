@@ -150,7 +150,8 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.9, resi
 set $menu kitty --class=launcher $HOME/.dotfiles/sway/.config/sway/sway-launcher-desktop.sh
 # bindsym $mod+d exec $menu
 # bindsym $mod+d exec dmenu-wl_run -i
-bindsym $mod+d exec $HOME/.local/bin/gtkmenu --width 500 --height 260
+# bindsym $mod+d exec $HOME/.local/bin/gtkmenu --width 500 --height 260
+bindsym $mod+d exec wofi -c $HOME/.dotfiles/wofi/.config/wofi/wofi.conf
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.

@@ -1,0 +1,27 @@
+window {
+  border: solid 2px #a3be8c;
+  background: black;
+  /* font-size: 14pt; */
+  font-family: "Fira Code Retina", "Source Code Pro", "Iosevka", Sans, monospace;
+}
+
+#input {
+  border-radius: 0;
+  margin: 5px;
+}
+
+#outer-box {
+  margin: 10px;
+}
+
+#entry {
+  margin: 5px;
+  border-radius: 0;
+}
+
+#entry:selected {
+  background: #8fbcbb;
+  border: none;
+  color: #2e3440;
+  font-weight: bold;
+}

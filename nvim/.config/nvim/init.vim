@@ -1,6 +1,10 @@
 " BASIC CONFIGURATION
 
+" Enable syntax highlighting
+syntax on
+
 filetype plugin indent on
+
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -12,6 +16,44 @@ set incsearch
 set ignorecase
 set smartcase
 set fileformats=unix,dos,mac
+set autoread
+
+" Disable the blinking cursor.
+set gcr=a:blinkon0
+
+" keep 3 lines from top/bottom when scrolling
+set scrolloff=3
+
+" Status bar
+set laststatus=2
+
+" Use modeline overrides
+set modeline
+set modelines=10
+
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+" Set login shell for :terminal command so aliases work
+set shell=/usr/bin/zsh
+
+"" Tabs. May be overridden by autocmd rules
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+set ruler
+" set number
+set relativenumber
+
+" enable true colors (24 bit color support)
+set termguicolors
+set cursorline
+
+" use F5 to toggle paste mode
+set pastetoggle=<F5>
 
 if exists('$SHELL')
   set shell=$SHELL
@@ -25,32 +67,6 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
-" Remap Escape
-inoremap jk <ESC>
-
-" Run commands with semicolon
-nnoremap ; :
-
-" Save the current buffer using the leader key
-noremap <Leader>w :w<CR>
-
-" Save and exit Vim using the leader key
-noremap <Leader>e :wq<CR>
-
-" Exit without saving using the leader key
-noremap <Leader>q :q!<CR>
-
-" Enable syntax highlighting
-syntax on
-
-" Clipboard functionality (paste from system)
-vnoremap <leader>y "+y
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
-
-" Look and feel
-
 let g:make = 'gmake'
 if exists('make')
   let g:make = 'make'
@@ -60,7 +76,38 @@ endif
 " VIM the hard way
 let g:hardtime_default_on = 1
 let g:hardtime_showmsg = 1
+let g:hardtime_ignore_quickfix = 1
 let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+
+let g:python_host_prog = "~/.asdf/shims/python"
+
+" w0rp/ale
+" ALE fixers
+let g:ale_fixers = {
+      \   'javascript': [ 'eslint' ],
+      \}
+
+" startify list of files
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ ]
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
+
+let g:CSApprox_loaded = 1
+
+" IndentLine
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
+
+let Grep_Default_Options = '-IR'
+let Grep_Skip_Files = '*.log *.db'
+let Grep_Skip_Dirs = '.git node_modules'
+
+" makes ranger show hidden files by default
+let g:neoranger_opts='--cmd="set show_hidden true"'
 
 packadd minpac
 
@@ -70,7 +117,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Add other plugins here.
-call minpac#add('whatyouhide/vim-lengthmatters')
+" call minpac#add('whatyouhide/vim-lengthmatters')
 call minpac#add('HerringtonDarkholme/yats.vim')
 call minpac#add('Lokaltog/neoranger')
 call minpac#add('Raimondi/delimitMate')
@@ -88,8 +135,10 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafOfTree/vim-vue-plugin')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mhinz/vim-startify')
-call minpac#add('morhetz/gruvbox')
+" call minpac#add('morhetz/gruvbox')
 call minpac#add('arcticicestudio/nord-vim')
+" call minpac#add('Lokaltog/vim-monotone')
+" call minpac#add('jacoborus/tender.vim')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('posva/vim-vue')
 call minpac#add('racer-rust/vim-racer')
@@ -109,11 +158,13 @@ call minpac#add('vim-scripts/vis')
 call minpac#add('w0rp/ale')
 call minpac#add('xolox/vim-misc')
 call minpac#add('xolox/vim-session')
-call minpac#add('jacoborus/tender.vim')
 call minpac#add('mattn/gist-vim')
 call minpac#add('mattn/webapi-vim')
 call minpac#add('danro/rename.vim')
 call minpac#add('christoomey/vim-tmux-navigator')
+call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' })
+call minpac#add('junegunn/fzf.vim')
+call minpac#add('rhysd/conflict-marker.vim')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -123,15 +174,23 @@ packloadall
 
 "" ADDITIONAL CONFIGURATION
 
-" Line numbers
-nnoremap <leader>n :set nonumber!<CR>
-nnoremap <leader>rn :set norelativenumber!<CR>
+" Remap Escape
+inoremap jk <ESC>
+
+" Run commands with semicolon
+nnoremap ; :
+
+" Save the current buffer using the leader key
+noremap <Leader>w :w<CR>
+
+" Clipboard functionality (paste from system)
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+vnoremap <leader>p "+p
+nnoremap <leader>p "+p
 
 " Clear highlighting
 nnoremap <leader>c :nohl<CR>
-
-" Paste mode
-nnoremap <leader>pa :set nopaste!<CR>
 
 " Pane navigation
 nnoremap <C-h> <C-w>h
@@ -139,74 +198,86 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"" Tabs. May be overridden by autocmd rules
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-
-syntax on
-set ruler
-set number
-set relativenumber
-
-let g:python_host_prog = "~/.asdf/shims/python"
-
-" enable true colors (24 bit color support)
-set termguicolors
-set cursorline
-set relativenumber
-
-
-" w0rp/ale
-" ALE fixers
-let g:ale_fixers = {
-\   'javascript': [
-\       'eslint',
-\   ],
-\}
-
 if has('nvim')
-    " map ESC to exit terminal mode
-    tnoremap <Esc> <C-\><C-n>
-    tnoremap <A-[> <Esc>
+  " map ESC to exit terminal mode
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <A-[> <Esc>
 
-    " map for moving from terminal buffer
-    tnoremap <A-h> <C-\><C-n><C-w>h
-    tnoremap <A-j> <C-\><C-n><C-w>j
-    tnoremap <A-k> <C-\><C-n><C-w>k
-    tnoremap <A-l> <C-\><C-n><C-w>l
-    nnoremap <A-h> <C-w>h
-    nnoremap <A-j> <C-w>j
-    nnoremap <A-k> <C-w>k
-    nnoremap <A-l> <C-w>l
+  " map for moving from terminal buffer
+  tnoremap <A-h> <C-\><C-n><C-w>h
+  tnoremap <A-j> <C-\><C-n><C-w>j
+  tnoremap <A-k> <C-\><C-n><C-w>k
+  tnoremap <A-l> <C-\><C-n><C-w>l
+  nnoremap <A-h> <C-w>h
+  nnoremap <A-j> <C-w>j
+  nnoremap <A-k> <C-w>k
+  nnoremap <A-l> <C-w>l
 
-    " Alt-R to paste from the register to terminal buffer
-    tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+  " Alt-R to paste from the register to terminal buffer
+  tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
+  function! FloatingFZF(width, height, border_highlight)
+    function! s:create_float(hl, opts)
+      let buf = nvim_create_buf(v:false, v:true)
+      let opts = extend({'relative': 'editor', 'style': 'minimal'}, a:opts)
+      let win = nvim_open_win(buf, v:true, opts)
+      call setwinvar(win, '&winhighlight', 'NormalFloat:'.a:hl)
+      call setwinvar(win, '&colorcolumn', '')
+      return buf
+    endfunction
+
+    " Size and position
+    let width = float2nr(&columns * a:width)
+    let height = float2nr(&lines * a:height)
+    let row = float2nr((&lines - height) / 2)
+    let col = float2nr((&columns - width) / 2)
+
+    " Border
+    let top = '╭' . repeat('─', width - 2) . '╮'
+    let mid = '│' . repeat(' ', width - 2) . '│'
+    let bot = '╰' . repeat('─', width - 2) . '╯'
+    let border = [top] + repeat([mid], height - 2) + [bot]
+
+    " Draw frame
+    let s:frame = s:create_float(a:border_highlight, {'row': row, 'col': col, 'width': width, 'height': height})
+    call nvim_buf_set_lines(s:frame, 0, -1, v:true, border)
+
+    " Draw viewport
+    call s:create_float('Normal', {'row': row + 1, 'col': col + 2, 'width': width - 4, 'height': height - 2})
+    autocmd BufWipeout <buffer> execute 'bwipeout' s:frame
+  endfunction
+
+  let g:fzf_layout = { 'window': 'call FloatingFZF(0.9, 0.6, "Comment")' }
 endif
 
 " morhetz/gruvbox
-let g:gruvbox_italic=1
+" let g:gruvbox_italic=1
 " colorscheme gruvbox
-" colorscheme tender
+
+" Nord theme
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
+augroup nord-theme-overrides
+  autocmd!
+  autocmd ColorScheme nord highlight Normal guibg=black
+  autocmd ColorScheme nord highlight LineNr guibg=black
+  autocmd ColorScheme nord highlight CursorLine guibg=#2e3440
+augroup END
 colorscheme nord
+
+" monotone theme
+" colorscheme monotone
 
 " Open ranger at current file with "-"
 nnoremap <silent> - :RangerCurrentFile<CR>
 
 " Open ranger in current working directory
 nnoremap <silent> <Leader>r :Ranger<CR>
-" makes ranger show hidden files by default
-let g:neoranger_opts='--cmd="set show_hidden true"'
 
 " whatyouhide/vim-lengthmatters
 " highlight color for character past 80 column
-call lengthmatters#highlight_link_to('DiffDelete')
-
-set pastetoggle=<F5>
+" call lengthmatters#highlight_link_to('DiffDelete')
 
 " neoclide/coc.nvim
 " use <c-space>for trigger completion
@@ -216,37 +287,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" startify list of files
-let g:startify_lists = [
-      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-      \ ]
-let g:startify_change_to_dir = 0
-let g:startify_change_to_vcs_root = 1
-
-let g:CSApprox_loaded = 1
-
-" IndentLine
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
-
-" Disable the blinking cursor.
-set gcr=a:blinkon0
-set scrolloff=3
-
-" Status bar
-set laststatus=2
-
-" Use modeline overrides
-set modeline
-set modelines=10
-
-set title
-set titleold="Terminal"
-set titlestring=%F
-
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -271,10 +311,6 @@ cnoreabbrev Qall qall
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
-
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
@@ -324,8 +360,6 @@ augroup vimrc-make-cmake
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
-set autoread
-
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
@@ -358,12 +392,6 @@ nnoremap <silent> <S-t> :tabnew<CR>
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-"" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
 " ripgrep
 if executable('rg')
   let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
@@ -374,7 +402,7 @@ endif
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
-"Recovery commands from history through FZF
+" Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 
 " snippets
@@ -386,10 +414,7 @@ let g:UltiSnipsEditSplit="vertical"
 " ale
 let g:ale_linters = {}
 
-"" Close buffer
-noremap <leader>c :bd<CR>
-
-"" Vmap for maintain Visual Mode after shifting > and <
+" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
 
@@ -441,6 +466,7 @@ let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.js,*.jsx,*.vue setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 augroup completion_preview_close
   autocmd!
@@ -474,7 +500,7 @@ augroup END
 
 " ale
 :call extend(g:ale_linters, {
-    \"go": ['golint', 'go vet'], })
+      \"go": ['golint', 'go vet'], })
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -498,82 +524,48 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts = 1
 
-if !exists('g:airline_powerline_fonts')
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
-
-  " powerline symbols
-  " let g:airline_left_sep = ''
-  " let g:airline_left_alt_sep = ''
-  " let g:airline_right_sep = ''
-  " let g:airline_right_alt_sep = ''
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = '|'
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = '|'
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.linenr = ''
-  let g:airline_symbols.dirty = ' *'
-  let g:airline_symbols.readonly = ''
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline#extensions#branch#enabled = 1
-  let g:airline#extensions#ale#enabled = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tagbar#enabled = 1
-  let g:airline_skip_empty_sections = 1
-endif
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '|'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.dirty = ' *'
+let g:airline_symbols.readonly = ''
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline_skip_empty_sections = 1
 
 " vim-airline/vim-airline-themes
-" let g:airline_theme = 'gruvbox'
-" let g:airline_theme = 'tender'
 let g:airline_theme = 'nord'
 
 
 " Creates a floating window with a most recent buffer to be used
 function! CreateCenteredFloatingWindow()
-    let width = float2nr(&columns * 0.6)
-    let height = float2nr(&lines * 0.6)
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+  let width = float2nr(&columns * 0.6)
+  let height = float2nr(&lines * 0.6)
+  let top = ((&lines - height) / 2) - 1
+  let left = (&columns - width) / 2
+  let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
 
-    let top = "╭" . repeat("─", width - 2) . "╮"
-    let mid = "│" . repeat(" ", width - 2) . "│"
-    let bot = "╰" . repeat("─", width - 2) . "╯"
-    let lines = [top] + repeat([mid], height - 2) + [bot]
-    let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
-    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    au BufWipeout <buffer> exe 'bw '.s:buf
+  let top = "╭" . repeat("─", width - 2) . "╮"
+  let mid = "│" . repeat(" ", width - 2) . "│"
+  let bot = "╰" . repeat("─", width - 2) . "╯"
+  let lines = [top] + repeat([mid], height - 2) + [bot]
+  let s:buf = nvim_create_buf(v:false, v:true)
+  call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+  call nvim_open_win(s:buf, v:true, opts)
+  set winhl=Normal:Floating
+  let opts.row += 1
+  let opts.height -= 2
+  let opts.col += 2
+  let opts.width -= 4
+  call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+  au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
 
 " Term handling
-
-" Set login shell for :terminal command so aliases work
-set shell=/usr/bin/zsh
 
 " When term starts, auto go into insert mode
 autocmd TermOpen * startinsert
@@ -582,43 +574,42 @@ autocmd TermOpen * startinsert
 autocmd TermOpen * setlocal listchars= nonumber norelativenumber
 
 function! OpenTerm(cmd)
-    call CreateCenteredFloatingWindow()
-    call termopen(a:cmd, { 'on_exit': function('OnTermExit') })
+  call CreateCenteredFloatingWindow()
+  call termopen(a:cmd, { 'on_exit': function('OnTermExit') })
 endfunction
 
 let s:scratch_open = 0
 function! ToggleScratchTerm()
-    if s:scratch_open
-        bd!
-        let s:scratch_open = 0
-    else
-        call OpenTerm('bash')
-        let s:scratch_open = 1
-    endif
+  if s:scratch_open
+    bd!
+    let s:scratch_open = 0
+  else
+    call OpenTerm('zsh')
+    let s:scratch_open = 1
+  endif
 endfunction
 
 let s:lazygit_open = 0
 function! ToggleLazyGit()
-    if s:lazygit_open
-        bd!
-        let s:lazygit_open = 0
-    else
-        call OpenTerm('lazygit')
-        let s:lazygit_open = 1
-    endif
+  if s:lazygit_open
+    bd!
+    let s:lazygit_open = 0
+  else
+    call OpenTerm('lazygit')
+    let s:lazygit_open = 1
+  endif
 endfunction
 
 function! OnTermExit(job_id, code, event) dict
-    if a:code == 0
-        bd!
-    endif
+  if a:code == 0
+    bd!
+  endif
 endfunction
-
-" Escape out of terminal mode
-tnoremap <Esc> <C-\><C-n><cr>
 
 " Open scratch term
 nnoremap <silent> <Leader>s :call ToggleScratchTerm()<CR>
 
 " Open lazygit
-nnoremap <silent> <Leader>' :call ToggleLazyGit()<CR>
+nnoremap <silent> <Leader>] :call ToggleLazyGit()<CR>
+
+" highlight Normal ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
