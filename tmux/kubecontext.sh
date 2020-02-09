@@ -6,4 +6,4 @@ if ! [ -x $(command -v kubectl) ]; then
   exit 1
 fi
 
-kubectl config get-contexts | grep \* |awk '{print $5"@"$3}'
+kubectl config get-contexts | grep \* |awk '{print $5":"$3}'
