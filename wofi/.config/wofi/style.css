@@ -2,7 +2,8 @@ window {
   border: solid 2px #88c0d0;
   background: black;
   /* font-size: 14pt; */
-  font-family: "Fira Sans Medium", "Fira Code Retina", "Source Code Pro", "Iosevka", Sans, monospace;
+  font-family: 'Source Sans Pro', 'Fira Sans Medium', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }
 
 #input {

@@ -140,6 +140,7 @@ input $laptop_trackpad {
 #
 # Start a terminal
 bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec alacritty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
