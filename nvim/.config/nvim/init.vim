@@ -192,12 +192,6 @@ nnoremap <leader>p "+p
 " Clear highlighting
 nnoremap <leader>c :nohl<CR>
 
-" Pane navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 if has('nvim')
   " map ESC to exit terminal mode
   tnoremap <Esc> <C-\><C-n>
@@ -312,7 +306,7 @@ cnoreabbrev Qall qall
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 " terminal emulation
-nnoremap <silent> <leader>sh :terminal<CR>
+" nnoremap <silent> <leader>sh :terminal<CR>
 
 
 "*****************************************************************************
@@ -580,24 +574,26 @@ endfunction
 
 let s:scratch_open = 0
 function! ToggleScratchTerm()
-  if s:scratch_open
-    bd!
-    let s:scratch_open = 0
-  else
-    call OpenTerm('zsh')
-    let s:scratch_open = 1
-  endif
+  call OpenTerm('zsh')
+  " if s:scratch_open
+  "   bd!
+  "   let s:scratch_open = 0
+  " else
+  "   call OpenTerm('zsh')
+  "   let s:scratch_open = 1
+  " endif
 endfunction
 
 let s:lazygit_open = 0
 function! ToggleLazyGit()
-  if s:lazygit_open
-    bd!
-    let s:lazygit_open = 0
-  else
-    call OpenTerm('lazygit')
-    let s:lazygit_open = 1
-  endif
+  call OpenTerm('lazygit')
+  " if s:lazygit_open
+  "   " bd!
+  "   let s:lazygit_open = 0
+  " else
+  "   call OpenTerm('lazygit')
+  "   let s:lazygit_open = 1
+  " endif
 endfunction
 
 function! OnTermExit(job_id, code, event) dict
@@ -607,7 +603,7 @@ function! OnTermExit(job_id, code, event) dict
 endfunction
 
 " Open scratch term
-nnoremap <silent> <Leader>s :call ToggleScratchTerm()<CR>
+nnoremap <silent> <Leader>[ :call ToggleScratchTerm()<CR>
 
 " Open lazygit
 nnoremap <silent> <Leader>] :call ToggleLazyGit()<CR>
