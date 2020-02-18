@@ -61,7 +61,7 @@
       "spacing": 10
     },
     "clock": {
-      "format": "{:%e %b %Y | %H:%M}"
+      "format": "{:%e %b %Y %H:%M}"
     },
     "cpu": {
       "format": "{usage}% ",

@@ -69,11 +69,6 @@ set $laptop_trackpad "1739:0:Synaptics_TM3276-022"
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-focus output $laptop
-
-bindswitch --reload lid:on output $laptop disable
-bindswitch --reload lid:off output $laptop enable
-
 output $laptop {
   mode 1920x1080@60Hz
   pos 0 0
@@ -89,6 +84,11 @@ output $2kmonitor {
   pos 1920 0
 }
 output * bg $HOME/Pictures/wallhaven-j5v2gw.jpg fill
+
+focus output $laptop
+
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
 
 ### Idle configuration
 #
@@ -165,7 +165,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and end your session?' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and end your session?' -b 'Yes, exit sway' 'swaymsg exit' -s 'Cancel'
 
 # Lock and suspend sway
 # bindsym $mod+Shift+x exec swaylock -f && sleep 60 && systemctl suspend

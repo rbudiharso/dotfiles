@@ -18,9 +18,6 @@ set smartcase
 set fileformats=unix,dos,mac
 set autoread
 
-" Disable the blinking cursor.
-set gcr=a:blinkon0
-
 " keep 3 lines from top/bottom when scrolling
 set scrolloff=3
 
@@ -34,9 +31,6 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
-
-" Set login shell for :terminal command so aliases work
-set shell=/usr/bin/zsh
 
 "" Tabs. May be overridden by autocmd rules
 set tabstop=2
