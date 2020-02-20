@@ -30,6 +30,24 @@
 @define-color orange0 #d65d0e;
 @define-color orange1 #fe8019;
 
+/* nord colors */
+@define-color nord0 #2e3440;
+@define-color nord1 #3b4252;
+@define-color nord2 #434c5e;
+@define-color nord3 #4c566a;
+@define-color nord4 #d8dee9;
+@define-color nord5 #e5e9f0;
+@define-color nord6 #eceff4;
+@define-color nord7 #8fbcbb;
+@define-color nord8 #88c0d0;
+@define-color nord9 #81a1c1;
+@define-color nord10 #5e81ac;
+@define-color nord11 #bf616a;
+@define-color nord12 #d08770;
+@define-color nord13 #ebcb8b;
+@define-color nord14 #a3be8c;
+@define-color nord15 #b48ead;
+
 * {
   border: none;
   border-radius: 0;
@@ -40,49 +58,53 @@
 }
 
 window#waybar {
-  background-color: rgba(28, 28, 28, 0.9);
+  background-color: transparent;
   color: @fg4;
   transition-property: background-color;
   transition-duration: .5s;
-  border: solid 1px @yellow0;
+  /* border: solid 1px @yellow0; */
 }
 
 #window {
   padding: 0 10px;
+  /* background: @nord2; */
+  color: @nord6;
 }
 
 #workspaces button {
+  margin-right: 10px;
   padding: 0 10px;
-  background-color: transparent;
-  color: @fg4;
-  border-top: solid 1px @yellow0;
-  border-bottom: solid 1px @yellow0;
+  /* background-color: transparent; */
+  background-color: @nord10;
+  color: @nord6;
+  /* border-top: solid 1px @yellow0; */
+  /* border-bottom: solid 1px @yellow0; */
 }
 
 #workspaces button:first-child,
 #workspaces button.focused:first-child {
-  border-left: solid 1px @yellow0;
+  /* border-left: solid 1px @yellow0; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-  background-color: @bg1;
+  background-color: @nord8;
   box-shadow: inherit;
   text-shadow: inherit;
-  border-top: solid 1px @yellow0;
-  border-bottom: solid 1px @yellow0;
+  /* border-top: solid 1px @yellow0; */
+  /* border-bottom: solid 1px @yellow0; */
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background-color: @fg1;
-  color: @bg1;
-  border-top: solid 1px @yellow0;
-  border-bottom: solid 1px @yellow0;
+  background-color: @nord8;
+  color: @nord0;
+  /* border-top: solid 1px @yellow0; */
+  /* border-bottom: solid 1px @yellow0; */
 }
 
 #workspaces button.urgent {
-  background-color: @red0;
+  background-color: @nord11;
 }
 
 #mode {
@@ -108,10 +130,12 @@ window#waybar {
 #custom-reboot,
 #custom-poweroff,
 #mpd {
+  margin-left: 10px;
   padding: 0 10px;
-  color: @fg4;
-  border-top: solid 1px @yellow0;
-  border-bottom: solid 1px @yellow0;
+  color: @nord4;
+  background: @nord2;
+  /* border-top: solid 1px @yellow0; */
+  /* border-bottom: solid 1px @yellow0; */
 }
 
 #clock {
@@ -210,7 +234,7 @@ label:focus {
 }
 
 #tray {
-  background-color: @blue1;
+  /* background-color: @nord7; */
 }
 
 #idle_inhibitor {
@@ -240,20 +264,24 @@ label:focus {
 }
 
 #custom-lock {
-  background-color: @aqua1;
+  /* background-color: @nord7; */
+  /* color: @nord6; */
 }
 
 #custom-logout {
-  background-color: @yellow1;
+  /* background-color: @nord8; */
+  /* color: @nord6; */
 }
 
 #custom-reboot {
-  background-color: @orange1;
+  background-color: @nord12;
+  /* color: @nord6; */
 }
 
 #custom-poweroff {
-  background-color: @red1;
-  border-right: solid 1px @yellow0;
+  background-color: @nord11;
+  /* color: @nord6; */
+  /* border-right: solid 1px @yellow0; */
 }
 
 #custom-weather {

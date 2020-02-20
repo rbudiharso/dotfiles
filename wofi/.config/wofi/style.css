@@ -2,7 +2,7 @@ window {
   border: solid 2px #88c0d0;
   background: black;
   /* font-size: 14pt; */
-  font-family: 'Source Sans Pro', 'Fira Sans Medium', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: Inter, 'Source Sans Pro', 'Fira Sans Medium', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 20px;
 }
 

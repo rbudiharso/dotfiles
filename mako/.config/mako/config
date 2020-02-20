@@ -6,11 +6,11 @@ default-timeout=5000
 
 # Format
 font=Source Sans Pro 14
-border-color=#002028
+border-color=#5e81ac
 border-size=2
-background-color=#002b36AA
-text-color=#fdf6e3
-format=<b>%s</b> <span color="#93a1a1">(%a)</span>\n%b
+background-color=#4c566add
+text-color=#eceff4
+format=<b>%s</b> <span color="#d8dee9">(%a)</span>\n%b
 
 # icons
 icon-path=/usr/share/icons/Papirus-Adapta-Nokto-Maia:/usr/share/icons/Papirus-Maia:/usr/share/icons/Papirus
@@ -20,16 +20,16 @@ icon-path=/usr/share/icons/Papirus-Adapta-Nokto-Maia:/usr/share/icons/Papirus-Ma
 format=Hidden: %h [%t]
 
 [urgency=low]
-text-color=#93a1a1
+text-color=#eceff4
 
 [urgency=low actionable]
-border-color=#93a1a1
+border-color=#8fbcbb
 
 [urgency=normal actionable]
-border-color=#268bd2
+border-color=#5e81ac
 
 [urgency=high]
-border-color=#9c2220
+border-color=#bf616a
 
 [urgency=high actionable]
-border-color=#6c71c4
+border-color=#b48ead

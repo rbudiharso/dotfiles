@@ -6,7 +6,7 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-right": ["custom/media", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/weather", "clock", "tray", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["custom/media", "pulseaudio", "network", "battery", "custom/weather", "clock", "tray", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
       "disable-scroll": true,
       "format": "{icon}",
@@ -61,7 +61,7 @@
       "spacing": 10
     },
     "clock": {
-      "format": "{:%e %b %Y %H:%M}"
+      "format": "{:%e %b %Y %H:%M} "
     },
     "cpu": {
       "format": "{usage}% ",
