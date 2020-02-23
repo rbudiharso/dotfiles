@@ -146,6 +146,7 @@ input $akko_keyboard {
   xkb_options caps:escape
 }
 input $laptop_trackpad {
+  natural_scroll enabled
   tap enabled
   tap_button_map lrm
   dwt enabled

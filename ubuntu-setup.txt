@@ -1,0 +1,35 @@
+Ubuntu
+
+- mkdir -p ~/.local/bin
+- sudo apt install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev zsh git curl stow xclip
+- install asdf [https://asdf-vm.com/] -> ~/.local/bin
+- install antibody [https://getantibody.github.io/] -> ~/.local/bin
+- chsh -s /usr/bin/zsh
+- logout + login
+- open new terminal, select q to NOT create .zshrc
+- clone dotfiles -> ~/.dotfiles
+- cd .dotfiles
+- ~/.local/bin/antibody bundle < ~/.dotfiles/antibody/plugins.txt > ~/.dotfiles/antibody/plugins.sh
+- stow zsh
+- source ~/.zshrc
+- stow asdf
+- asdf plugin-add neovim && asdf install neovim 0.4.3 && asdf global neovim 0.4.3 # or the any of the latest neovim release
+- stow nvim
+- git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+- chmod +r ~/.local/share/nvim/shada/main.shada
+- asdf plugin-add python && asdf install python 2.7.17 && asdf global python 2.7.17
+- pip install --user pynvim
+- asdf plugin-add python && asdf install python 3.8.1 && asdf global python 3.8.1
+- pip3 install --user pynvim
+- asdf plugin-add ruby && asdf install ruby 2.7.0 && asdf global ruby 2.7.0
+- gem install neovim
+- asdf plugin-add nodejs && asdf install nodejs 12.16.1 && asdf global nodejs 12.16.1
+- npm i -g neovim
+
+
+
+* available on asdf
+- neovim
+- tmux
+- kubectl
+- helm

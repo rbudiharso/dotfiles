@@ -2,20 +2,19 @@
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 
-# autoload -Uz compinit
-# compinit -i
+autoload -Uz compinit
+compinit -i
 
-# set CAPSLOCK as Escape
-setxkbmap -option caps:escape
+test -r $HOME/.asdf/asdf.sh && source $HOME/.asdf/asdf.sh
+test -r $HOME/.asdf/completions/asdf.bash && source $HOME/.asdf/completions/asdf.bash
 
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
-export PATH=~/Bin:$PATH
 export PATH=~/.asdf/shims:$PATH
 
-if [ $ASDF_DIR ]; then
-  export PATH=$(asdf where golang)/packages/bin:$PATH
-fi
+# if [ $ASDF_DIR ]; then
+#   export PATH=$(asdf where golang)/packages/bin:$PATH
+# fi
 
 export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 # source <(antibody init)
@@ -25,8 +24,13 @@ export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robb
 source ~/.dotfiles/antibody/plugins.sh
 
 # additional files
-source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/helm-completion.zsh
+source ~/.dotfiles/zsh.d/aliases.zsh
+# source ~/.dotfiles/zsh.d/helm-completion.zsh
+
+# test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
+# set CAPSLOCK as Escape
+# setxkbmap -option caps:escape
 
 # uncomment this to profile zsh startup time
 # zprof

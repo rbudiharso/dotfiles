@@ -158,15 +158,14 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: @bg0;
-    /* background-color: rgba(28, 28, 28, 0.9); */
-    color: @fg4;
+    background-color: @nord2;
+    color: @nord4;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: @red1;
-  color: @fg4;
+  background-color: @nord11;
+  color: @nord4;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -196,7 +195,13 @@ label:focus {
 }
 
 #network.disconnected {
-  color: #f53c3c;
+  background: @nord11;
+  color: @nord4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #pulseaudio {
@@ -238,12 +243,12 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #2d3436;
+  /* background-color: #2d3436; */
 }
 
 #idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
+  background-color: @nord14;
+  color: @nord0;
 }
 
 #mpd {
