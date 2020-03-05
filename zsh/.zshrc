@@ -32,5 +32,7 @@ source ~/.dotfiles/zsh.d/aliases.zsh
 # set CAPSLOCK as Escape
 # setxkbmap -option caps:escape
 
+eval "$(starship init zsh)"
+neofetch --config ~/.dotfiles/neofetch.conf
 # uncomment this to profile zsh startup time
 # zprof

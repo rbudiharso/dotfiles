@@ -1,0 +1,29 @@
+[character]
+symbol = "➜"
+
+[aws]
+disabled = true
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "

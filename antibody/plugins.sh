@@ -8,5 +8,3 @@ source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLA
 fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting )
 source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions )
-source /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-reobin-SLASH-typewritten/typewritten.zsh-theme
-fpath+=( /home/rbudiharso/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-reobin-SLASH-typewritten )

@@ -14,4 +14,4 @@ zsh-users/zsh-autosuggestions
 # denysdovhan/spaceship-prompt
 # romkatv/powerlevel10k
 # sindresorhus/pure
-reobin/typewritten
+# reobin/typewritten
