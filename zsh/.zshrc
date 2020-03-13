@@ -2,11 +2,11 @@
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 
-autoload -Uz compinit
-compinit -i
+# autoload -Uz compinit
+# compinit -i
 
 test -r $HOME/.asdf/asdf.sh && source $HOME/.asdf/asdf.sh
-test -r $HOME/.asdf/completions/asdf.bash && source $HOME/.asdf/completions/asdf.bash
+# test -r $HOME/.asdf/completions/asdf.bash && source $HOME/.asdf/completions/asdf.bash
 
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH

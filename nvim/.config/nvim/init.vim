@@ -1,4 +1,6 @@
 " BASIC CONFIGURATION
+let g:python3_host_prog = '~/.asdf/shims/python'
+let g:loaded_python_provider = 0
 
 " Enable syntax highlighting
 syntax on
