@@ -33,6 +33,9 @@ source ~/.dotfiles/zsh.d/aliases.zsh
 # setxkbmap -option caps:escape
 
 eval "$(starship init zsh)"
+# source <(kubectl completion zsh)
+# complete -F __start_kubectl k
 neofetch --config ~/.dotfiles/neofetch.conf
+# hey
 # uncomment this to profile zsh startup time
 # zprof

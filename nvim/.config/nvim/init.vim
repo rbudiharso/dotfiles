@@ -2,6 +2,11 @@
 let g:python3_host_prog = '~/.asdf/shims/python'
 let g:loaded_python_provider = 0
 
+let g:neoterm_default_mod = 'botright'
+let g:neoterm_autoinsert = 1
+
+let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
 " Enable syntax highlighting
 syntax on
 
@@ -161,6 +166,8 @@ call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('rhysd/conflict-marker.vim')
+call minpac#add('kassio/neoterm')
+call minpac#add('vimwiki/vimwiki')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -605,3 +612,5 @@ nnoremap <silent> <Leader>[ :call ToggleScratchTerm()<CR>
 nnoremap <silent> <Leader>] :call ToggleLazyGit()<CR>
 
 " highlight Normal ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
+
+nnoremap <silent> <C-Space> :Tnew<CR>

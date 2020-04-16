@@ -101,7 +101,8 @@ output $2kmonitor {
   mode 2560x1440@74Hz
   pos 1920 0
 }
-output * bg $HOME/Pictures/nord-4k.png fill
+# output * bg $HOME/Pictures/nord-4k.png fill
+output * bg $HOME/Pictures/thinkpad-t480-4k.png fill
 
 focus output $laptop
 
@@ -329,6 +330,8 @@ bindsym $mod+Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(d
 bindsym $mod+p exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+Shift+p exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 
+bindsym $mod+Shift+f exec firefox
+
 #
 # Status Bar:
 #
@@ -343,7 +346,7 @@ gaps outer 0
 gaps inner 10
 
 # class                 border    backgr.   text      indicator   child_border
-client.focused          $nord10   $nord10   $nord0    $nord7      $nord10
+client.focused          $nord13   $nord10   $nord0    $nord7      $nord13
 client.focused_inactive $nord3    $nord3    $nord0    $nord7      $nord3
 client.unfocused        $nord3    $nord3    $nord0    $nord7      $nord3
 client.urgent           $nord11   $nord11   $nord6    $nord11     $nord11
@@ -353,20 +356,23 @@ client.background       $bg0
 
 # To find the window attributes: use swaymsg -t get_tree
 assign [app_id="^kitty$"] $ws2
-assign [class="Firefox"] $ws3
-assign [class="Slack"] $ws4
-assign [class="VSCodium"] $ws5
-assign [class="Spotify"] $ws5
+# assign [class="Firefox"] $ws3
+# assign [class="Slack"] $ws4
+# assign [class="VSCodium"] $ws5
+# assign [class="Spotify"] $ws5
 
 # inactive window transparency
 exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
 
-# kubectl-fzf auto completion
-# https://github.com/bonnefoa/kubectl-fzf
-exec $HOME/Bin/cache_builder
-
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
 exec redshift-gtk
+
+# exec mako, lightweight notification daemon for wayland
+exec mako
+
+# TADA VPN
+bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN passwd-file $HOME/.tadavpn.pass && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
+bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
 
 # include /etc/sway/config.d/*
