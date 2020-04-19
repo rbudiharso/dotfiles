@@ -1,3 +1,10 @@
+" takac/vim-hardtime
+" VIM the hard way
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_ignore_quickfix = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+
 let g:make = 'gmake'
 if exists('make')
   let g:make = 'make'
@@ -34,6 +41,7 @@ call minpac#add('racer-rust/vim-racer')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('sheerun/vim-polyglot')
 call minpac#add('takac/vim-hardtime')
+call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
@@ -58,7 +66,6 @@ call minpac#add('kassio/neoterm')
 call minpac#add('vimwiki/vimwiki')
 call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('arcticicestudio/nord-vim')
-" call minpac#add('cocopon/iceberg.vim')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -66,38 +73,28 @@ command! Pc call minpac#clean()
 " Load the plugins right now. (optional)
 packloadall
 
-" BASIC CONFIGURATION
-let g:python3_host_prog = '~/.asdf/shims/python'
+" python binary path
 let g:loaded_python_provider = 0
+let g:python_host_prog = "~/.asdf/shims/python"
+let g:python3_host_prog = '~/.asdf/shims/python'
 
+" neoterm
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_autoinsert = 1
 
+" vimwiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" Enable syntax highlighting
-syntax on
-
-filetype plugin indent on
 
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
-set backspace=indent,eol,start
 set hidden
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set fileformats=unix,dos,mac
-set autoread
-
-" keep 3 lines from top/bottom when scrolling
-set scrolloff=3
-
-" Status bar
-set laststatus=2
 
 " Use modeline overrides
 set modeline
@@ -109,7 +106,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" set ruler
 " set number
 set relativenumber
 
@@ -132,20 +128,9 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
-" takac/vim-hardtime
-" VIM the hard way
-let g:hardtime_default_on = 1
-let g:hardtime_showmsg = 1
-let g:hardtime_ignore_quickfix = 1
-let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-
-let g:python_host_prog = "~/.asdf/shims/python"
-
 " w0rp/ale
-" ALE fixers
-let g:ale_fixers = {
-      \   'javascript': [ 'eslint' ],
-      \}
+let g:ale_fixers = { 'javascript': [ 'eslint' ] }
+let g:ale_linters = { 'javascript': [ 'eslint' ] }
 
 " startify list of files
 let g:startify_lists = [
@@ -154,6 +139,7 @@ let g:startify_lists = [
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 
+" CSApprox
 let g:CSApprox_loaded = 1
 
 " IndentLine
@@ -166,11 +152,13 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
+" neoranger
 " makes ranger show hidden files by default
 let g:neoranger_opts='--cmd="set show_hidden true"'
-
-" Remap Escape
-inoremap jk <ESC>
+" Open ranger at current file with "-"
+nnoremap <silent> - :RangerCurrentFile<CR>
+" Open ranger in current working directory
+nnoremap <silent> <Leader>r :Ranger<CR>
 
 " Run commands with semicolon
 nnoremap ; :
@@ -204,39 +192,6 @@ if has('nvim')
 
   " Alt-R to paste from the register to terminal buffer
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-
-  function! FloatingFZF(width, height, border_highlight)
-    function! s:create_float(hl, opts)
-      let buf = nvim_create_buf(v:false, v:true)
-      let opts = extend({'relative': 'editor', 'style': 'minimal'}, a:opts)
-      let win = nvim_open_win(buf, v:true, opts)
-      call setwinvar(win, '&winhighlight', 'NormalFloat:'.a:hl)
-      call setwinvar(win, '&colorcolumn', '')
-      return buf
-    endfunction
-
-    " Size and position
-    let width = float2nr(&columns * a:width)
-    let height = float2nr(&lines * a:height)
-    let row = float2nr((&lines - height) / 2)
-    let col = float2nr((&columns - width) / 2)
-
-    " Border
-    let top = '╭' . repeat('─', width - 2) . '╮'
-    let mid = '│' . repeat(' ', width - 2) . '│'
-    let bot = '╰' . repeat('─', width - 2) . '╯'
-    let border = [top] + repeat([mid], height - 2) + [bot]
-
-    " Draw frame
-    let s:frame = s:create_float(a:border_highlight, {'row': row, 'col': col, 'width': width, 'height': height})
-    call nvim_buf_set_lines(s:frame, 0, -1, v:true, border)
-
-    " Draw viewport
-    call s:create_float('Normal', {'row': row + 1, 'col': col + 2, 'width': width - 4, 'height': height - 2})
-    autocmd BufWipeout <buffer> execute 'bwipeout' s:frame
-  endfunction
-
-  let g:fzf_layout = { 'window': 'call FloatingFZF(0.9, 0.6, "Comment")' }
 endif
 
 " Nord theme
@@ -250,15 +205,6 @@ augroup nord-theme-overrides
   autocmd ColorScheme nord highlight CursorLine guibg=#2e3440
 augroup END
 colorscheme nord
-
-" iceberg colorscheme
-" colorscheme iceberg
-
-" Open ranger at current file with "-"
-nnoremap <silent> - :RangerCurrentFile<CR>
-
-" Open ranger in current working directory
-nnoremap <silent> <Leader>r :Ranger<CR>
 
 " neoclide/coc.nvim
 " use <c-space>for trigger completion
@@ -288,9 +234,6 @@ cnoreabbrev Qall qall
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 
-"*****************************************************************************
-"" Commands
-"*****************************************************************************
 " remove trailing whitespaces
 command! FixWhitespace :%s/\s\+$//e
 
@@ -384,11 +327,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" ale
-let g:ale_linters = {
-      \   'javascript': [ 'eslint' ],
-      \}
-
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -457,7 +395,6 @@ let g:airline_skip_empty_sections = 1
 
 " vim-airline/vim-airline-themes
 let g:airline_theme = 'nord'
-" let g:airline_theme = 'iceberg'
 
 " Term handling
 " When term starts, auto go into insert mode
