@@ -404,3 +404,8 @@ autocmd TermOpen * startinsert
 autocmd TermOpen * setlocal listchars= nonumber norelativenumber
 
 nnoremap <silent> <C-Space> :Tnew<CR>
+
+noremap <silent> <M-h> :TmuxNavigateLeft<CR>
+noremap <silent> <M-j> :TmuxNavigateDown<CR>
+noremap <silent> <M-k> :TmuxNavigateUp<CR>
+noremap <silent> <M-l> :TmuxNavigateRight<CR>

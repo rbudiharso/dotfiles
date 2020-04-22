@@ -36,6 +36,12 @@ eval "$(starship init zsh)"
 # source <(kubectl completion zsh)
 # complete -F __start_kubectl k
 neofetch --config ~/.dotfiles/neofetch.conf
-# hey
+
+ssf() {
+  host=$(grep -e "^Host " ~/.ssh/config | awk '{print $2}' | fzf)
+  echo "SSH session started, connecting to" $host
+  ssh $host
+}
+
 # uncomment this to profile zsh startup time
 # zprof
