@@ -201,7 +201,7 @@ let g:nord_italic_comments = 1
 augroup nord-theme-overrides
   autocmd!
   autocmd ColorScheme nord highlight Normal guibg=black
-  autocmd ColorScheme nord highlight LineNr guibg=black
+  autocmd ColorScheme nord highlight LineNr guibg=black guifg=#7f828a
   autocmd ColorScheme nord highlight CursorLine guibg=#2e3440
 augroup END
 colorscheme nord
