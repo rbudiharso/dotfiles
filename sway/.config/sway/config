@@ -375,4 +375,5 @@ exec mako
 bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN passwd-file $HOME/.tadavpn.pass && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
 bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
 
+exec ~/.dotfiles/sway/.config/sway/autotiling.py
 # include /etc/sway/config.d/*
