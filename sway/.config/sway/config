@@ -326,9 +326,17 @@ bindsym XF86Launch6 exec light -A 10
 
 # for taking screenshot
 bindsym $mod+Print exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+p exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+Shift+p exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+
+# for taking screen recording
+bindsym Ctrl+Print exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4").mp4
+bindsym Ctrl+p exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4").mp4
+bindsym Ctrl+Shift+Print exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4").mp4 -g "$$(slurp)"
+bindsym Ctrl+Shift+p exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4").mp4 -g "$$(slurp)"
+# stop wf-recorder
+bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
 bindsym $mod+Shift+f exec firefox
 
