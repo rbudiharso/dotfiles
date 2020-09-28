@@ -11,6 +11,8 @@ test -r $HOME/.asdf/asdf.sh && source $HOME/.asdf/asdf.sh
 export EDITOR='nvim'
 export PATH=~/.local/bin:$PATH
 export PATH=~/.asdf/shims:$PATH
+export PATH=~/.linkerd2/bin:$PATH
+export TERM=xterm-256color
 
 # if [ $ASDF_DIR ]; then
 #   export PATH=$(asdf where golang)/packages/bin:$PATH
@@ -45,3 +47,4 @@ ssf() {
 
 # uncomment this to profile zsh startup time
 # zprof
+export GITHUB_TOKEN=e1bbfd6827355efceb17a4bbd076420847eba887

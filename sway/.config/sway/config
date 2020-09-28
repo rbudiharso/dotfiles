@@ -70,13 +70,14 @@ set $nord14 #a3be8c
 set $nord15 #b48ead
 
 set $laptop "Unknown 0x0521 0x00000000"
-set $4kmonitor "Unknown BenQ EL2870U A3K00589SL0"
+set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
 
 set $laptop_keyboard "1:1:AT_Translated_Set_2_keyboard"
 set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
 set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
 set $laptop_trackpad "1739:0:Synaptics_TM3276-022"
+set $keychron_k1 "1452:591:Keychron_K1_Keyboard"
 
 ### Output configuration
 #
@@ -141,6 +142,9 @@ input $laptop_keyboard {
   xkb_options caps:escape
 }
 input $massdrop_ctrl {
+  xkb_options caps:escape
+}
+input $keychron_k1 {
   xkb_options caps:escape
 }
 input $akko_keyboard {

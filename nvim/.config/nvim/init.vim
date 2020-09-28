@@ -1,3 +1,12 @@
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 " takac/vim-hardtime
 " VIM the hard way
 let g:hardtime_default_on = 1
@@ -18,9 +27,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Add other plugins here.
-" yet another typescript syntax
-call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('Lokaltog/neoranger')
+call minpac#add('chrisbra/colorizer')
 call minpac#add('Raimondi/delimitMate')
 call minpac#add('Shougo/vimproc.vim', {'do': g:make})
 call minpac#add('SirVer/ultisnips')
@@ -28,15 +35,11 @@ call minpac#add('Yggdroot/indentLine')
 call minpac#add('adelarsq/vim-matchit')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('andrewstuart/vim-kubernetes')
-call minpac#add('ap/vim-css-color')
 call minpac#add('ekalinin/Dockerfile.vim')
 call minpac#add('honza/vim-snippets')
 call minpac#add('pangloss/vim-javascript')
-call minpac#add('leafOfTree/vim-vue-plugin')
-call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mhinz/vim-startify')
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-call minpac#add('posva/vim-vue')
+" call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('racer-rust/vim-racer')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('sheerun/vim-polyglot')
@@ -47,9 +50,8 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-eunuch')
 call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('vim-scripts/CSApprox')
 call minpac#add('vim-scripts/grep.vim')
 call minpac#add('vim-scripts/vis')
 call minpac#add('w0rp/ale')
@@ -57,15 +59,15 @@ call minpac#add('xolox/vim-misc')
 call minpac#add('xolox/vim-session')
 call minpac#add('mattn/gist-vim')
 call minpac#add('mattn/webapi-vim')
-call minpac#add('danro/rename.vim')
+call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' })
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('rhysd/conflict-marker.vim')
 call minpac#add('kassio/neoterm')
 call minpac#add('vimwiki/vimwiki')
-call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('arcticicestudio/nord-vim')
+call minpac#add('jacoborus/tender.vim')
+call minpac#add('vifm/vifm.vim')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -152,13 +154,7 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-" neoranger
-" makes ranger show hidden files by default
-let g:neoranger_opts='--cmd="set show_hidden true"'
-" Open ranger at current file with "-"
-nnoremap <silent> - :RangerCurrentFile<CR>
-" Open ranger in current working directory
-nnoremap <silent> <Leader>r :Ranger<CR>
+nnoremap <silent> - :Vifm<CR>
 
 " Run commands with semicolon
 nnoremap ; :
@@ -204,7 +200,7 @@ augroup nord-theme-overrides
   autocmd ColorScheme nord highlight LineNr guibg=black guifg=#7f828a
   autocmd ColorScheme nord highlight CursorLine guibg=#2e3440
 augroup END
-colorscheme nord
+colorscheme tender
 
 " neoclide/coc.nvim
 " use <c-space>for trigger completion
@@ -361,15 +357,6 @@ augroup END
 " javascript
 let g:javascript_enable_domhtmlcss = 1
 
-" typescript
-let g:yats_host_keyword = 1
-
-" vuejs
-" vim vue
-let g:vue_disable_pre_processors=1
-" vim vue plugin
-let g:vim_vue_plugin_load_full_syntax = 1
-
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
@@ -393,8 +380,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
 
-" vim-airline/vim-airline-themes
-let g:airline_theme = 'nord'
+let g:airline_theme = 'tender'
 
 " Term handling
 " When term starts, auto go into insert mode
@@ -409,3 +395,4 @@ noremap <silent> <M-h> :TmuxNavigateLeft<CR>
 noremap <silent> <M-j> :TmuxNavigateDown<CR>
 noremap <silent> <M-k> :TmuxNavigateUp<CR>
 noremap <silent> <M-l> :TmuxNavigateRight<CR>
+
