@@ -47,4 +47,3 @@ ssf() {
 
 # uncomment this to profile zsh startup time
 # zprof
-export GITHUB_TOKEN=e1bbfd6827355efceb17a4bbd076420847eba887
