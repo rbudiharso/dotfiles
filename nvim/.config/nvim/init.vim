@@ -7,6 +7,8 @@ if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+:set background=dark
+
 " takac/vim-hardtime
 " VIM the hard way
 let g:hardtime_default_on = 1
@@ -74,11 +76,6 @@ command! Pc call minpac#clean()
 
 " Load the plugins right now. (optional)
 packloadall
-
-" python binary path
-let g:loaded_python_provider = 0
-let g:python_host_prog = "~/.asdf/shims/python"
-let g:python3_host_prog = '~/.asdf/shims/python'
 
 " neoterm
 let g:neoterm_default_mod = 'botright'
@@ -196,11 +193,11 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 augroup nord-theme-overrides
   autocmd!
+  autocmd ColorScheme nord highlight SignColumn guibg=black
   autocmd ColorScheme nord highlight Normal guibg=black
   autocmd ColorScheme nord highlight LineNr guibg=black guifg=#7f828a
-  autocmd ColorScheme nord highlight CursorLine guibg=#2e3440
 augroup END
-colorscheme tender
+colorscheme nord
 
 " neoclide/coc.nvim
 " use <c-space>for trigger completion
@@ -365,13 +362,13 @@ let g:javascript_enable_domhtmlcss = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = '|'
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = '|'
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.dirty = ' *'
@@ -380,15 +377,13 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
 
-let g:airline_theme = 'tender'
+let g:airline_theme = 'nord'
 
 " Term handling
 " When term starts, auto go into insert mode
 autocmd TermOpen * startinsert
-
 " Turn off line numbers etc
 autocmd TermOpen * setlocal listchars= nonumber norelativenumber
-
 nnoremap <silent> <C-Space> :Tnew<CR>
 
 noremap <silent> <M-h> :TmuxNavigateLeft<CR>

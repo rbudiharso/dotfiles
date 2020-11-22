@@ -61,7 +61,7 @@
       "spacing": 10
     },
     "clock": {
-      "format": "{:%e %b %Y %H:%M} "
+      "format": "{:%A, %e %b %Y %H:%M} "
     },
     "cpu": {
       "format": "{usage}% ",
@@ -131,7 +131,7 @@
       "on-click": "swaylock -f && sleep 60 && systemctl suspend"
     },
     "custom/logout": {
-      "format": "",
+      "format": "",
       "on-click": "swaymsg exit"
     },
     "custom/reboot": {

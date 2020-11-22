@@ -21,3 +21,5 @@ VSCodium/.config/VSCodium/User/globalStorage/
 VSCodium/.config/VSCodium/User/workspaceStorage/
 VSCodium/.config/VSCodium/logs/
 nvim/.config/nvim/pack
+tmux/.tmux/resurrect/*.txt
+tmux/.tmux/plugins/**/*

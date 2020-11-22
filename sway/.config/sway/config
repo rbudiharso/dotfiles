@@ -103,7 +103,8 @@ output $2kmonitor {
   pos 1920 0
 }
 # output * bg $HOME/Pictures/nord-4k.png fill
-output * bg $HOME/Pictures/thinkpad-t480-4k.png fill
+# output * bg $HOME/Pictures/thinkpad-t480-4k.png fill
+output * bg $HOME/Pictures/colours.png fill
 
 focus output $laptop
 
@@ -353,7 +354,7 @@ bar {
   swaybar_command waybar
 }
 
-default_border pixel 1
+default_border pixel 0
 gaps outer 0
 gaps inner 10
 
@@ -368,10 +369,10 @@ client.background       $bg0
 
 # To find the window attributes: use swaymsg -t get_tree
 assign [app_id="^kitty$"] $ws2
-# assign [class="Firefox"] $ws3
-# assign [class="Slack"] $ws4
+assign [class="Firefox"] $ws3
+assign [class="Slack"] $ws4
 # assign [class="VSCodium"] $ws5
-# assign [class="Spotify"] $ws5
+assign [class="Spotify"] $ws5
 
 # inactive window transparency
 exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
@@ -384,8 +385,7 @@ exec redshift-gtk
 exec mako
 
 # TADA VPN
-bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN passwd-file $HOME/.tadavpn.pass && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
+bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
 bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
 
-exec ~/.dotfiles/sway/.config/sway/autotiling.py
 # include /etc/sway/config.d/*
