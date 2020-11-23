@@ -384,6 +384,10 @@ exec redshift-gtk
 # exec mako, lightweight notification daemon for wayland
 exec mako
 
+# sway autotiling
+# https://github.com/nwg-piotr/autotiling
+exec autotiling
+
 # TADA VPN
 bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
 bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"

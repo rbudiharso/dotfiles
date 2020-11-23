@@ -1,7 +1,7 @@
 alias vim=nvim
 alias code=vscodium
-alias kctx=kubie ctx
-alias kns=kubie ns
+alias kctx="kubie ctx"
+alias kns="kubie ns"
 alias cat=bat
 alias cl=clear
 alias hey='fortune|cowsay -f stegosaurus|lolcat'
