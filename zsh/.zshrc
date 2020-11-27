@@ -16,12 +16,12 @@ export PATH=~/.asdf/shims:$PATH
 #   export PATH=$(asdf where golang)/packages/bin:$PATH
 # fi
 
-export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
+# export ZSH=$HOME/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 # source <(antibody init)
 # antibody bundle < ~/.dotfiles/antibody/plugins.txt
 
 # load antibody staticaly
-source ~/.dotfiles/antibody/plugins.sh
+# source ~/.dotfiles/antibody/plugins.sh
 
 # additional files
 source ~/.dotfiles/zsh.d/aliases.zsh
@@ -32,7 +32,7 @@ source ~/.dotfiles/zsh.d/aliases.zsh
 # set CAPSLOCK as Escape
 # setxkbmap -option caps:escape
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 # source <(kubectl completion zsh)
 # complete -F __start_kubectl k
 neofetch --config ~/.dotfiles/neofetch.conf

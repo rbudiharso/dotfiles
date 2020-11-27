@@ -1,10 +1,12 @@
-robbyrussell/oh-my-zsh
-robbyrussell/oh-my-zsh path:plugins/git
+ohmyzsh/ohmyzsh
+# ohmyzsh/ohmyzsh path:plugins/git
+
+# robbyrussell/oh-my-zsh path:plugins/git
 # robbyrussell/oh-my-zsh path:plugins/asdf
 # robbyrussell/oh-my-zsh path:plugins/kubectl
-zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-autosuggestions
+# zsh-users/zsh-completions
+# zsh-users/zsh-syntax-highlighting
+# zsh-users/zsh-autosuggestions
 # greymd/docker-zsh-completion
 # dbz/kube-aliases
 # bonnefoa/kubectl-fzf
