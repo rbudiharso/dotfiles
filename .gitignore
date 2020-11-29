@@ -8,3 +8,6 @@ nvim/.config/nvim/pack
 tmux/.tmux/plugins/**/*
 tmux/.tmux/resurrect/**/*
 vifm/.config/vifm/vifminfo.json
+vifm/.config/vifm/vifminfo
+zsh.d/*.zwc
+zsh/.config/zsh/.zcompdump*

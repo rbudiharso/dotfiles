@@ -1,4 +1,4 @@
-ohmyzsh/ohmyzsh
+# ohmyzsh/ohmyzsh
 # ohmyzsh/ohmyzsh path:plugins/git
 
 # robbyrussell/oh-my-zsh path:plugins/git
