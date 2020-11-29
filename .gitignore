@@ -11,3 +11,4 @@ vifm/.config/vifm/vifminfo.json
 vifm/.config/vifm/vifminfo
 zsh.d/*.zwc
 zsh/.config/zsh/.zcompdump*
+zsh/.config/zsh/.zhistory

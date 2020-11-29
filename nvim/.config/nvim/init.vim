@@ -36,6 +36,7 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('vifm/vifm.vim')
 call minpac#add('kkga/vim-envy')
 call minpac#add('sonph/onehalf', { 'subdir': 'vim' })
+call minpac#add('arcticicestudio/nord-vim')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -287,7 +288,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline_theme='onehalfdark'
 
 " Visual
-colorscheme onehalflight
+colorscheme nord
 
 " italic for comment
 " place this after colorscheme
