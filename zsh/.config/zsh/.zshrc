@@ -27,7 +27,7 @@ zpm load zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh,async
 # antibody bundle < ~/.dotfiles/antibody/plugins.txt
 
 # additional files
-source ~/.dotfiles/zsh.d/aliases.zsh
+source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 
 # set CAPSLOCK as Escape
 setxkbmap -option caps:escape
