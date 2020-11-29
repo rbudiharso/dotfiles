@@ -92,6 +92,7 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
+set noshowmode
 
 " w0rp/ale
 let g:ale_fixers = { 'javascript': [ 'eslint' ] }

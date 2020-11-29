@@ -21,7 +21,7 @@ zpm load oh-my-zsh/safe-paste,type:omz
 zpm load oh-my-zsh/tmux,type:omz
 zpm load oh-my-zsh/zsh_reload,type:omz
 zpm load zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh,async
-
+zpm load zsh-users/zsh-completions,source:zsh-completions.plugin.zsh,async
 # https://getantibody.github.io/
 # source <(antibody init)
 # antibody bundle < ~/.dotfiles/antibody/plugins.txt
@@ -42,6 +42,9 @@ export TERM=screen-256color
 #   echo "SSH session started, connecting to" $host
 #   ssh $host
 # }
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # uncomment this to profile zsh startup time
 # zprof

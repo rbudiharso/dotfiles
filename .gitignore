@@ -12,3 +12,4 @@ vifm/.config/vifm/vifminfo
 zsh.d/*.zwc
 zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/.zhistory
+zsh/.config/zsh/aliases.zsh.zwc
