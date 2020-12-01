@@ -104,7 +104,7 @@ output $2kmonitor {
 }
 # output * bg $HOME/Pictures/nord-4k.png fill
 # output * bg $HOME/Pictures/thinkpad-t480-4k.png fill
-output * bg $HOME/Pictures/colours.png fill
+output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
 
 focus output $laptop
 
@@ -375,11 +375,11 @@ assign [class="Slack"] $ws4
 assign [class="Spotify"] $ws5
 
 # inactive window transparency
-exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
+# exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
 
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
-exec redshift-gtk
+exec gammastep
 
 # exec mako, lightweight notification daemon for wayland
 exec mako

@@ -4,7 +4,7 @@ alias kctx="kubie ctx"
 alias kns="kubie ns"
 if ! command -v batcat &> /dev/null
 then
-    alias cat=cat
+    alias cat=bat
 else
     alias cat=batcat
 fi
