@@ -16,3 +16,4 @@ zsh/.config/zsh/aliases.zsh.zwc
 **/*.zwc
 zsh/.config/zsh/cache/*
 zsh/.config/zsh/.zim
+zsh/.config/zsh/*.old
