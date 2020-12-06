@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x 
+set -x
 
 # Manual
 # download dotfiles from gdrive and put them in homedir except config
@@ -22,7 +22,7 @@ asdf install starship 0.47.0 && asdf global starship 0.47.0
 asdf install kubectl 1.19.4 && asdf global kubectl 1.19.4
 asdf install k9s 0.24.1 && asdf global k9s 0.24.1
 
-git clone https://github.com/rbudiharso/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
 stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout
 
