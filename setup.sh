@@ -10,9 +10,37 @@ chmod 600 $HOME/.kube/config
 chmod -R 400 $HOME/.ssh/*
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
-sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli gammastep mako curl git util-linux-user neofetch
 
+# Slack
+curl -Lso /tmp/slack.rpm https://downloads.slack-edge.com/linux_releases/slack-4.11.3-0.1.fc21.x86_64.rpm
+
+cd $HOME/Downloads
+# Fonts with ligature
+curl -Lso FantasqueSansMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
+curl -Lso FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+curl -Lso Hasklig.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hasklig.zip
+curl -Lso JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+
+unzip FantasqueSansMono.zip
+unzip FiraCode.zip
+unzip Hasklig.zip
+unzip JetBrainsMono.zip
+
+mkdir -p $HOME/.local/share/fonts
+mv *.ttf $HOME/.local/share/fonts
+rm -rf ./*
+
+# a bunch of sudo commands
+sudo fc-cache -fv $HOME/.local/share/fonts
+# Add VSCodium repo
+sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
+
+sudo dnf update -y
+sudo dnf install -y zsh stow fzf tmux vifm kitty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli gammastep mako curl git util-linux-user neofetch codium
+sudo dnf install -y /tmp/slack.rpm
+
+cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 source $HOME/.asdf/asdf.sh
 for name in neovim starship kubectl helm k9s; do asdf plugin-add $name; done
@@ -36,10 +64,6 @@ zsh ~/.config/zsh/.zim/zimfw.zsh install
 nvim +Pu +qall
 
 cd $HOME/Downloads
-# Slack
-curl -Lso  slack.rpm https://downloads.slack-edge.com/linux_releases/slack-4.11.3-0.1.fc21.x86_64.rpm
-sudo dnf install -y slack.rpm
-
 # Telegram
 curl -Lso telegram.desktop.tar.xz https://telegram.org/dl/desktop/linux
 tar -xf telegram.desktop.tar.xz
@@ -76,25 +100,5 @@ Terminal=false
 StartupWMClass=LensDashboard
 Type=Application
 END
-
-curl -Lso FantasqueSansMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
-curl -Lso FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-curl -Lso Hasklig.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hasklig.zip
-curl -Lso JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-
-unzip FantasqueSansMono.zip
-unzip FiraCode.zip
-unzip Hasklig.zip
-unzip JetBrainsMono.zip
-
-mkdir -p $HOME/.local/share/fonts
-mv *.ttf $HOME/.local/share/fonts
-rm -rf ./*
-sudo fc-cache -fv $HOME/.local/share/fonts
-
-# VSCodium
-sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
-sudo dnf install codium
 
 chsh -s $(which zsh)
