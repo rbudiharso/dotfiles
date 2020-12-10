@@ -92,8 +92,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ------------------
 
 if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  # Update static initialization script if it's outdated, before sourcing it
-  source ${ZIM_HOME}/zimfw.zsh init -q
+    # Update static initialization script if it's outdated, before sourcing it
+    source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 source ${ZIM_HOME}/init.zsh
 
@@ -112,8 +112,8 @@ bindkey '^[[B' history-substring-search-down
 # Bind up and down keys
 zmodload -F zsh/terminfo +p:terminfo
 if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
-  bindkey ${terminfo[kcuu1]} history-substring-search-up
-  bindkey ${terminfo[kcud1]} history-substring-search-down
+    bindkey ${terminfo[kcuu1]} history-substring-search-up
+    bindkey ${terminfo[kcud1]} history-substring-search-down
 fi
 
 bindkey '^P' history-substring-search-up
@@ -130,25 +130,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 setopt HIST_SAVE_NO_DUPS
 
 source $HOME/.asdf/asdf.sh
-
-# if [[ ! -f ~/.zpm/zpm.zsh ]]; then
-# 	git clone --recursive https://github.com/zpm-zsh/zpm ~/.zpm
-# fi
-# source ~/.zpm/zpm.zsh
-# zpm load oh-my-zsh/fzf,type:omz
-# zpm load oh-my-zsh/git,type:omz
-# zpm load oh-my-zsh/common-aliases,type:omz
-# zpm load oh-my-zsh/command-not-found,type:omz
-# zpm load oh-my-zsh/helm,type:omz
-# zpm load oh-my-zsh/kubectl,type:omz
-# zpm load oh-my-zsh/safe-paste,type:omz
-# zpm load oh-my-zsh/tmux,type:omz
-# zpm load oh-my-zsh/zsh_reload,type:omz
-# zpm load zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh,async
-# zpm load zsh-users/zsh-completions,source:zsh-completions.plugin.zsh,async
-# https://getantibody.github.io/
-# source <(antibody init)
-# antibody bundle < ~/.dotfiles/antibody/plugins.txt
 
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
@@ -170,6 +151,19 @@ export TERM=screen-256color
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# run command everytime we change directory
+autoload -U add-zsh-hook
+# load-local-conf() {
+#      # check file exists, is regular file and is readable:
+#      if [[ -f .source_me && -r .source_me ]]; then
+#        source .source_me
+#      fi
+# }
+run-onefetch() {
+    onefetch --image $HOME/.dotfiles/wallpapers/saitama-995x995.jpg 2&> /dev/null || true
+}
+add-zsh-hook chpwd run-onefetch
 
 # uncomment this to profile zsh startup time
 # zprof
