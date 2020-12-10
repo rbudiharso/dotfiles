@@ -37,18 +37,19 @@ sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/maste
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 
 sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli gammastep mako curl git util-linux-user neofetch codium
+sudo dnf install -y zsh stow fzf tmux vifm kitty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli gammastep mako curl git util-linux-user neofetch codium gnome-shell-extension-user-theme wlogout
 sudo dnf install -y /tmp/slack.rpm
 
 cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 source $HOME/.asdf/asdf.sh
-for name in neovim starship kubectl helm k9s; do asdf plugin-add $name; done
+for name in neovim starship kubectl helm k9s kubie; do asdf plugin-add $name; done
 asdf install helm 3.4.1 && asdf global helm 3.4.1
 asdf install neovim 0.4.4 && asdf global neovim 0.4.4
 asdf install starship 0.47.0 && asdf global starship 0.47.0
 asdf install kubectl 1.19.4 && asdf global kubectl 1.19.4
 asdf install k9s 0.24.1 && asdf global k9s 0.24.1
+asdf install kubie 0.11.1 && asdf global kubie 0.11.1
 
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
@@ -74,8 +75,8 @@ cat > $HOME/.local/share/applications/Telegram.desktop <<END
 Version=1.0
 Name=Telegram Desktop
 Comment=Official desktop version of Telegram messaging app
-TryExec=/home/rbudiharso/.local/bin/Telegram/Telegram
-Exec=/home/rbudiharso/.local/bin/Telegram/Telegram -workdir /home/rbudiharso/.local/share/TelegramDesktop/ -- %u
+TryExec=/home/rbudiharso/.local/bin/Telegram
+Exec=/home/rbudiharso/.local/bin/Telegram -workdir /home/rbudiharso/.local/share/TelegramDesktop/ -- %u
 Icon=telegram
 Terminal=false
 StartupWMClass=TelegramDesktop
