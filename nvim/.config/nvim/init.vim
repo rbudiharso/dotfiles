@@ -180,6 +180,7 @@ augroup vimrc-yaml
   autocmd!
   autocmd FileType yaml setlocal tabstop=2 softtabstop=2 expandtab shiftwidth=2
 augroup END
+
 "" Split
 noremap <Leader>h :split<CR>
 noremap <Leader>v :vsplit<CR>

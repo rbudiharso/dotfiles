@@ -11,6 +11,9 @@ chmod -R 400 $HOME/.ssh/*
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
 
+git config --global user.email "rbudiharso@gmail.com"
+git config --global user.name "Rahmat Budiharso"
+
 # Slack
 curl -Lso /tmp/slack.rpm https://downloads.slack-edge.com/linux_releases/slack-4.11.3-0.1.fc21.x86_64.rpm
 

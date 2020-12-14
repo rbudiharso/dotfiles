@@ -154,14 +154,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:
 
 # run command everytime we change directory
 autoload -U add-zsh-hook
-# load-local-conf() {
-#      # check file exists, is regular file and is readable:
-#      if [[ -f .source_me && -r .source_me ]]; then
-#        source .source_me
-#      fi
-# }
 run-onefetch() {
-    onefetch --image $HOME/.dotfiles/wallpapers/saitama-995x995.jpg 2&> /dev/null || true
+    onefetch 2&>/dev/null || true
 }
 add-zsh-hook chpwd run-onefetch
 
