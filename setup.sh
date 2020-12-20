@@ -47,6 +47,7 @@ cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 source $HOME/.asdf/asdf.sh
 for name in neovim starship kubectl helm k9s kubie; do asdf plugin-add $name; done
+bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install helm 3.4.1 && asdf global helm 3.4.1
 asdf install neovim 0.4.4 && asdf global neovim 0.4.4
 asdf install starship 0.47.0 && asdf global starship 0.47.0
