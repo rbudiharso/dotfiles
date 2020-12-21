@@ -171,12 +171,6 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # Application launcher
-# for_window [app_id="^launcher$"] floating enable, border none, opacity 0.9, resize set height 200, resize set width 600
-# set $menu kitty --class=launcher bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --height=25 | xargs -r swaymsg -t command exec'
-# set $menu kitty --class=launcher $HOME/.dotfiles/sway/.config/sway/sway-launcher-desktop.sh
-# bindsym $mod+d exec $menu
-# bindsym $mod+d exec dmenu-wl_run -i
-# bindsym $mod+d exec $HOME/.local/bin/gtkmenu --width 500 --height 260
 bindsym $mod+d exec wofi -c $HOME/.dotfiles/wofi/.config/wofi/wofi.conf
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -193,11 +187,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and end your session?' -b 'Yes, exit sway' 'swaymsg exit' -s 'Cancel'
 
 # Lock and suspend sway
-# bindsym $mod+Shift+x exec swaylock -f && sleep 60 && systemctl suspend
 bindsym $mod+Shift+x exec wlogout
-#
+
 # Moving around:
-#
 # Move your focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -374,19 +366,16 @@ assign [class="Slack"] $ws4
 # assign [class="VSCodium"] $ws5
 assign [class="Spotify"] $ws5
 
-# inactive window transparency
-# exec $HOME/.config/sway/inactive-windows-transparency.py -o 0.9
-
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
-exec gammastep
+exec redshift-gtk
 
 # exec mako, lightweight notification daemon for wayland
 exec mako
 
 # sway autotiling
 # https://github.com/nwg-piotr/autotiling
-exec autotiling
+exec $HOME/.local/bin/autotiling
 
 # TADA VPN
 bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
