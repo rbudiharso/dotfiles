@@ -1,0 +1,11 @@
+package asdf
+package aws
+package config
+package fzf
+package git-flow
+package neovim
+package tmux-zen
+theme bobthefish
+theme cmorrell
+theme default
+theme one
