@@ -46,7 +46,7 @@ sudo dnf install -y /tmp/slack.rpm
 cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 source $HOME/.asdf/asdf.sh
-for name in neovim starship kubectl helm k9s kubie; do asdf plugin-add $name; done
+for name in neovim starship kubectl helm k9s kubie nodejs; do asdf plugin-add $name; done
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install helm 3.4.1 && asdf global helm 3.4.1
 asdf install neovim 0.4.4 && asdf global neovim 0.4.4
@@ -57,7 +57,8 @@ asdf install kubie 0.11.1 && asdf global kubie 0.11.1
 
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
-stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout
+stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf
+asdf install nodejs 14.15.3 && asdf global nodejs 14.15.3
 
 git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
