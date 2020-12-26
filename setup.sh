@@ -33,6 +33,11 @@ mkdir -p $HOME/.local/share/fonts
 mv *.ttf $HOME/.local/share/fonts
 rm -rf ./*
 
+# onefetch
+curl -Lso /tmp/onefetch.tar.gz https://github.com/o2sh/onefetch/releases/download/v2.8.0/onefetch-linux.tar.gz
+tar -xvzf /tmp/onefetch.tar.gz
+mv /tmp/onefetch $HOME/.local/bin/onefetch
+
 # a bunch of sudo commands
 sudo fc-cache -fv $HOME/.local/share/fonts
 # Add VSCodium repo

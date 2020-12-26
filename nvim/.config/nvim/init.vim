@@ -148,6 +148,13 @@ nnoremap <silent> <leader>sh :terminal<CR>
 au TermEnter * setlocal scrolloff=0
 au TermLeave * setlocal scrolloff=3
 
+augroup nord-theme-overrides
+  autocmd!
+  autocmd ColorScheme nord highlight Normal guibg=#121212
+  autocmd ColorScheme nord highlight SignColumn guibg=#121212
+  autocmd ColorScheme nord highlight CursorLine guibg=#303030
+augroup END
+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
