@@ -164,8 +164,7 @@ input $laptop_trackpad {
 # Basics:
 #
 # Start a terminal
-bindsym $mod+Return exec kitty
-# bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty
 
 # Kill focused window
 bindsym $mod+Shift+q kill

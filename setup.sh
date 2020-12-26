@@ -45,7 +45,7 @@ sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/maste
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 
 sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch codium gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks
+sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch codium gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks
 sudo dnf install -y /tmp/slack.rpm
 
 cd $HOME
@@ -62,7 +62,7 @@ asdf install kubie 0.11.1 && asdf global kubie 0.11.1
 
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
-stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf
+stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf alacritty
 asdf install nodejs 14.15.3 && asdf global nodejs 14.15.3
 
 git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
