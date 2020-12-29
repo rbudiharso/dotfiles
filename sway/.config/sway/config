@@ -360,6 +360,7 @@ client.background       $bg0
 
 # To find the window attributes: use swaymsg -t get_tree
 assign [app_id="^kitty$"] $ws2
+assign [app_id="^Alacritty$"] $ws2
 assign [class="Firefox"] $ws3
 assign [class="Slack"] $ws4
 # assign [class="VSCodium"] $ws5

@@ -45,8 +45,10 @@ sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/maste
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 
 sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch codium gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks
+sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch codium gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks light playerctl flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo dnf install -y /tmp/slack.rpm
+sudo flatpak install -y flathub com.spotify.Client
 
 cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
