@@ -366,6 +366,8 @@ assign [class="Slack"] $ws4
 # assign [class="VSCodium"] $ws5
 assign [class="Spotify"] $ws5
 
+for_window [app_id="nmtui_modal"] floating enable
+
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
 exec redshift-gtk

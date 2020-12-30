@@ -167,6 +167,12 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
+"" javascript
+augroup javascript-space
+  autocmd!
+  autocmd BufRead,BufNewFile *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+augroup END
+
 "" txt
 augroup vimrc-wrapping
   autocmd!

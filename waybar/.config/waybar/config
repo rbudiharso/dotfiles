@@ -77,7 +77,10 @@
     },
     "backlight": {
       "format": "{percent}% {icon}",
-      "format-icons": ["", ""]
+      "format-icons": ["", ""],
+      "format-alt-click": "click-right",
+      "on-scroll-down": "light -A 1",
+      "on-scroll-up": "light -U 1"
     },
     "battery": {
       "states": {
@@ -94,7 +97,7 @@
       "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
       "format-linked": "{ifname} (No IP) ",
       "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      "on-click": "alacritty -o window.class.instance=nmtui_modal -d 60 30 -e nmtui"
     },
     "pulseaudio": {
       "format": "{volume}% {icon} {format_source}",
