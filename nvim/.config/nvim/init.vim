@@ -34,6 +34,8 @@ call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('vifm/vifm.vim')
+call minpac#add('ConradIrwin/vim-bracketed-paste')
+call minpac#add('kassio/neoterm')
 call minpac#add('kkga/vim-envy')
 call minpac#add('sonph/onehalf', { 'subdir': 'vim' })
 call minpac#add('arcticicestudio/nord-vim')
@@ -52,6 +54,7 @@ endif
 set relativenumber
 
 set cursorline
+set scrolloff=3
 
 "" Encoding
 set encoding=utf-8
@@ -145,8 +148,12 @@ endif
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
-au TermEnter * setlocal scrolloff=0
-au TermLeave * setlocal scrolloff=3
+augroup terminal-setting
+    autocmd!
+    autocmd TermOpen,TermEnter * startinsert
+    autocmd TermOpen,TermEnter * setlocal scrolloff=0 listchars= nonumber norelativenumber
+    autocmd TermClose,TermLeave * setlocal scrolloff=3
+augroup END
 
 augroup nord-theme-overrides
   autocmd!
