@@ -78,6 +78,7 @@ set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
 set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
 set $laptop_trackpad "1739:0:Synaptics_TM3276-022"
 set $keychron_k1 "1452:591:Keychron_K1_Keyboard"
+set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
 
 ### Output configuration
 #
@@ -152,6 +153,12 @@ input $akko_keyboard {
   xkb_options caps:escape
 }
 input $laptop_trackpad {
+  natural_scroll enabled
+  tap enabled
+  tap_button_map lrm
+  dwt enabled
+}
+input $x1c_trackpad {
   natural_scroll enabled
   tap enabled
   tap_button_map lrm
