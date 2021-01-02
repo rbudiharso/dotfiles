@@ -112,4 +112,8 @@ StartupWMClass=LensDashboard
 Type=Application
 END
 
+# better git diff
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+
+# change our shell to ZSH
 chsh -s $(which zsh)
