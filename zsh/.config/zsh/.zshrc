@@ -137,11 +137,6 @@ source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 # set CAPSLOCK as Escape
 setxkbmap -option caps:escape
 
-eval "$(starship init zsh)"
-neofetch --config ~/.dotfiles/neofetch.conf
-
-export TERM=screen-256color
-
 # ssf() {
 #   host=$(grep -e "^Host " ~/.ssh/config | awk '{print $2}' | fzf)
 #   echo "SSH session started, connecting to" $host
@@ -158,6 +153,9 @@ run-onefetch() {
     onefetch 2&>/dev/null || true
 }
 add-zsh-hook chpwd run-onefetch
+
+eval "$(starship init zsh)"
+neofetch --config ~/.dotfiles/neofetch.conf
 
 # uncomment this to profile zsh startup time
 # zprof
