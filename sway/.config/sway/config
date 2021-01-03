@@ -69,17 +69,15 @@ set $nord13 #ebcb8b
 set $nord14 #a3be8c
 set $nord15 #b48ead
 
-set $laptop "Unknown 0x0521 0x00000000"
 set $x1c_screen "Unknown 0x0608 0x00000000"
 set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
 
-set $laptop_keyboard "1:1:AT_Translated_Set_2_keyboard"
+set $x1c_keyboard "1:1:AT_Translated_Set_2_keyboard"
+set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
 set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
 set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
-set $laptop_trackpad "1739:0:Synaptics_TM3276-022"
 set $keychron_k1 "1452:591:Keychron_K1_Keyboard"
-set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
 
 ### Output configuration
 #
@@ -91,11 +89,6 @@ set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output $x1c_screen {
-  mode 1920x1080@60Hz
-  pos 0 0
-}
-
-output $laptop {
   mode 1920x1080@60Hz
   pos 0 0
 }
@@ -114,8 +107,8 @@ output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
 
 focus output $x1c_screen
 
-bindswitch --reload lid:on output $laptop disable
-bindswitch --reload lid:off output $laptop enable
+bindswitch --reload lid:on output $x1c_screen disable
+bindswitch --reload lid:off output $x1c_screen enable
 
 ### Idle configuration
 #
@@ -145,7 +138,7 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 # set capslock as esc
-input $laptop_keyboard {
+input $x1c_keyboard {
   xkb_options caps:escape
 }
 input $massdrop_ctrl {
@@ -156,12 +149,6 @@ input $keychron_k1 {
 }
 input $akko_keyboard {
   xkb_options caps:escape
-}
-input $laptop_trackpad {
-  natural_scroll enabled
-  tap enabled
-  tap_button_map lrm
-  dwt enabled
 }
 input $x1c_trackpad {
   natural_scroll enabled
@@ -319,6 +306,7 @@ bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
 bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
 bindsym --locked XF86AudioMicMute exec --no-startup-id pactl set-source-mute $(pacmd list-sources |awk '/* index:/{print $3}') toggle
+bindsym --locked $mod+c exec --no-startup-id pactl set-source-mute $(pacmd list-sources |awk '/* index:/{print $3}') toggle
 bindsym --locked XF86Tools exec --no-startup-id pactl set-source-mute $(pacmd list-sources |awk '/* index:/{print $3}') toggle
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
@@ -333,9 +321,9 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86Launch6 exec light -A 10
 
 # for taking screenshot
-bindsym $mod+Print exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+bindsym Print exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+p exec grim "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
+bindsym Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 bindsym $mod+Shift+p exec grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date -Iminutes).png"
 
 # for taking screen recording
