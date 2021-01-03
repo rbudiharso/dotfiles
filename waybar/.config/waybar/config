@@ -11,6 +11,7 @@
       "disable-scroll": true,
       "format": "{icon}",
       "format-icons": {
+        "Files": "",
         "Terminal": "",
         "Web": "",
         "Chat": "",
@@ -131,19 +132,23 @@
     },
     "custom/lock": {
       "format": "",
-      "on-click": "swaylock -f && sleep 60 && systemctl suspend"
+      "on-click": "swaylock -f -i $HOME/.dotfiles/wallpapers/saitama-1920x1080-blur.jpg && sleep 5 && systemctl suspend",
+      "tooltip-format": "Lock Computer"
     },
     "custom/logout": {
       "format": "",
-      "on-click": "swaymsg exit"
+      "on-click": "swaymsg exit",
+      "tooltip-format": "Logout"
     },
     "custom/reboot": {
       "format": "",
-      "on-click": "reboot"
+      "on-click": "reboot",
+      "tooltip-format": "Reboot"
     },
     "custom/poweroff": {
       "format": "",
-      "on-click": "poweroff"
+      "on-click": "poweroff",
+      "tooltip-format": "Shutdown"
     },
     "custom/weather": {
       "format": "{}",

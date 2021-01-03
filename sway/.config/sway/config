@@ -12,7 +12,7 @@ set $up k
 set $right l
 
 # Set names for workspaces
-set $ws1 "Main"
+set $ws1 "Files"
 set $ws2 "Terminal"
 set $ws3 "Web"
 set $ws4 "Chat"
@@ -70,6 +70,7 @@ set $nord14 #a3be8c
 set $nord15 #b48ead
 
 set $laptop "Unknown 0x0521 0x00000000"
+set $x1c_screen "Unknown 0x0608 0x00000000"
 set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
 
@@ -89,6 +90,11 @@ set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output $x1c_screen {
+  mode 1920x1080@60Hz
+  pos 0 0
+}
+
 output $laptop {
   mode 1920x1080@60Hz
   pos 0 0
@@ -103,11 +109,10 @@ output $2kmonitor {
   mode 2560x1440@74Hz
   pos 1920 0
 }
-# output * bg $HOME/Pictures/nord-4k.png fill
-# output * bg $HOME/Pictures/thinkpad-t480-4k.png fill
+
 output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
 
-focus output $laptop
+focus output $x1c_screen
 
 bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
@@ -342,6 +347,7 @@ bindsym Ctrl+Shift+p exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H
 bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+s exec slack
 
 #
 # Status Bar:
@@ -366,12 +372,14 @@ client.placeholder      $nord0    $nord0    $nord0    $nord0      $nord0
 client.background       $bg0
 
 # To find the window attributes: use swaymsg -t get_tree
+assign [app_id="^org.gnome.Nautilus$"] $ws1
 assign [app_id="^kitty$"] $ws2
 assign [app_id="^Alacritty$"] $ws2
-assign [class="Firefox"] $ws3
+assign [class="^Firefox$"] $ws3
 assign [class="Slack"] $ws4
-# assign [class="VSCodium"] $ws5
-assign [class="Spotify"] $ws5
+assign [class="TelegramDesktop"] $ws4
+assign [class="Lens"] $ws6
+assign [class="Spotify"] $ws6
 
 for_window [app_id="nmtui_modal"] floating enable
 
