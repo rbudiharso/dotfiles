@@ -79,6 +79,9 @@ set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
 set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
 set $keychron_k1 "1452:591:Keychron_K1_Keyboard"
 
+# enable xwayland support
+xwayland enable
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -96,6 +99,7 @@ output $x1c_screen {
 output $4kmonitor {
   mode 3840x2160@30Hz
   pos 1920 0
+  adaptive_sync on
 }
 
 output $2kmonitor {
@@ -107,8 +111,8 @@ output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
 
 focus output $x1c_screen
 
-bindswitch --reload lid:on output $x1c_screen disable
-bindswitch --reload lid:off output $x1c_screen enable
+bindswitch --reload --locked lid:on output $x1c_screen disable
+bindswitch --reload --locked lid:off output $x1c_screen enable
 
 ### Idle configuration
 #
