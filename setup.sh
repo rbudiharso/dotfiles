@@ -67,7 +67,7 @@ asdf install nodejs 14.15.3 && asdf global nodejs 14.15.3
 
 git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-pip install awscli awsebcli autotiling
+pip install awscli awsebcli autotiling neovim
 mkdir -p $HOME/.config/zsh/.zim
 curl -Lso $HOME/.config/zsh/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 zsh ~/.config/zsh/.zim/zimfw.zsh install
