@@ -7,7 +7,7 @@ export SAVEHIST=10000
 export PATH=$HOME/.local/bin:$HOME/.platformio/penv/bin:$PATH
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERM=screen-256color
+export TERM=tmux-256color
 
 # Start configuration added by Zim install {{{
 #

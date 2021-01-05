@@ -320,3 +320,4 @@ colorscheme nord
 " italic for comment
 " place this after colorscheme
 highlight Comment cterm=italic gui=italic
+highlight Normal ctermbg=none guibg=none
