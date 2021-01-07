@@ -43,7 +43,7 @@ mv /tmp/onefetch $HOME/.local/bin/onefetch
 sudo fc-cache -fv $HOME/.local/share/fonts
 
 sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++
+sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo dnf install -y /tmp/slack.rpm
 sudo flatpak install -y flathub com.spotify.Client

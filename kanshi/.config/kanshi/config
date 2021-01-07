@@ -1,0 +1,8 @@
+profile {
+    output "Unknown 0x0608 0x00000000" mode 1920x1080@60Hz
+}
+
+profile {
+    output "Unknown 0x0608 0x00000000" disable
+    output "BenQ Corporation BenQ EL2870U A3K00589SL0" mode 3840x2160@30Hz adaptive_sync on
+}
