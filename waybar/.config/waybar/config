@@ -6,7 +6,7 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-right": ["custom/media", "pulseaudio", "network", "battery", "clock", "tray", "idle_inhibitor", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["tray", "custom/media", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
       "disable-scroll": true,
       "format": "{icon}",

@@ -374,7 +374,7 @@ assign [app_id="^Firefox$"] $ws3
 assign [class="^Firefox$"] $ws3
 assign [class="Slack"] $ws4
 assign [app_id="[T|t]elegram"] $ws4
-assign [class="Lens"] $ws6
+assign [class="Lens"] $ws5
 assign [class="Spotify"] $ws6
 
 for_window [app_id="nmtui_modal"] floating enable

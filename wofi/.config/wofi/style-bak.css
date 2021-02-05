@@ -1,0 +1,31 @@
+window {
+  border: solid 1px #88c0d0;
+  background: black;
+  /* font-size: 14pt; */
+  font-family: Inter, 'Source Sans Pro', 'Fira Sans Medium', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+#input {
+  border-radius: 0;
+  margin: 5px;
+}
+
+#outer-box {
+  margin: 10px;
+}
+
+#entry {
+  margin: 5px;
+  border-radius: 0;
+}
+
+#entry:selected {
+  background: #8fbcbb;
+  border: none;
+  color: #2e3440;
+  font-weight: bold;
+}
+#img {
+  margin-right: 10px;
+}

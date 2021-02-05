@@ -45,6 +45,7 @@ command! Pc call minpac#clean()
 
 " Load the plugins right now. (optional)
 packloadall
+packadd! dracula_pro
 
 if (has('termguicolors'))
   set termguicolors
@@ -312,10 +313,12 @@ let g:airline_symbols.readonly = ''
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
-let g:airline_theme='onehalfdark'
+let g:airline_theme='dracula_pro'
+
+let g:dracula_colorterm = 0
 
 " Visual
-colorscheme nord
+colorscheme dracula_pro_van_helsing
 
 " italic for comment
 " place this after colorscheme
