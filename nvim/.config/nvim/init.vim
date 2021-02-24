@@ -37,6 +37,7 @@ call minpac#add('vifm/vifm.vim')
 call minpac#add('ConradIrwin/vim-bracketed-paste')
 call minpac#add('kassio/neoterm')
 call minpac#add('kkga/vim-envy')
+call minpac#add('dhruvasagar/vim-table-mode')
 call minpac#add('sonph/onehalf', { 'subdir': 'vim' })
 call minpac#add('arcticicestudio/nord-vim')
 
@@ -50,6 +51,10 @@ packadd! dracula_pro
 if (has('termguicolors'))
   set termguicolors
 endif
+
+" set persistent undo
+set undofile
+set undodir=~/.dotfiles/nvim/.config/nvim/undodir
 
 " set relative number
 set relativenumber

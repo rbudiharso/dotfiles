@@ -8,6 +8,9 @@ export PATH=$HOME/.local/bin:$HOME/.platformio/penv/bin:$PATH
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM=tmux-256color
+export SPICETIFY_INSTALL="/home/rbudiharso/.local/bin/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Start configuration added by Zim install {{{
 #

@@ -3,8 +3,9 @@ swap-pane
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/plugged/
-VSCodium/.config/VSCodium/**/*
 nvim/.config/nvim/pack
+nvim/.config/nvim/undodir/*
+VSCodium/.config/VSCodium/**/*
 tmux/.tmux/plugins/**/*
 tmux/.tmux/resurrect/**/*
 vifm/.config/vifm/vifminfo.json
