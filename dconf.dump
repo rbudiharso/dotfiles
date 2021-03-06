@@ -1,0 +1,42 @@
+[desktop/interface]
+cursor-theme='deepin'
+document-font-name='Droid Sans 11'
+font-name='Droid Sans 11'
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='deepin'
+icon-theme='deepin'
+monospace-font-name='FiraCode Nerd Font Mono weight=450 11'
+toolkit-accessibility=false
+
+[desktop/wm/preferences]
+titlebar-font='Droid Sans Semi-Bold 11'
+
+[mutter]
+center-new-windows=true
+
+[nautilus/preferences]
+default-folder-viewer='list-view'
+search-filter-time-type='last_modified'
+search-view='list-view'
+
+[nautilus/window-state]
+initial-size=(890, 550)
+maximized=true
+
+[settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-last-coordinates=(-6.9037014398848093, 107.6071)
+
+[settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='kitty'
+name='Launch terminal'
+
+[settings-daemon/plugins/xsettings]
+hinting='slight'
+
+[system/location]
+enabled=true
