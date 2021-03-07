@@ -380,7 +380,8 @@ assign [class="Spotify"] $ws6
 for_window [app_id="nmtui_modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
 
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/xdg-desktop-portal --verbose -r
 
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
