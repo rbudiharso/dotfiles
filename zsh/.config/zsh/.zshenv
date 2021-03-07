@@ -11,6 +11,7 @@ export TERM=tmux-256color
 export SPICETIFY_INSTALL="/home/rbudiharso/.local/bin/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 # Start configuration added by Zim install {{{
 #
