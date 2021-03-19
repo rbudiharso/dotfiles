@@ -74,8 +74,9 @@ set $x1c4_screen "Panasonic Industry Company 0x96A2 0x00000000"
 set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
 
-set $x1c_keyboard "1:1:AT_Translated_Set_2_keyboard"
-set $x1c_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
+set $x1c7_keyboard "1:1:AT_Translated_Set_2_keyboard"
+set $x1c7_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
+set $x1c4_trackpad "2:7:SynPS/2_Synaptics_TouchPad"
 set $massdrop_ctrl "1240:61138:Massdrop_Inc._CTRL_Keyboard"
 set $akko_keyboard "3141:30264:AKKO_AKKO_3068BT"
 set $keychron_k1 "1452:591:Keychron_K1_Keyboard"
@@ -100,7 +101,7 @@ output $x1c7_screen {
 
 output $x1c4_screen {
   mode 2560x1440@60Hz
-  scale 1.25
+  scale 1
   pos 0 0
 }
 
@@ -150,7 +151,7 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 # set capslock as esc
-input $x1c_keyboard {
+input $x1c7_keyboard {
   xkb_options caps:escape
 }
 input $massdrop_ctrl {
@@ -162,7 +163,13 @@ input $keychron_k1 {
 input $akko_keyboard {
   xkb_options caps:escape
 }
-input $x1c_trackpad {
+input $x1c7_trackpad {
+  natural_scroll enabled
+  tap enabled
+  tap_button_map lrm
+  dwt enabled
+}
+input $x1c4_trackpad {
   natural_scroll enabled
   tap enabled
   tap_button_map lrm
