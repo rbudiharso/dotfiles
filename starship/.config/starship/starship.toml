@@ -70,5 +70,9 @@ symbol = " "
 [rust]
 symbol = " "
 
+[kubernetes]
+format = 'on [$symbol$context \($namespace\)](dimmed yellow) '
+disabled = false
+
 [aws]
 disabled = true

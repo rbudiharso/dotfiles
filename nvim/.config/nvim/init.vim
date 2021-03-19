@@ -40,6 +40,8 @@ call minpac#add('kkga/vim-envy')
 call minpac#add('dhruvasagar/vim-table-mode')
 call minpac#add('sonph/onehalf', { 'subdir': 'vim' })
 call minpac#add('arcticicestudio/nord-vim')
+call minpac#add('hashivim/vim-terraform')
+call minpac#add('godlygeek/tabular')
 
 command! Pu call minpac#update()
 command! Pc call minpac#clean()
@@ -319,6 +321,11 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='dracula_pro'
+
+" terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+let g:terraform_fold_sections=1
 
 let g:dracula_colorterm = 0
 

@@ -65,7 +65,8 @@
   border: none;
   border-radius: 0;
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: 'Carlito', 'Source Sans Pro', 'Fira Sans', 'otf-font-awesome', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', 'Fira Sans', Roboto, Helvetica, Arial, 'otf-font-awesome', FontAwesome, sans-serif;
+  font-weight: 500;
   font-size: 16px;
   min-height: 0;
 }
@@ -87,6 +88,7 @@ window#waybar {
   padding: 0 10px;
   background-color: @purple;
   color: @fg;
+  border-radius: 3px;
 }
 
 #workspaces button:hover {
@@ -123,6 +125,7 @@ window#waybar {
   padding: 0 10px;
   color: @fg;
   background: @purple;
+  border-radius: 3px;
 }
 
 #clock {
