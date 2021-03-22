@@ -6,7 +6,7 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-right": ["tray", "custom/media", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/lock", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["tray", "custom/media", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
       "disable-scroll": true,
       "format": "{icon}",
@@ -22,35 +22,6 @@
         "default": ""
       }
     },
-    "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>"
-    },
-    "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-      "unknown-tag": "N/A",
-      "interval": 2,
-      "consume-icons": {
-        "on": " "
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ",
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
@@ -63,25 +34,6 @@
     },
     "clock": {
       "format": "{:%A, %e %b %Y %H:%M} "
-    },
-    "cpu": {
-      "format": "{usage}% ",
-      "tooltip": false
-    },
-    "memory": {
-      "format": "{}% "
-    },
-    "temperature": {
-      "critical-threshold": 80,
-      "format": "{temperatureC}°C {icon}",
-      "format-icons": ["", "", ""]
-    },
-    "backlight": {
-      "format": "{percent}% {icon}",
-      "format-icons": ["", ""],
-      "format-alt-click": "click-right",
-      "on-scroll-down": "light -A 1",
-      "on-scroll-up": "light -U 1"
     },
     "battery": {
       "states": {
@@ -127,13 +79,7 @@
         "default": "🎜"
       },
       "escape": true,
-      /* "exec": "$HOME/.dotfiles/waybar/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder */
         "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/lock": {
-      "format": "",
-      "on-click": "swaylock -f -i $HOME/.dotfiles/wallpapers/saitama-1920x1080-blur.jpg && sleep 5 && systemctl suspend",
-      "tooltip-format": "Lock Computer"
     },
     "custom/logout": {
       "format": "",
@@ -149,15 +95,6 @@
       "format": "",
       "on-click": "poweroff",
       "tooltip-format": "Shutdown"
-    },
-    "custom/weather": {
-      "format": "{}",
-      "format-alt": "{alt}: {}",
-      "format-alt-click": "click-right",
-      "interval": 1800,
-      "return-type": "json",
-      "exec": "$HOME/.dotfiles/waybar/.config/waybar/weather.sh",
-      "exec-if": "ping wttr.in -c1"
     }
 }
 

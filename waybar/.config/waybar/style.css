@@ -1,53 +1,3 @@
-/* gruvbox colors */
-/* https://github.com/morhetz/gruvbox */
-/* dark theme */
-@define-color bg_h0 #1d2021;
-@define-color bg_s0 #32302f;
-@define-color bg0 #282828;
-@define-color bg1 #3c3836;
-@define-color bg2 #504945;
-@define-color bg3 #665c54;
-@define-color bg4 #7c6f64;
-@define-color fg0 #a89984;
-@define-color fg1 #bdae93;
-@define-color fg2 #d5c4a1;
-@define-color fg3 #ebdbb2;
-@define-color fg4 #fbf1c7;
-@define-color gray0 #928374;
-@define-color gray1 #a89984;
-@define-color red0 #cc241d;
-@define-color red1 #fb4934;
-@define-color green0 #98971a;
-@define-color green1 #b8bb26;
-@define-color yellow0 #d79921;
-@define-color yellow1 #fabd2f;
-@define-color blue0 #458588;
-@define-color blue1 #83a598;
-@define-color purple0 #b16286;
-@define-color purple1 #d3869b;
-@define-color aqua0 #689d6a;
-@define-color aqua1 #8ec07c;
-@define-color orange0 #d65d0e;
-@define-color orange1 #fe8019;
-
-/* nord colors */
-@define-color nord0 #2e3440;
-@define-color nord1 #3b4252;
-@define-color nord2 #434c5e;
-@define-color nord3 #4c566a;
-@define-color nord4 #d8dee9;
-@define-color nord5 #e5e9f0;
-@define-color nord6 #eceff4;
-@define-color nord7 #8fbcbb;
-@define-color nord8 #88c0d0;
-@define-color nord9 #81a1c1;
-@define-color nord10 #5e81ac;
-@define-color nord11 #bf616a;
-@define-color nord12 #d08770;
-@define-color nord13 #ebcb8b;
-@define-color nord14 #a3be8c;
-@define-color nord15 #b48ead;
-
 /* dracula */
 @define-color bg #0b0d0f;
 @define-color bg2 #44475a;
@@ -61,6 +11,13 @@
 @define-color red #ff5555;
 @define-color yellow #ffff80;
 
+
+@keyframes blink {
+  to {
+    background-color: @gray;
+    color: @fg;
+  }
+}
 * {
   border: none;
   border-radius: 0;
@@ -88,7 +45,6 @@ window#waybar {
   padding: 0 10px;
   background-color: @purple;
   color: @fg;
-  border-radius: 3px;
 }
 
 #workspaces button:hover {
@@ -110,14 +66,11 @@ window#waybar {
 
 #clock,
 #battery,
-#backlight,
 #network,
 #pulseaudio,
 #tray,
-#mode,
 #idle_inhibitor,
 #custom-media,
-#custom-lock,
 #custom-logout,
 #custom-reboot,
 #custom-poweroff {
@@ -125,16 +78,6 @@ window#waybar {
   padding: 0 10px;
   color: @fg;
   background: @purple;
-  border-radius: 3px;
-}
-
-#clock {
-  /* background-color: #64727D; */
-}
-
-#battery {
-  /* background-color: #ffffff; */
-  /* color: #ffffff; */
 }
 
 #battery.charging {
@@ -145,13 +88,6 @@ window#waybar {
   color: @yellow;
 }
 
-@keyframes blink {
-  to {
-    background-color: @gray;
-    color: @fg;
-  }
-}
-
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @fg;
@@ -160,14 +96,6 @@ window#waybar {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#backlight {
-  /* background-color: #90b1b1; */
-}
-
-#network {
-  /* background-color: #2980b9; */
 }
 
 #network.disconnected {
@@ -181,12 +109,12 @@ window#waybar {
 }
 
 #pulseaudio {
-  background-color: @cyan;
-  color: @bg2;
+  background-color: @purple;
 }
 
 #pulseaudio.muted {
   background-color: @gray;
+  color: @bg2;
 }
 
 #custom-media.custom-spotify {
@@ -198,27 +126,18 @@ window#waybar {
   background-color: transparent;
 }
 
-#idle_inhibitor {
-  /* background-color: #2d3436; */
-}
-
 #idle_inhibitor.activated {
   background-color: @green;
   color: @bg2;
 }
 
-#custom-lock {
+#custom-logout {
   background-color: @yellow;
   color: @bg2;
 }
 
-#custom-logout {
-  background-color: @orange;
-  color: @bg2;
-}
-
 #custom-reboot {
-  background-color: @pink;
+  background-color: @orange;
   color: @bg2;
 }
 

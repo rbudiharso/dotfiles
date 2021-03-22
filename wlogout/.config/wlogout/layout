@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock -f -i $HOME/.dotfiles/wallpapers/saitama-1920x1080-blur.jpg",
     "text" : "Lock",
     "keybind" : "l"
 }

@@ -391,8 +391,8 @@ client.background       $bg0
 assign [app_id="^org.gnome.Nautilus$"] $ws1
 assign [app_id="^kitty$"] $ws2
 assign [app_id="^Alacritty$"] $ws2
-assign [app_id="^Firefox$"] $ws3
-assign [class="^Firefox$"] $ws3
+assign [app_id="^[F|f]irefox$"] $ws3
+assign [class="^[F|f]irefox$"] $ws3
 assign [class="Slack"] $ws4
 assign [app_id="[T|t]elegram"] $ws4
 assign [class="Lens"] $ws5
