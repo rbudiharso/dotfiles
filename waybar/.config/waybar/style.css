@@ -14,7 +14,7 @@
 
 @keyframes blink {
   to {
-    background-color: @gray;
+    background-color: @purple;
     color: @fg;
   }
 }
