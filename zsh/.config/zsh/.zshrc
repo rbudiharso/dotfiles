@@ -127,15 +127,13 @@ bindkey -M vicmd 'j' history-substring-search-down
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 
-setopt HIST_SAVE_NO_DUPS
-
 source $HOME/.asdf/asdf.sh
 
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 
 # set CAPSLOCK as Escape
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 
 # ssf() {
 #   host=$(grep -e "^Host " ~/.ssh/config | awk '{print $2}' | fzf)
