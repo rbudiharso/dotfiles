@@ -127,6 +127,12 @@ bindkey -M vicmd 'j' history-substring-search-down
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
 
+# source secret env variables if exists
+local envfile=$HOME/.my_env
+if [[ -a $envfile ]]; then
+    source $envfile
+fi
+
 source $HOME/.asdf/asdf.sh
 
 # additional files
