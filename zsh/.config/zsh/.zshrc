@@ -123,6 +123,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
 # set env variable in .zshenv
+
 # uncoment if you want to profile zsh startup time
 # dont forget to uncomment zprof at the bottom of this file
 # zmodload zsh/zprof
@@ -147,6 +148,8 @@ source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 #   ssh $host
 # }
 
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
