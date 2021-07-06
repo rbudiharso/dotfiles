@@ -156,6 +156,12 @@ endif
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <expr> <C-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
 augroup terminal-setting
     autocmd!
     autocmd TermOpen,TermEnter * startinsert

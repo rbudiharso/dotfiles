@@ -415,6 +415,8 @@ exec mako
 # https://github.com/nwg-piotr/autotiling
 exec $HOME/.local/bin/autotiling
 
+exec source $HOME/.dotfiles/sway/.config/sway/env
+
 # TADA VPN
 bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
 bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"

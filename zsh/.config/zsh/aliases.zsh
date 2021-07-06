@@ -6,10 +6,10 @@ alias kns="kubie ns"
 if ! command -v batcat &> /dev/null
 then
     alias cat=bat
-    alias catp=bat -pp
+    alias catp="bat -pp"
 else
     alias cat=batcat
-    alias catp=batcat -pp
+    alias catp="batcat -pp"
 fi
 alias cl=clear
 alias vu='nmcli connection up "TADAVPN"'

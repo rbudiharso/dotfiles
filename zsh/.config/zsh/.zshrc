@@ -166,3 +166,4 @@ neofetch --config ~/.dotfiles/neofetch.conf
 
 # uncomment this to profile zsh startup time
 # zprof
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
