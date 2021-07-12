@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -116,7 +116,7 @@ font:
     family: Fira Code Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Retina
 
   # Bold font face
   bold:
@@ -220,7 +220,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x0b0d0f'
+    black:   '0x6272a4'
     red:     '0xff9580'
     green:   '0x8aff80'
     yellow:  '0xffff80'
@@ -231,7 +231,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x0b0d0f'
+    black:   '0x6272a4'
     red:     '0xffaa99'
     green:   '0xa2ff99'
     yellow:  '0xffff99'
@@ -332,7 +332,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 0.90
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
