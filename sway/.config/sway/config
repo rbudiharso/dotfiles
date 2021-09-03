@@ -151,31 +151,12 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 # set capslock as esc
-input $x1c7_keyboard {
+input type:keyboard {
+  xkb_layout us
+  xkb_model thinkpad
   xkb_options caps:escape
 }
-input $massdrop_ctrl {
-  xkb_options caps:escape
-}
-input $keychron_k1 {
-  xkb_options caps:escape
-}
-input $akko_keyboard {
-  xkb_options caps:escape
-}
-input $x1c7_trackpad {
-  natural_scroll enabled
-  tap enabled
-  tap_button_map lrm
-  dwt enabled
-}
-input $x1c4_trackpad {
-  natural_scroll enabled
-  tap enabled
-  tap_button_map lrm
-  dwt enabled
-}
-input $t480_trackpad {
+input type:touchpad {
   natural_scroll enabled
   tap enabled
   tap_button_map lrm
@@ -401,8 +382,11 @@ assign [class="Spotify"] $ws6
 for_window [app_id="nmtui_modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
 
-exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/libexec/xdg-desktop-portal --verbose -r
+
+# mopidy as mpd server
+exec mopidy
 
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
@@ -418,7 +402,11 @@ exec $HOME/.local/bin/autotiling
 exec source $HOME/.dotfiles/sway/.config/sway/env
 
 # TADA VPN
-bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
-bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
+# bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
+# bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # include /etc/sway/config.d/*

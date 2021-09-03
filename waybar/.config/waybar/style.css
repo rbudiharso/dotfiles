@@ -71,6 +71,7 @@ window#waybar {
 #tray,
 #idle_inhibitor,
 #custom-media,
+#mpd,
 #custom-logout,
 #custom-reboot,
 #custom-poweroff {
@@ -117,9 +118,10 @@ window#waybar {
   color: @bg2;
 }
 
+#mpd,
 #custom-media.custom-spotify {
   background-color: #1ED760;
-  color: @fg;
+  color: @bg2;
 }
 
 #tray {

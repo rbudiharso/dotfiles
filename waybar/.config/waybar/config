@@ -1,100 +1,122 @@
 {
-  "layer": "top",
+    "layer": "top",
     "position": "top",
     "height": 30,
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-right": ["tray", "custom/media", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["tray", "custom/media", "mpd", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
-      "disable-scroll": true,
-      "format": "{icon}",
-      "format-icons": {
-        "Files": "",
-        "Terminal": "",
-        "Web": "",
-        "Chat": "",
-        "Program": "",
-        "Other": "",
-        "urgent": "",
-        "focused": "",
-        "default": ""
-      }
+        "disable-scroll": true,
+        "format": "{icon}",
+        "format-icons": {
+            "Files": "",
+            "Terminal": "",
+            "Web": "",
+            "Chat": "",
+            "Program": "",
+            "Other": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
     },
     "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "tray": {
-      "spacing": 10
+        "spacing": 10
     },
     "clock": {
-      "format": "{:%A, %e %b %Y %H:%M} "
+        "format": "{:%A, %e %b %Y %H:%M} "
     },
     "battery": {
-      "states": {
-        "warning": 30,
-        "critical": 15
-      },
-      "format": "{capacity}% {icon}",
-      "format-charging": "{capacity}% ",
-      "format-alt": "{time} {icon}",
-      "format-icons": ["", "", "", "", ""]
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
-      "format-wifi": "{essid} ",
-      "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-      "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
-      "on-click": "alacritty -o window.class.instance=nmtui_modal -d 60 30 -e nmtui"
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "alacritty -o window.class.instance=nmtui_modal -d 60 30 -e nmtui"
     },
     "pulseaudio": {
-      "format": "{volume}% {icon} {format_source}",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": " {format_source}",
-      "format-source": "{volume}% ",
-      "format-source-muted": "",
-      "format-icons": {
-        "headphones": "",
-        "handsfree": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "", ""]
-      },
-      "on-click": "pavucontrol"
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
     },
     "custom/media": {
-      "format": "{icon} {}",
-      "return-type": "json",
-      "max-length": 40,
-      "format-icons": {
-        "spotify": "",
-        "default": "🎜"
-      },
-      "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
     },
     "custom/logout": {
-      "format": "",
-      "on-click": "swaymsg exit",
-      "tooltip-format": "Logout"
+        "format": "",
+        "on-click": "swaymsg exit",
+        "tooltip-format": "Logout"
     },
     "custom/reboot": {
-      "format": "",
-      "on-click": "reboot",
-      "tooltip-format": "Reboot"
+        "format": "",
+        "on-click": "reboot",
+        "tooltip-format": "Reboot"
     },
     "custom/poweroff": {
-      "format": "",
-      "on-click": "poweroff",
-      "tooltip-format": "Shutdown"
+        "format": "",
+        "on-click": "poweroff",
+        "tooltip-format": "Shutdown"
+    },
+    "mpd": {
+        "format": "{randomIcon}{repeatIcon}{artist} - {title} {stateIcon}",
+        "format-disconnected": "Disconnected 🎜",
+        "format-stopped": "Stopped 🎜",
+        "interval": 10,
+        "random-icons": {
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": "",
+            "stopped": "🎜"
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "on-click": "mpc toggle",
+        "on-click-middle": "mpc clear && mpc ls | shuf -n 1 | mpc load && mpc play",
+        "on-click-right": "mpc next"
     }
 }
 
