@@ -1,8 +1,6 @@
 alias vim=nvim
 alias code=vscodium
 alias k=kubectl
-alias kctx="kubie ctx"
-alias kns="kubie ns"
 if ! command -v batcat &> /dev/null
 then
     alias cat=bat
@@ -19,4 +17,9 @@ alias ecrlogin="aws ecr get-login-password --region ap-southeast-1 | docker logi
 
 sht() {
   ssh $1 -t -- /bin/sh -c 'tmux has-session && exec tmux attach || exec tmux'
+}
+
+alias kctx="kubectl config use-context"
+kns() {
+    kubectl config set-context --current --namespace="$@"
 }
