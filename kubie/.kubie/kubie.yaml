@@ -36,7 +36,7 @@ prompt:
 
     # When using zsh, show context and namespace on the right-hand side using RPS1.
     # Default: false
-    zsh_use_rps1: true
+    zsh_use_rps1: false
 
     # When using fish, show context and namespace on the right-hand side.
     # Default: false
