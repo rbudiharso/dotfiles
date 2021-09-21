@@ -42,7 +42,6 @@ zmodule ohmyzsh/ohmyzsh -f 'plugins/fzf' -s 'plugins/fzf/fzf.plugin.zsh' \
   -f 'plugins/helm' -s 'plugins/helm/helm.plugin.zsh' \
   -f 'plugins/kubectl' -s 'plugins/kubectl/kubectl.plugin.zsh' \
   -f 'plugins/safe-paste' -s 'plugins/safe-paste/safe-paste.plugin.zsh' \
-  -f 'plugins/tmux' -s 'plugins/tmux/tmux.plugin.zsh' \
   -f 'plugins/zsh_reload' -s 'plugins/zsh_reload/zsh_reload.plugin.zsh'
 
 # end
