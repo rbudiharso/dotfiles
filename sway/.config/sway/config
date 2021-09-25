@@ -73,6 +73,7 @@ set $x1c7_screen "Unknown 0x0608 0x00000000"
 set $x1c4_screen "Panasonic Industry Company 0x96A2 0x00000000"
 set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $2kmonitor "Acer Technologies Acer VG240YU 0x0000A5A8"
+set $lenovo2k "Lenovo Group Limited L24q-10 U5V125B6"
 
 set $x1c7_keyboard "1:1:AT_Translated_Set_2_keyboard"
 set $x1c7_trackpad "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad"
@@ -112,6 +113,11 @@ output $4kmonitor {
 }
 
 output $2kmonitor {
+  mode 2560x1440@74Hz
+  pos 1920 0
+}
+
+output $lenovo2k {
   mode 2560x1440@74Hz
   pos 1920 0
 }
