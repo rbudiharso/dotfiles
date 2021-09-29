@@ -1,8 +1,13 @@
 profile {
-    output "Unknown 0x0608 0x00000000" mode 1920x1080@60Hz
+    output "Panasonic Industry Company 0x96A2 0x00000000" mode 1920x1080@60Hz
 }
 
 profile {
-    output "Unknown 0x0608 0x00000000" disable
-    output "BenQ Corporation BenQ EL2870U A3K00589SL0" mode 3840x2160@30Hz adaptive_sync on
+    output "Panasonic Industry Company 0x96A2 0x00000000" disable
+    output "BenQ Corporation BenQ EL2870U A3K00589SL0" mode 3840x2160@30Hz
+}
+
+profile {
+    output "Panasonic Industry Company 0x96A2 0x00000000" mode 2560x1440 position 0,0
+    output "Lenovo Group Limited L24q-10 U5V125B6" mode 2560x1440 position 2560,0
 }
