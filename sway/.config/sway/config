@@ -105,23 +105,23 @@ output $x1c4_screen {
   pos 0 0
 }
 
-output $4kmonitor {
-  mode 3840x2160@30Hz
-  pos 1920 0
-  adaptive_sync on
-}
-
-output $lenovo2k {
-  mode 2560x1440@74Hz
-  pos 1920 0
-}
+# output $4kmonitor {
+#   mode 3840x2160@30Hz
+#   pos 2560 0
+#   adaptive_sync on
+# }
+#
+# output $lenovo2k {
+#   mode 2560x1440@74Hz
+#   pos 2560 0
+# }
 
 output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
 
-focus output $x1c7_screen
+focus output $x1c4_screen
 
-bindswitch --reload --locked lid:on output $x1c7_screen disable
-bindswitch --reload --locked lid:off output $x1c7_screen enable
+bindswitch --reload --locked lid:on output $x1c4_screen disable
+bindswitch --reload --locked lid:off output $x1c4_screen enable
 
 ### Idle configuration
 #
@@ -169,7 +169,7 @@ input type:touchpad {
 # Basics:
 #
 # Start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -397,6 +397,12 @@ exec mako
 
 # exec kanshi, automatically configure display
 exec kanshi
+
+# pipewire
+exec pipewire
+exec pipewire-pulse
+
+exec bluetoothctl power on
 
 # sway autotiling
 # https://github.com/nwg-piotr/autotiling

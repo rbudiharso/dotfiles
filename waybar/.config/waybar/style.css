@@ -15,21 +15,25 @@
 @keyframes blink {
   to {
     background-color: @purple;
+    border-bottom: 3px solid @purple;
     color: @fg;
   }
 }
+
 * {
-  border: none;
+  /* border: none; */
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   border-radius: 0;
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: 'Comfortaa', Roboto, Helvetica, Arial, 'otf-font-awesome', FontAwesome, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
+  font-family: 'Fira Sans', feather, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @bg2;
   color: @fg;
   transition-property: background-color;
   transition-duration: .5s;
@@ -43,25 +47,27 @@ window#waybar {
 #workspaces button {
   margin-right: 10px;
   padding: 0 10px;
-  background-color: @purple;
+  background-color: @bg2;
   color: @fg;
+  border-bottom: 3px solid @purple;
 }
 
 #workspaces button:hover {
-  background-color: @green;
-  color: @bg2;
+  background-color: @bg2;
+  color: @purple;
   box-shadow: inherit;
   text-shadow: inherit;
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background-color: @green;
-  color: @bg2;
+  background-color: @purple;
+  /* color: @fg; */
 }
 
 #workspaces button.urgent {
   background-color: @red;
+  border-bottom: 3px solid @red;
 }
 
 #clock,
@@ -78,7 +84,8 @@ window#waybar {
   margin-left: 10px;
   padding: 0 10px;
   color: @fg;
-  background: @purple;
+  /* background: @purple; */
+  border-bottom: 3px solid @purple;
 }
 
 #battery.charging {
@@ -102,6 +109,7 @@ window#waybar {
 #network.disconnected {
   background: @red;
   color: @fg;
+  border-bottom: 3px solid @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -110,40 +118,58 @@ window#waybar {
 }
 
 #pulseaudio {
-  background-color: @purple;
+  /* background-color: @purple; */
+  border-bottom: 3px solid @green;
 }
 
 #pulseaudio.muted {
-  background-color: @gray;
-  color: @bg2;
+  /* background-color: @gray; */
+  /* color: @gray; */
+  border-bottom: 3px solid @purple;
 }
 
 #mpd,
 #custom-media.custom-spotify {
-  background-color: #1ED760;
-  color: @bg2;
+  /* background-color: #1ED760; */
+  /* color: @bg2; */
+  border-bottom: 3px solid @green;
+}
+
+#mpd.disconnected,
+#mpd.paused,
+#mpd.stopped {
+  border-bottom: 3px solid @purple;
 }
 
 #tray {
   background-color: transparent;
+  border: none;
+}
+
+#idle_inhibitor {
+  /* border-bottom: 3px solid @green; */
 }
 
 #idle_inhibitor.activated {
-  background-color: @green;
-  color: @bg2;
+  /* background-color: @green; */
+  /* color: @bg2; */
+  border-bottom: 3px solid @green;
 }
 
 #custom-logout {
-  background-color: @yellow;
-  color: @bg2;
+  /* background-color: @yellow; */
+  /* color: @bg2; */
+  border-bottom: 3px solid @yellow;
 }
 
 #custom-reboot {
-  background-color: @orange;
-  color: @bg2;
+  /* background-color: @orange; */
+  /* color: @bg2; */
+  border-bottom: 3px solid @orange;
 }
 
 #custom-poweroff {
-  background-color: @red;
-  color: @bg2;
+  /* background-color: @red; */
+  /* color: @bg2; */
+  border-bottom: 3px solid @red;
 }
