@@ -116,7 +116,7 @@ output $x1c4_screen {
 #   pos 2560 0
 # }
 
-output * bg $HOME/.dotfiles/wallpapers/saitama-1920x1080.png fill
+output * bg $HOME/.dotfiles/wallpapers/snowy-landscape.png fill
 
 focus output $x1c4_screen
 
@@ -357,7 +357,7 @@ bar {
 
 default_border pixel 0
 gaps outer 0
-gaps inner 10
+gaps inner 20
 
 # class                 border    backgr.   text      indicator   child_border
 client.focused          $nord13   $nord10   $nord0    $nord7      $nord13
@@ -380,17 +380,18 @@ assign [class="Lens"] $ws5
 assign [class="Spotify"] $ws6
 
 for_window [app_id="nmtui_modal"] floating enable
+for_window [class="modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
 
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec /usr/libexec/xdg-desktop-portal --verbose -r
+# exec /usr/libexec/polkit-gnome-authentication-agent-1
+# exec /usr/libexec/xdg-desktop-portal-wlr -r
 
 # mopidy as mpd server
 exec mopidy
 
 # redshift automatic color temperature adjustment
 # https://github.com/minus7/redshift
-exec gammastep
+# exec gammastep
 
 # exec mako, lightweight notification daemon for wayland
 exec mako
@@ -399,10 +400,10 @@ exec mako
 exec kanshi
 
 # pipewire
-exec pipewire
-exec pipewire-pulse
+# exec pipewire
+# exec pipewire-pulse
 
-exec bluetoothctl power on
+# exec bluetoothctl power on
 
 # sway autotiling
 # https://github.com/nwg-piotr/autotiling

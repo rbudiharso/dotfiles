@@ -1,10 +1,10 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    "height": 50,
+    "margin-top": 20,
+    "margin-left": 20,
+    "margin-right": 20,
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-right": ["tray", "mpd", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
@@ -30,7 +30,7 @@
         }
     },
     "tray": {
-        "spacing": 10
+        "spacing": 20
     },
     "clock": {
         "format": "{:%A, %e %b %Y %H:%M} ",
@@ -90,12 +90,12 @@
     },
     "custom/reboot": {
         "format": "",
-        "on-click": "sudo reboot",
+        "on-click": "reboot",
         "tooltip-format": "Reboot"
     },
     "custom/poweroff": {
         "format": "",
-        "on-click": "sudo shutdown -h now",
+        "on-click": "poweroff",
         "tooltip-format": "Shutdown"
     },
     "mpd": {

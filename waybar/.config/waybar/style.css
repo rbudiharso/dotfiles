@@ -1,5 +1,5 @@
 /* dracula */
-@define-color bg #0b0d0f;
+@define-color bg #1d1f21;
 @define-color bg2 #44475a;
 @define-color fg #f8f8f2;
 @define-color gray #708ca9;
@@ -15,7 +15,7 @@
 @keyframes blink {
   to {
     background-color: @purple;
-    border-bottom: 3px solid @purple;
+    border-bottom: 5px solid @purple;
     color: @fg;
   }
 }
@@ -26,34 +26,35 @@
   border-left: 0;
   border-right: 0;
   border-radius: 0;
-  font-family: 'Fira Sans', icomoon, feather, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: 'Fira Sans Medium', icomoon, feather, sans-serif;
+  /* font-weight: 700; */
+  font-size: 15px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: @bg2;
+  background-color: @bg;
   color: @fg;
   transition-property: background-color;
   transition-duration: .5s;
 }
 
 #window {
-  padding: 0 10px;
+  padding: 0 20px;
   color: @fg;
+  margin: 10px 0;
 }
 
 #workspaces button {
   margin-right: 10px;
-  padding: 0 10px;
-  background-color: @bg2;
+  padding: 0 20px;
+  background-color: @bg;
   color: @fg;
-  border-bottom: 3px solid @purple;
+  border-bottom: 5px solid @purple;
 }
 
 #workspaces button:hover {
-  background-color: @bg2;
+  background-color: @bg;
   color: @purple;
   box-shadow: inherit;
   text-shadow: inherit;
@@ -67,7 +68,7 @@ window#waybar {
 
 #workspaces button.urgent {
   background-color: @red;
-  border-bottom: 3px solid @red;
+  border-bottom: 5px solid @red;
 }
 
 #clock,
@@ -82,10 +83,10 @@ window#waybar {
 #custom-reboot,
 #custom-poweroff {
   margin-left: 10px;
-  padding: 0 10px;
+  padding: 0 20px;
   color: @fg;
   /* background: @purple; */
-  border-bottom: 3px solid @purple;
+  border-bottom: 5px solid @purple;
 }
 
 #battery.charging {
@@ -109,7 +110,7 @@ window#waybar {
 #network.disconnected {
   background: @red;
   color: @fg;
-  border-bottom: 3px solid @red;
+  border-bottom: 5px solid @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -119,26 +120,26 @@ window#waybar {
 
 #pulseaudio {
   /* background-color: @purple; */
-  border-bottom: 3px solid @green;
+  border-bottom: 5px solid @green;
 }
 
 #pulseaudio.muted {
   /* background-color: @gray; */
   /* color: @gray; */
-  border-bottom: 3px solid @purple;
+  border-bottom: 5px solid @purple;
 }
 
 #mpd,
 #custom-media.custom-spotify {
   /* background-color: #1ED760; */
   /* color: @bg2; */
-  border-bottom: 3px solid @green;
+  border-bottom: 5px solid @green;
 }
 
 #mpd.disconnected,
 #mpd.paused,
 #mpd.stopped {
-  border-bottom: 3px solid @purple;
+  border-bottom: 5px solid @purple;
 }
 
 #tray {
@@ -147,29 +148,29 @@ window#waybar {
 }
 
 #idle_inhibitor {
-  /* border-bottom: 3px solid @green; */
+  /* border-bottom: 5px solid @green; */
 }
 
 #idle_inhibitor.activated {
   /* background-color: @green; */
   /* color: @bg2; */
-  border-bottom: 3px solid @green;
+  border-bottom: 5px solid @green;
 }
 
 #custom-logout {
   /* background-color: @yellow; */
   /* color: @bg2; */
-  border-bottom: 3px solid @yellow;
+  border-bottom: 5px solid @yellow;
 }
 
 #custom-reboot {
   /* background-color: @orange; */
   /* color: @bg2; */
-  border-bottom: 3px solid @orange;
+  border-bottom: 5px solid @orange;
 }
 
 #custom-poweroff {
   /* background-color: @red; */
   /* color: @bg2; */
-  border-bottom: 3px solid @red;
+  border-bottom: 5px solid @red;
 }
