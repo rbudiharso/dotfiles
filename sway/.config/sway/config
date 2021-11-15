@@ -1,7 +1,8 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
+exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -343,7 +344,7 @@ bindsym Ctrl+Shift+p exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H
 # stop wf-recorder
 bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+Shift+s exec slack
 
 #
@@ -383,7 +384,7 @@ for_window [app_id="nmtui_modal"] floating enable
 for_window [class="modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
 
-# exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 # exec /usr/libexec/xdg-desktop-portal-wlr -r
 
 # mopidy as mpd server
@@ -400,10 +401,10 @@ exec mako
 exec kanshi
 
 # pipewire
-# exec pipewire
-# exec pipewire-pulse
+exec pipewire
+exec pipewire-pulse
 
-# exec bluetoothctl power on
+exec bluetoothctl power on
 
 # sway autotiling
 # https://github.com/nwg-piotr/autotiling
@@ -415,8 +416,8 @@ exec source $HOME/.dotfiles/sway/.config/sway/env
 # bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
 # bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
 
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# exec hash dbus-update-activation-environment 2>/dev/null && \
+#      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # include /etc/sway/config.d/*
