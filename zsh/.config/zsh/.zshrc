@@ -150,7 +150,7 @@ source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-complete -F __start_kubectl k
+compdef __start_kubectl k
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
