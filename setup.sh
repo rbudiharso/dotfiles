@@ -49,20 +49,20 @@ sudo dnf install -y /tmp/slack.rpm
 sudo flatpak install -y flathub com.spotify.Client
 
 cd $HOME
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 source $HOME/.asdf/asdf.sh
 for name in starship kubectl helm k9s kubie nodejs; do asdf plugin-add $name; done
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-asdf install helm 3.4.1 && asdf global helm 3.4.1
-asdf install starship 0.47.0 && asdf global starship 0.47.0
-asdf install kubectl 1.19.4 && asdf global kubectl 1.19.4
-asdf install k9s 0.24.1 && asdf global k9s 0.24.1
-asdf install kubie 0.11.1 && asdf global kubie 0.11.1
+asdf install nodejs lts && asdf global nodejs lts
+asdf install helm 3.7.2 && asdf global helm 3.7.2
+asdf install starship 1.1.1 && asdf global starship 1.1.1
+asdf install kubectl 1.23.1 && asdf global kubectl 1.23.1
+asdf install k9s 0.24.18 && asdf global k9s 0.25.18
+asdf install kubie 0.16.0 && asdf global kubie 0.16.0
 
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
 stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf alacritty
-asdf install nodejs lts && asdf global nodejs lts
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
