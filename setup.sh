@@ -43,7 +43,7 @@ mv /tmp/onefetch $HOME/.local/bin/onefetch
 sudo fc-cache -fv $HOME/.local/share/fonts
 
 sudo dnf update -y
-sudo dnf install -y zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout redshift-gtk gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant
+sudo dnf install -y neovim zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant pulseaudio-utils
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo dnf install -y /tmp/slack.rpm
 sudo flatpak install -y flathub com.spotify.Client
@@ -51,10 +51,9 @@ sudo flatpak install -y flathub com.spotify.Client
 cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 source $HOME/.asdf/asdf.sh
-for name in neovim starship kubectl helm k9s kubie nodejs; do asdf plugin-add $name; done
+for name in starship kubectl helm k9s kubie nodejs; do asdf plugin-add $name; done
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install helm 3.4.1 && asdf global helm 3.4.1
-asdf install neovim 0.4.4 && asdf global neovim 0.4.4
 asdf install starship 0.47.0 && asdf global starship 0.47.0
 asdf install kubectl 1.19.4 && asdf global kubectl 1.19.4
 asdf install k9s 0.24.1 && asdf global k9s 0.24.1
@@ -63,16 +62,17 @@ asdf install kubie 0.11.1 && asdf global kubie 0.11.1
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
 stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf alacritty
-asdf install nodejs 14.15.3 && asdf global nodejs 14.15.3
+asdf install nodejs lts && asdf global nodejs lts
 
-git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 pip install awscli awsebcli autotiling neovim
 mkdir -p $HOME/.config/zsh/.zim
 curl -Lso $HOME/.config/zsh/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 zsh ~/.config/zsh/.zim/zimfw.zsh install
 
-nvim +Pu +qall
+nvim +PlugInstall +qall
 
 cd $HOME/Downloads
 # Telegram
