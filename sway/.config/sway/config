@@ -410,6 +410,8 @@ exec bluetoothctl power on
 # https://github.com/nwg-piotr/autotiling
 exec $HOME/.local/bin/autotiling
 
+# workaround for pipewire not starting properly
+exec rm /run/user/1000/pipewire-0.lock && systemctl --user start "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
 
 # TADA VPN
