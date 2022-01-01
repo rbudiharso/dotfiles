@@ -102,7 +102,7 @@ output $x1c7_screen {
 
 output $x1c4_screen {
   mode 2560x1440@60Hz
-  scale 1
+  scale 1.25
   pos 0 0
 }
 
@@ -411,7 +411,7 @@ exec bluetoothctl power on
 exec $HOME/.local/bin/autotiling
 
 # workaround for pipewire not starting properly
-exec rm /run/user/1000/pipewire-0.lock && systemctl --user start "pipewire.service"
+exec rm /run/user/1000/pipewire-0.lock && systemctl --user restart "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
 
 # TADA VPN
