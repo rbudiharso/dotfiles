@@ -85,3 +85,8 @@ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 # change our shell to ZSH
 chsh -s $(which zsh)
+
+# GNOME theme Graphite
+git clone https://github.com/vinceliuice/Graphite-gtk-theme ~/Downloads/Graphite-gtk-theme
+cd ~/Downloads/Graphite-gtk-theme
+./install.sh -t green
