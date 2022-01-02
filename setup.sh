@@ -90,3 +90,17 @@ chsh -s $(which zsh)
 git clone https://github.com/vinceliuice/Graphite-gtk-theme ~/Downloads/Graphite-gtk-theme
 cd ~/Downloads/Graphite-gtk-theme
 ./install.sh -t green
+
+gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-green-light'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 12'
+gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode NF weight=450 12'
+gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 12'
+gsettings set org.gnome.desktop.interface font-name 'Fira Sans 12'
+
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
+# disable default keybinding
+for i in {1..9}; do
+  gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"
+done
+
