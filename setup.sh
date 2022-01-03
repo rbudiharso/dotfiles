@@ -30,12 +30,6 @@ mkdir -p $HOME/.local/share/fonts
 mv *.ttf $HOME/.local/share/fonts
 rm -rf ./*
 
-# Slack
-curl -Lso /tmp/slack.rpm https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-4.23.0-0.1.fc21.x86_64.rpm
-
-# K8s Lens
-curl -Lso /tmp/lens.rpm https://api.k8slens.dev/binaries/Lens-5.3.3-latest.20211223.1.x86_64.rpm
-
 # onefetch
 cd /tmp
 curl -Lso /tmp/onefetch.tar.gz https://github.com/o2sh/onefetch/releases/download/v2.8.0/onefetch-linux.tar.gz
@@ -50,8 +44,17 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf update -y
 sudo dnf install -y neovim zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant pulseaudio-utils telegram-desktop mozilla-fira-sans-fonts
-sudo dnf install -y /tmp/slack.rpm
-sudo dnf install -y /tmp/lens.rpm
+
+# Slack
+sudo dnf install -y https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-4.23.0-0.1.fc21.x86_64.rpm
+
+# K8s Lens
+sudo dnf install -y https://api.k8slens.dev/binaries/Lens-5.3.3-latest.20211223.1.x86_64.rpm
+
+# Simplenote
+sudo dnf install -y https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-x86_64.rpm
+
+# Spotify
 sudo flatpak install -y flathub com.spotify.Client
 
 cd $HOME

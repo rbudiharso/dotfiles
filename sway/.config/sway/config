@@ -106,12 +106,13 @@ output $x1c4_screen {
   pos 0 0
 }
 
-# output $4kmonitor {
-#   mode 3840x2160@30Hz
-#   pos 2560 0
-#   adaptive_sync on
-# }
-#
+output $4kmonitor {
+  mode 3840x2160@30Hz
+  scale 1.25
+  pos 2560 0
+  adaptive_sync on
+}
+
 # output $lenovo2k {
 #   mode 2560x1440@74Hz
 #   pos 2560 0
