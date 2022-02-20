@@ -6,7 +6,7 @@
     "margin-left": 20,
     "margin-right": 20,
     "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-right": ["tray", "mpd", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
         "disable-scroll": true,
         "format": "{icon}",
@@ -49,7 +49,7 @@
     },
     "network": {
         "format-wifi": "{essid} ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "LAN: {ipaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ",
         "on-click": "alacritty -o window.class.instance=nmtui_modal -e nmtui"

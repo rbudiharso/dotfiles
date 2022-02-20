@@ -102,7 +102,7 @@ output $x1c7_screen {
 
 output $x1c4_screen {
   mode 2560x1440@60Hz
-  scale 1.25
+  scale 1
   pos 0 0
 }
 
@@ -171,7 +171,7 @@ input type:touchpad {
 # Basics:
 #
 # Start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty -o font.size=12
 
 # Kill focused window
 bindsym $mod+Shift+q kill
