@@ -43,7 +43,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf update -y
-sudo dnf install -y neovim zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant pulseaudio-utils telegram-desktop mozilla-fira-sans-fonts
+sudo dnf install -y neovim zsh stow fzf tmux vifm kitty alacritty sway swaylock swayidle bat wofi grim slurp waybar libnsl wl-clipboard xclip awscli mako curl git util-linux-user neofetch gnome-shell-extension-user-theme wlogout gnome-tweaks light playerctl flatpak NetworkManager-tui openssl-devel readline-devel zlib-devel gcc-c++ polkit-gnome kanshi swappy pngquant pulseaudio-utils telegram-desktop mozilla-fira-sans-fonts python3-pip
 
 # Slack
 sudo dnf install -y https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-4.23.0-0.1.fc21.x86_64.rpm
@@ -66,7 +66,7 @@ asdf install nodejs lts && asdf global nodejs lts
 asdf install helm 3.7.2 && asdf global helm 3.7.2
 asdf install starship 1.1.1 && asdf global starship 1.1.1
 asdf install kubectl 1.23.1 && asdf global kubectl 1.23.1
-asdf install k9s 0.24.18 && asdf global k9s 0.25.18
+#asdf install k9s 0.24.18 && asdf global k9s 0.25.18
 asdf install kubie 0.16.0 && asdf global kubie 0.16.0
 
 cd $HOME/.dotfiles
