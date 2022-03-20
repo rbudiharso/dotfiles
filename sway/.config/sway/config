@@ -381,6 +381,9 @@ assign [app_id="[T|t]elegram"] $ws4
 assign [class="Lens"] $ws5
 assign [class="Spotify"] $ws6
 
+set $opacity 0.9
+for_window [app_id="^Alacritty$"] opacity $opacity
+for_window [app_id="^kitty$"] opacity $opacity
 for_window [app_id="nmtui_modal"] floating enable
 for_window [class="modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
