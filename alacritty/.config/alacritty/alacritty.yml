@@ -495,3 +495,8 @@ live_config_reload: true
 
 import:
   - ~/.dotfiles/alacritty/.config/alacritty/dracula-pro-van-helsing.yaml
+
+# override background color
+colors:
+  primary:
+    background: '0x000000'

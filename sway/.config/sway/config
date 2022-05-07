@@ -405,8 +405,8 @@ exec mako
 exec kanshi
 
 # pipewire
-exec pipewire
-exec pipewire-pulse
+# exec pipewire
+# exec pipewire-pulse
 
 exec bluetoothctl power on
 
