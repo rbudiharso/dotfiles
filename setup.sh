@@ -71,7 +71,7 @@ asdf install kubie 0.16.0 && asdf global kubie 0.16.0
 
 cd $HOME/.dotfiles
 ln -s $HOME/.dotfiles/zsh/.config/zsh/.zshenv $HOME/.zshenv
-stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf alacritty neofetch
+stow nvim zsh tmux vifm starship sway kitty mako swaylock swaynag waybar wofi wlogout asdf alacritty neofetch swappy
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
