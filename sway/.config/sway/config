@@ -102,13 +102,13 @@ output $x1c7_screen {
 
 output $x1c4_screen {
   mode 2560x1440@60Hz
-  scale 1
+  scale 1.5
   pos 0 0
 }
 
 output $4kmonitor {
   mode 3840x2160@30Hz
-  scale 1.25
+  scale 2
   pos 2560 0
   adaptive_sync on
 }
