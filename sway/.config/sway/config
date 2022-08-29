@@ -118,7 +118,7 @@ output $4kmonitor {
 #   pos 2560 0
 # }
 
-output * bg $HOME/.dotfiles/wallpapers/sunset.png fill
+output * bg $HOME/.dotfiles/wallpapers/mac-os-big-sur-4k.jpg fill
 
 focus output $x1c4_screen
 
