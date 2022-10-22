@@ -194,3 +194,9 @@ cd ~/Downloads/vimix-gtk-themes
 wget -O ~/Bin/grv https://github.com/rgburke/grv/releases/download/v0.3.2/grv_v0.3.2_linux64
 chmod +x ~/Bin/grv
 ```
+
+## Slack with flatpak on wayland
+```
+flatpak override --user --socket=wayland com.slack.Slack GDK_BACKEND=wayland flatpak run com.slack.Slack --enable-features=UseOzonePlatform --ozone-platform=wayland
+```
+

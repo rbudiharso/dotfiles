@@ -10,12 +10,13 @@
 @define-color purple #9580ff;
 @define-color red #ff5555;
 @define-color yellow #ffff80;
+@define-color blue #478ec6;
 
 
 @keyframes blink {
   to {
-    background-color: @purple;
-    border-bottom: 5px solid @purple;
+    background-color: @blue;
+    border-bottom: 5px solid @blue;
     color: @fg;
   }
 }
@@ -47,22 +48,22 @@ window#waybar {
 
 #workspaces button {
   margin-right: 10px;
-  padding: 0 20px;
+  padding: 0 5px;
   background-color: @bg;
   color: @fg;
-  border-bottom: 5px solid @purple;
+  border-bottom: 5px solid @blue;
 }
 
 #workspaces button:hover {
   background-color: @bg;
-  color: @purple;
+  color: @blue;
   box-shadow: inherit;
   text-shadow: inherit;
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background-color: @purple;
+  background-color: @blue;
   /* color: @fg; */
 }
 
@@ -85,8 +86,8 @@ window#waybar {
   margin-left: 10px;
   padding: 0 20px;
   color: @fg;
-  /* background: @purple; */
-  border-bottom: 5px solid @purple;
+  /* background: @blue; */
+  border-bottom: 5px solid @blue;
 }
 
 #battery.charging {
@@ -119,14 +120,14 @@ window#waybar {
 }
 
 #pulseaudio {
-  /* background-color: @purple; */
+  /* background-color: @blue; */
   border-bottom: 5px solid @green;
 }
 
 #pulseaudio.muted {
   /* background-color: @gray; */
   /* color: @gray; */
-  border-bottom: 5px solid @purple;
+  border-bottom: 5px solid @blue;
 }
 
 #mpd,
@@ -139,7 +140,7 @@ window#waybar {
 #mpd.disconnected,
 #mpd.paused,
 #mpd.stopped {
-  border-bottom: 5px solid @purple;
+  border-bottom: 5px solid @blue;
 }
 
 #tray {

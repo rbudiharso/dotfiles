@@ -102,22 +102,23 @@ output $x1c7_screen {
 
 output $x1c4_screen {
   mode 2560x1440@60Hz
-  scale 1
+  scale 1.5
   pos 0 0
 }
 
-# output $4kmonitor {
-#   mode 3840x2160@30Hz
-#   pos 2560 0
-#   adaptive_sync on
-# }
-#
+output $4kmonitor {
+  mode 3840x2160@30Hz
+  scale 2
+  pos 2560 0
+  adaptive_sync on
+}
+
 # output $lenovo2k {
 #   mode 2560x1440@74Hz
 #   pos 2560 0
 # }
 
-output * bg $HOME/.dotfiles/wallpapers/snowy-landscape.png fill
+output * bg $HOME/.dotfiles/wallpapers/mac-os-big-sur-4k.jpg fill
 
 focus output $x1c4_screen
 
@@ -129,10 +130,10 @@ bindswitch --reload --locked lid:off output $x1c4_screen enable
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -i $HOME/.dotfiles/wallpapers/saitama-1920x1080-blur.jpg' \
+         timeout 300 'swaylock -f -i $HOME/.dotfiles/wallpapers/sunset.blurred.png' \
          timeout 600 'swaymsg "output * dpms off" && systemctl suspend' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -i $HOME/.dotfiles/wallpapers/saitama-1920x1080-blur.jpg'
+         before-sleep 'swaylock -f -i $HOME/.dotfiles/wallpapers/sunset.blurred.png'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -170,7 +171,7 @@ input type:touchpad {
 # Basics:
 #
 # Start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty -o font.size=12
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -380,6 +381,9 @@ assign [app_id="[T|t]elegram"] $ws4
 assign [class="Lens"] $ws5
 assign [class="Spotify"] $ws6
 
+set $opacity 0.9
+for_window [app_id="^Alacritty$"] opacity $opacity
+for_window [app_id="^kitty$"] opacity $opacity
 for_window [app_id="nmtui_modal"] floating enable
 for_window [class="modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
@@ -401,8 +405,8 @@ exec mako
 exec kanshi
 
 # pipewire
-exec pipewire
-exec pipewire-pulse
+# exec pipewire
+# exec pipewire-pulse
 
 exec bluetoothctl power on
 
@@ -410,6 +414,8 @@ exec bluetoothctl power on
 # https://github.com/nwg-piotr/autotiling
 exec $HOME/.local/bin/autotiling
 
+# workaround for pipewire not starting properly
+exec rm /run/user/1000/pipewire-0.lock && systemctl --user restart "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
 
 # TADA VPN
