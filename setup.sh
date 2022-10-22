@@ -117,3 +117,7 @@ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 # change our shell to ZSH
 chsh -s $(which zsh)
+
+# fast-syntax-highlighting
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+  ~/.config/zsh/.zim/modules/ohmyzsh/plugins/fast-syntax-highlighting

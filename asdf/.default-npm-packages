@@ -1,6 +1,6 @@
 eslint
-eslint-cli
 neovim
 nodemon
 npmrc
 diff-so-fancy
+yaml-language-server

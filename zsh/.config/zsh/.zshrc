@@ -134,7 +134,7 @@ if [[ -a $envfile ]]; then
     source $envfile
 fi
 
-source $HOME/.asdf/asdf.sh
+. $HOME/.asdf/asdf.sh
 
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh

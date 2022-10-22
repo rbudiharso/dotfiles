@@ -31,16 +31,18 @@ zmodule completion
 zmodule zsh-users/zsh-autosuggestions
 # Fish-like syntax highlighting for Zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
+# zmodule zsh-users/zsh-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
-zmodule ohmyzsh/ohmyzsh -f 'plugins/fzf' -s 'plugins/fzf/fzf.plugin.zsh' \
+zmodule ohmyzsh/ohmyzsh \
+  -f 'plugins/fzf' -s 'plugins/fzf/fzf.plugin.zsh' \
   -f 'plugins/command-not-found' -s 'plugins/command-not-found/command-not-found.plugin.zsh' \
   -f 'plugins/helm' -s 'plugins/helm/helm.plugin.zsh' \
   -f 'plugins/kubectl' -s 'plugins/kubectl/kubectl.plugin.zsh' \
-  -f 'plugins/safe-paste' -s 'plugins/safe-paste/safe-paste.plugin.zsh'
+  -f 'plugins/safe-paste' -s 'plugins/safe-paste/safe-paste.plugin.zsh' \
+  -f 'plugins/fast-syntax-highlighting' -s 'plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh'
 
 # end
