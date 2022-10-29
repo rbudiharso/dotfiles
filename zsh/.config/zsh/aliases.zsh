@@ -1,13 +1,4 @@
 alias vim=nvim
-# alias code=vscodium
-alias k=kubectl
-
-if command -v exa &> /dev/null
-then
-    alias ls=exa
-    alias ll='exa -l'
-    alias la='exa -la'
-fi
 
 if ! command -v batcat &> /dev/null
 then

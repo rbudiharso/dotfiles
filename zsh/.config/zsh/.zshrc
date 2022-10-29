@@ -134,8 +134,6 @@ if [[ -a $envfile ]]; then
     source $envfile
 fi
 
-. $HOME/.asdf/asdf.sh
-
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 
@@ -148,12 +146,8 @@ source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 #   ssh $host
 # }
 
-source <(kubectl completion zsh)
-source <(helm completion zsh)
-compdef __start_kubectl k
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# populate .gitignore file
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
 
 # run command everytime we change directory
 autoload -U add-zsh-hook
@@ -162,9 +156,7 @@ run-onefetch() {
 }
 add-zsh-hook chpwd run-onefetch
 
-eval "$(starship init zsh)"
 neofetch --config ~/.dotfiles/neofetch.conf
 
 # uncomment this to profile zsh startup time
 # zprof
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}

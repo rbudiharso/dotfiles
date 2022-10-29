@@ -43,6 +43,7 @@ set hidden
 set noshowmode
 set scrolloff=3
 set completeopt=menu,menuone,noselect
+set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 let g:dracula_colorterm = 0
 colorscheme dracula_pro_van_helsing
