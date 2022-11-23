@@ -389,24 +389,12 @@ for_window [class="modal"] floating enable
 for_window [class="arduino-ide|processing-app-Base"] floating enable
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1
-# exec /usr/libexec/xdg-desktop-portal-wlr -r
-
-# mopidy as mpd server
-exec mopidy
-
-# redshift automatic color temperature adjustment
-# https://github.com/minus7/redshift
-# exec gammastep
 
 # exec mako, lightweight notification daemon for wayland
 exec mako
 
 # exec kanshi, automatically configure display
 exec kanshi
-
-# pipewire
-# exec pipewire
-# exec pipewire-pulse
 
 exec bluetoothctl power on
 
@@ -417,13 +405,3 @@ exec $HOME/.local/bin/autotiling
 # workaround for pipewire not starting properly
 exec rm /run/user/1000/pipewire-0.lock && systemctl --user restart "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
-
-# TADA VPN
-# bindsym $mod+Shift+F11 exec nmcli connection up TADAVPN && $($HOME/.dotfiles/sway/.config/sway/inet.sh)
-# bindsym $mod+Shift+F12 exec nmcli connection down TADAVPN && notify-send -u low "VPN disconnected"
-
-# exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-# exec hash dbus-update-activation-environment 2>/dev/null && \
-#      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-# include /etc/sway/config.d/*
