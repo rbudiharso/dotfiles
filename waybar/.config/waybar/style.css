@@ -22,12 +22,11 @@
 }
 
 * {
-  /* border: none; */
   border-top: 0;
   border-left: 0;
   border-right: 0;
   border-radius: 0;
-  font-family: 'Noto Sans', 'Fira Sans', icomoon, feather, sans-serif;
+  font-family: 'Noto Sans', 'Fira Sans', icomoon, sans-serif;
   font-weight: 700;
   font-size: 16px;
   min-height: 0;
@@ -36,40 +35,33 @@
 window#waybar {
   background-color: @bg;
   color: @fg;
-  transition-property: background-color;
-  transition-duration: .5s;
 }
 
 #window {
   padding: 0 20px;
   color: @fg;
-  margin: 10px 0;
 }
 
 #workspaces button {
   margin: 0 10px 0 0;
-  padding: 0 20px;
-  background-color: @bg;
+  padding: 0 0 0 20px;
   color: @fg;
-  border-bottom: 5px solid @blue;
 }
 
 #workspaces button:hover {
-  background-color: @bg;
   color: @blue;
   box-shadow: inherit;
   text-shadow: inherit;
+  background: inherit;
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background-color: @blue;
-  /* color: @fg; */
+  color: @blue;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
-  border-bottom: 5px solid @red;
+  color: @red;
 }
 
 #clock,
@@ -83,11 +75,9 @@ window#waybar {
 #custom-logout,
 #custom-reboot,
 #custom-poweroff {
-  margin-left: 10px;
-  padding: 0 20px;
+  /* margin-left: 10px; */
+  padding: 0 20px 0 0;
   color: @fg;
-  /* background: @blue; */
-  border-bottom: 5px solid @blue;
 }
 
 #battery.charging {
@@ -120,27 +110,11 @@ window#waybar {
 }
 
 #pulseaudio {
-  /* background-color: @blue; */
-  border-bottom: 5px solid @green;
 }
 
-#pulseaudio.muted {
-  /* background-color: @gray; */
-  /* color: @gray; */
-  border-bottom: 5px solid @blue;
-}
-
-#mpd,
-#custom-media.custom-spotify {
-  /* background-color: #1ED760; */
-  /* color: @bg2; */
-  border-bottom: 5px solid @green;
-}
-
-#mpd.disconnected,
-#mpd.paused,
-#mpd.stopped {
-  border-bottom: 5px solid @blue;
+#pulseaudio.muted,
+#pulseaudio.source-muted {
+  color: @fg;
 }
 
 #tray {
@@ -149,29 +123,20 @@ window#waybar {
 }
 
 #idle_inhibitor {
-  /* border-bottom: 5px solid @green; */
 }
 
 #idle_inhibitor.activated {
-  /* background-color: @green; */
-  /* color: @bg2; */
-  border-bottom: 5px solid @green;
+  color: @green;
 }
 
 #custom-logout {
-  /* background-color: @yellow; */
-  /* color: @bg2; */
-  border-bottom: 5px solid @yellow;
+  color: @yellow;
 }
 
 #custom-reboot {
-  /* background-color: @orange; */
-  /* color: @bg2; */
-  border-bottom: 5px solid @orange;
+  color: @orange;
 }
 
 #custom-poweroff {
-  /* background-color: @red; */
-  /* color: @bg2; */
-  border-bottom: 5px solid @red;
+  color: @red;
 }

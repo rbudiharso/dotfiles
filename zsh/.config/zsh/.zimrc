@@ -25,6 +25,8 @@ zmodule fzf
 zmodule k
 # Sets up helm in zsh.
 zmodule joke/zim-helm
+zmodule joke/zim-kubectl
+zmodule joke/zim-k9s
 # Sets up starship prompt in zsh
 zmodule joke/zim-starship
 
@@ -56,7 +58,6 @@ zmodule zdharma-continuum/fast-syntax-highlighting
 zmodule ohmyzsh/ohmyzsh \
   -f 'plugins/fzf' -s 'plugins/fzf/fzf.plugin.zsh' \
   -f 'plugins/command-not-found' -s 'plugins/command-not-found/command-not-found.plugin.zsh' \
-  -f 'plugins/helm' -s 'plugins/helm/helm.plugin.zsh' \
   -f 'plugins/kubectl' -s 'plugins/kubectl/kubectl.plugin.zsh' \
   -f 'plugins/safe-paste' -s 'plugins/safe-paste/safe-paste.plugin.zsh'
 

@@ -359,7 +359,7 @@ bar {
 
 default_border pixel 0
 gaps outer 0
-gaps inner 20
+gaps inner 10
 
 # class                 border    backgr.   text      indicator   child_border
 client.focused          $nord13   $nord10   $nord0    $nord7      $nord13

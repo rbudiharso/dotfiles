@@ -62,6 +62,8 @@ set vimhelp
 
 set norunexec
 
+set dotfiles
+
 " Selected color scheme
 
 colorscheme dracula
