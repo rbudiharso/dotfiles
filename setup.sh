@@ -20,11 +20,13 @@ curl -Lso FantasqueSansMono.zip https://github.com/ryanoasis/nerd-fonts/releases
 curl -Lso FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 curl -Lso Hasklig.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hasklig.zip
 curl -Lso JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+cp ~/.dotfiles/icomoon.zip .
 
 unzip FantasqueSansMono.zip
 unzip FiraCode.zip
 unzip Hasklig.zip
 unzip JetBrainsMono.zip
+unzip icomoon.zip
 
 mkdir -p $HOME/.local/share/fonts
 mv *.ttf $HOME/.local/share/fonts
