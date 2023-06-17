@@ -71,7 +71,7 @@ set $nord14 #a3be8c
 set $nord15 #b48ead
 
 set $x1c7_screen "Unknown 0x0608 0x00000000"
-set $x1c4_screen "Panasonic Industry Company 0x96A2 0x00000000"
+set $x1c4_screen "Panasonic Industry Company 0x96A2 Unknown"
 set $4kmonitor "BenQ Corporation BenQ EL2870U A3K00589SL0"
 set $lenovo2k "Lenovo Group Limited L24q-10 U5V125B6"
 
@@ -100,6 +100,12 @@ output $x1c7_screen {
   pos 0 0
 }
 
+output eDP-1 {
+  mode 2560x1440@60Hz
+  scale 1.5
+  pos 0 0
+}
+
 output $x1c4_screen {
   mode 2560x1440@60Hz
   scale 1.5
@@ -108,7 +114,7 @@ output $x1c4_screen {
 
 output $4kmonitor {
   mode 3840x2160@30Hz
-  scale 2
+  # scale 2
   pos 2560 0
   adaptive_sync on
 }
@@ -359,7 +365,7 @@ bar {
 
 default_border pixel 0
 gaps outer 0
-gaps inner 10
+gaps inner 5
 
 # class                 border    backgr.   text      indicator   child_border
 client.focused          $nord13   $nord10   $nord0    $nord7      $nord13
@@ -405,3 +411,5 @@ exec $HOME/.local/bin/autotiling
 # workaround for pipewire not starting properly
 exec rm /run/user/1000/pipewire-0.lock && systemctl --user restart "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
+
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK

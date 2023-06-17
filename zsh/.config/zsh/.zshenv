@@ -11,6 +11,7 @@ export VISUAL="nvim"
 export TERM=xterm-256color
 export PATH="$HOME/.asdf/shims:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.kubescape/bin:$PATH"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export ZSH_THEME="dracula-pro"
 # export FZF_BASE=/usr/share/doc/fzf

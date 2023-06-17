@@ -158,6 +158,12 @@ augroup javascript-space
   autocmd BufRead,BufNewFile *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
+" python
+augroup python-space
+  autocmd!
+  autocmd BufRead,BufNewFile *.py setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+augroup END
+
 " startify list of files
 let g:startify_lists = [{ 'type': 'dir', 'header': ['MRU'. getcwd()] }]
 let g:startify_change_to_dir = 0

@@ -115,3 +115,8 @@ done
 
 # Create required directories
 mkdir -p $HOME/Pictures/Screenshots
+
+# for electron app such as slack and k8slens, tweak the .desktop file to make it un-blurry
+# the .desktop file usualy placed in /usr/share/applications/*.desktop
+# add this line below on the "Exec=<binary>" before "%U" (if exists)
+# Exec=<binary> --enable-features=WaylandWindowDecorations --enable-features=UseOzonePlatform --ozone-platform=wayland [%U]

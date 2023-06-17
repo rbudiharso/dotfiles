@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 50,
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-right": ["tray", "pulseaudio", "network", "battery", "clock", "idle_inhibitor", "custom/logout", "custom/reboot", "custom/poweroff"],
     "sway/workspaces": {
