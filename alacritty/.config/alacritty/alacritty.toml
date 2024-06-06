@@ -1,4 +1,6 @@
-import = ["/home/rbudiharso/.dotfiles/alacritty/.config/alacritty/dracula-pro-van-helsing.yaml"]
+import = [
+  "/home/rbudiharso/.dotfiles/alacritty/.config/alacritty/dracula-pro-van-helsing.yaml",
+]
 live_config_reload = true
 
 [colors.primary]
@@ -9,7 +11,7 @@ DBUS_SESSION_BUS_ADDRESS = ""
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
