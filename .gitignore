@@ -21,3 +21,4 @@ zsh/.config/zsh/cache/*
 zsh/.config/zsh/.zim/*
 zsh/.config/zsh/*.old
 sway/.config/sway/env
+.DS_Store
