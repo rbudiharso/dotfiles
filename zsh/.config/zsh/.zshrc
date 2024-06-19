@@ -136,6 +136,7 @@ fi
 
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
+source ~/.asdf/installs/rust/1.78.0/env
 
 # set CAPSLOCK as Escape
 # setxkbmap -option caps:escape
