@@ -22,3 +22,5 @@ zsh/.config/zsh/.zim/*
 zsh/.config/zsh/*.old
 sway/.config/sway/env
 .DS_Store
+zed/.config/zed/embeddings
+zed/.config/zed/prompts

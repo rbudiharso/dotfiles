@@ -136,7 +136,11 @@ fi
 
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
-source ~/.asdf/installs/rust/1.78.0/env
+
+local rustenv=$HOME/.asdf/installs/rust/1.78.0/env
+if [[ -a $rustenv ]]; then
+    source $rustenv
+fi
 
 # set CAPSLOCK as Escape
 # setxkbmap -option caps:escape
@@ -157,7 +161,9 @@ run-onefetch() {
 }
 add-zsh-hook chpwd run-onefetch
 
-neofetch --config ~/.dotfiles/neofetch.conf
+# neofetch has been deprecated, consider switching to fastfetch
+# neofetch --config ~/.dotfiles/neofetch.conf
+fastfetch
 
 # uncomment this to profile zsh startup time
 # zprof
