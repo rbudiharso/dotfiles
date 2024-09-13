@@ -12,6 +12,7 @@ export TERM=xterm-256color
 export PATH="$HOME/.asdf/shims:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.kubescape/bin:$PATH"
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export ZSH_THEME="dracula-pro"
 # export FZF_BASE=/usr/share/doc/fzf
