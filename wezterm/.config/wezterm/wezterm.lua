@@ -13,9 +13,11 @@ config.color_scheme = "Dracula (Official)"
 -- config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_frame = {
-	font = wezterm.font({ family = "SF Pro Rounded", weight = "Bold" }),
-	font_size = 14,
+	font = wezterm.font("Red Hat Display", { weight = "Bold", stretch = "Normal", style = "Normal" }),
+	font_size = 12,
 }
+config.font = wezterm.font("Red Hat Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
+config.font_size = 12
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
