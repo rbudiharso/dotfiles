@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local appearance = require("appearance")
+-- local appearance = require("appearance")
 
 local config = wezterm.config_builder()
 
@@ -7,10 +7,10 @@ config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = "Gruvbox Dark"
+config.color_scheme = "Dracula (Official)"
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 30
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_frame = {
 	font = wezterm.font({ family = "SF Pro Rounded", weight = "Bold" }),
