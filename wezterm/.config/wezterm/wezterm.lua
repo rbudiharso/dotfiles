@@ -14,10 +14,10 @@ config.color_scheme = "Dracula (Official)"
 config.window_decorations = "RESIZE"
 config.window_frame = {
 	font = wezterm.font("Red Hat Display", { weight = "Bold", stretch = "Normal", style = "Normal" }),
-	font_size = 12,
+	font_size = 13,
 }
-config.font = wezterm.font("Red Hat Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
-config.font_size = 12
+config.font = wezterm.font("Red Hat Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
+config.font_size = 13
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
@@ -61,6 +61,15 @@ config.keys = {
 		action = wezterm.action.SpawnCommandInNewTab({
 			cwd = wezterm.home_dir,
 			args = { "nvim", wezterm.config_file },
+		}),
+	},
+	-- Open dotfiles file with nvim by pressing SUPER + .
+	{
+		key = ".",
+		mods = "SUPER",
+		action = wezterm.action.SpawnCommandInNewTab({
+			cwd = "~/.dotfiles",
+			args = { "nvim" },
 		}),
 	},
 	{
