@@ -137,7 +137,7 @@ fi
 # additional files
 source ~/.dotfiles/zsh/.config/zsh/aliases.zsh
 
-local rustenv=$HOME/.asdf/installs/rust/1.78.0/env
+local rustenv=$HOME/.asdf/installs/rust/1.80.1/env
 if [[ -a $rustenv ]]; then
     source $rustenv
 fi
