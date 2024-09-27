@@ -9,15 +9,42 @@ config.set_environment_variables = {
 
 config.color_scheme = "Dracula (Official)"
 
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 30
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_frame = {
 	font = wezterm.font("Red Hat Display", { weight = "Bold", stretch = "Normal", style = "Normal" }),
-	font_size = 13,
+	font_size = 12,
+	active_titlebar_bg = "#282a37",
+}
+config.colors = {
+	tab_bar = {
+		inactive_tab_edge = "#282a37",
+		active_tab = {
+			bg_color = "#282a37",
+			fg_color = "#dadada",
+		},
+		inactive_tab = {
+			bg_color = "#282a37",
+			fg_color = "#727272",
+		},
+		inactive_tab_hover = {
+			bg_color = "#282a37",
+			fg_color = "#cccccc",
+		},
+		new_tab = {
+			bg_color = "#282a37",
+			fg_color = "#aaaaaa",
+		},
+		new_tab_hover = {
+			bg_color = "#282a37",
+			fg_color = "#ffffff",
+			intensity = "Bold",
+		},
+	},
 }
 config.font = wezterm.font("Red Hat Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
-config.font_size = 13
+config.font_size = 12
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
