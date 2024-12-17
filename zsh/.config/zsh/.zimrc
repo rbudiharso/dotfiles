@@ -15,30 +15,14 @@ zmodule termtitle
 zmodule utility
 # Sets up asdf, with auto install and optimized usage of the direnv plugin.
 zmodule asdf
-# Enables and configures smart and extensive tab completion.
-zmodule completion
-# Adds aliases and better defaults for exa.
-zmodule exa
 # Configures fzf for faster fetching of files and directories names.
 zmodule fzf
-# All kubectl aliases in one function.
-zmodule k
 # Sets up helm in zsh.
 zmodule joke/zim-helm
 zmodule joke/zim-kubectl
 zmodule joke/zim-k9s
 # Sets up starship prompt in zsh
 zmodule joke/zim-starship
-
-
-#
-# Prompt
-#
-# Exposes git repository status information to prompts.
-# zmodule git-info
-# A customizable version of steeef's prompt theme.
-# zmodule steeef
-
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
 # Enables and configures smart and extensive tab completion.
