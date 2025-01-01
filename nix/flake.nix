@@ -70,10 +70,11 @@
         enable = true;
         brews = [
           "mas"
+          "asdf"
         ];
         casks = [
           "hammerspoon"
-          # "firefox"
+          "firefox"
           "the-unarchiver"
         ];
         masApps = {
