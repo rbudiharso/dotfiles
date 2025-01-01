@@ -38,6 +38,7 @@
           pkgs.kubeswitch
           pkgs.kubie
           pkgs.lazygit
+          pkgs.lens
           pkgs.libyaml
           pkgs.luajitPackages.luarocks-nix
           pkgs.luarocks
@@ -57,6 +58,7 @@
           pkgs.tree
           pkgs.unnaturalscrollwheels
           pkgs.vifm
+          pkgs.wezterm
           pkgs.wget
           pkgs.yazi
         ];
@@ -74,18 +76,21 @@
           "asdf"
         ];
         casks = [
-          "hammerspoon"
+          "appcleaner"
           "firefox"
+          "hammerspoon"
+          "shottr"
           "the-unarchiver"
-          "app-cleaner"
+          "whisky"
+          "yaak"
         ];
         masApps = {
           # "Firewatch" = 1164603847; # too big
           # "Stray" = 6451498949; # too big
-          "Wireguard" = 1451685025;
-          "WhatApp" = 310633997;
           "Amphetamine" = 937984704;
           "Slack" = 803453959;
+          "WhatApp" = 310633997;
+          "Wireguard" = 1451685025;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
