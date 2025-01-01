@@ -33,3 +33,7 @@ disabled = false
 
 [aws]
 disabled = true
+
+[custom.kubie]
+command = "echo '[kubie]'"
+when = '''kubie info ctx'''

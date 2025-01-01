@@ -167,3 +167,4 @@ fastfetch
 
 # uncomment this to profile zsh startup time
 # zprof
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

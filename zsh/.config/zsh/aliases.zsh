@@ -20,3 +20,5 @@ alias kctx="kubectl config use-context"
 kns() {
     kubectl config set-context --current --namespace="$@"
 }
+
+alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'

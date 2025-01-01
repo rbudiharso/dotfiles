@@ -7,7 +7,7 @@ config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = "Dracula (Official)"
+config.color_scheme = "Gruvbox"
 
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
