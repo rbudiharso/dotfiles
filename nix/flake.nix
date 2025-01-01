@@ -18,8 +18,8 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
-          # pkgs.asdf-vm
           pkgs.awscli2
+          pkgs.bartender
           pkgs.bat
           pkgs.coreutils
           pkgs.dive
@@ -48,6 +48,7 @@
           pkgs.obsidian
           pkgs.opentofu
           pkgs.p7zip
+          pkgs.rectangle-pro
           pkgs.ripgrep
           pkgs.sqlite
           pkgs.starship
@@ -76,6 +77,7 @@
           "hammerspoon"
           "firefox"
           "the-unarchiver"
+          "app-cleaner"
         ];
         masApps = {
           # "Firewatch" = 1164603847; # too big
