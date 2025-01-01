@@ -18,45 +18,46 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
-          pkgs.neovim
-          pkgs.tmux
-          pkgs.ghostty
-          pkgs.mkalias
-          pkgs.obsidian
-          pkgs.libyaml
-          pkgs.sqlite
-          pkgs.coreutils
-          pkgs.asdf-vm
+          # pkgs.asdf-vm
           pkgs.awscli2
           pkgs.bat
+          pkgs.coreutils
           pkgs.dive
           pkgs.docker
-          pkgs.docker-compose
           pkgs.docker-buildx
+          pkgs.docker-compose
           pkgs.elixir
           pkgs.fastfetch
           pkgs.fd
           pkgs.fzf
-          pkgs.kubernetes-helm
-          pkgs.kubectl
+          pkgs.ghostty
           pkgs.htop
           pkgs.jq
+          pkgs.kubectl
+          pkgs.kubernetes-helm
+          pkgs.kubeswitch
           pkgs.kubie
           pkgs.lazygit
-          pkgs.luarocks
+          pkgs.libyaml
           pkgs.luajitPackages.luarocks-nix
-          pkgs.nmap
+          pkgs.luarocks
+          pkgs.mkalias
           pkgs.ncdu
+          pkgs.neovim
+          pkgs.nmap
+          pkgs.obsidian
           pkgs.opentofu
           pkgs.p7zip
           pkgs.ripgrep
+          pkgs.sqlite
           pkgs.starship
           pkgs.stow
+          pkgs.tmux
           pkgs.tree
+          pkgs.unnaturalscrollwheels
           pkgs.vifm
           pkgs.wget
           pkgs.yazi
-          pkgs.unnaturalscrollwheels
         ];
 
       fonts.packages = [
@@ -129,6 +130,9 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      # use touch id when sudo
+      security.pam.enableSudoTouchIdAuth = true;
     };
   in
   {

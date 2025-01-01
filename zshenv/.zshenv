@@ -1,0 +1,3 @@
+XDG_DATA_HOME="${HOME}/.local/share"
+XDG_CONFIG_HOME="${HOME}/.config"
+ZDOTDIR="$XDG_CONFIG_HOME/zsh"
