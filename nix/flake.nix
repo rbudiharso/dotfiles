@@ -40,7 +40,7 @@
           pkgs.lazygit
           pkgs.lens
           pkgs.libyaml
-          pkgs.luajitPackages.luarocks-nix
+          pkgs.lua51Packages.lua
           pkgs.luarocks
           pkgs.mkalias
           pkgs.ncdu
