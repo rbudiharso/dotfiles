@@ -346,7 +346,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = Dracula+
+theme = tokyonight
 
 # Background color for the window.
 background = #282c34
@@ -766,7 +766,7 @@ mouse-scroll-multiplier = 1
 # On macOS, background opacity is disabled when the terminal enters native
 # fullscreen. This is because the background becomes gray and it can cause
 # widgets to show through which isn't generally desirable.
-background-opacity = 1
+background-opacity = 0.9
 
 # A positive value enables blurring of the background when background-opacity
 # is less than 1. The value is the blur radius to apply. A value of 20
@@ -1224,7 +1224,7 @@ window-padding-x = 10
 # top padding to 2 and the bottom padding to 4. If you want to set both
 # paddings to the same value, you can use a single value. For example,
 # `window-padding-y = 2` will set both paddings to 2.
-window-padding-y = 5
+window-padding-y = 10
 
 # The viewport dimensions are usually not perfectly divisible by the cell
 # size. In this case, some extra padding on the end of a column and the bottom

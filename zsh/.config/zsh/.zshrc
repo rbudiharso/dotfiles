@@ -66,5 +66,6 @@ alias la='ls -lah --color'
 alias vim='nvim'
 alias ksw='switch'
 alias kns='switch ns'
+alias cl='clear'
 
-fastfetch
+# fastfetch
