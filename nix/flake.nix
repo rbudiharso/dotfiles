@@ -22,6 +22,7 @@
           pkgs.bartender
           pkgs.bat
           pkgs.coreutils
+          pkgs.discord
           pkgs.dive
           pkgs.docker
           pkgs.docker-buildx
@@ -61,6 +62,9 @@
           pkgs.wezterm
           pkgs.wget
           pkgs.yazi
+          pkgs.zoom-us
+          pkgs.openvpn
+          pkgs.google-chrome
         ];
 
       fonts.packages = [
@@ -77,8 +81,12 @@
         ];
         casks = [
           "appcleaner"
+          "chatgpt"
+          "dropbox"
           "firefox"
+          "google-drive"
           "hammerspoon"
+          "keyboardcleantool"
           "shottr"
           "the-unarchiver"
           "whisky"
