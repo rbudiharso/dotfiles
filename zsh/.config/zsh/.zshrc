@@ -3,7 +3,6 @@ XDG_DATA_HOME="${HOME}/.local/share"
 ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 ZSH_CACHE_DIR="$XDG_DATA_HOME/zsh/cache"
-STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 PATH=$HOME/.local/bin:$PATH
 EDITOR="nvim"
 VISUAL="nvim"
