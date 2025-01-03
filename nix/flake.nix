@@ -22,11 +22,13 @@
           pkgs.bartender
           pkgs.bat
           pkgs.coreutils
+          pkgs.colima
           pkgs.discord
           pkgs.dive
           pkgs.docker
           pkgs.docker-buildx
           pkgs.docker-compose
+          pkgs.docker-credential-helpers
           pkgs.elixir
           pkgs.fastfetch
           pkgs.fd
