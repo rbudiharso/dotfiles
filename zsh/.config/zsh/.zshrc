@@ -7,17 +7,20 @@ PATH=$HOME/.local/bin:$PATH
 EDITOR="nvim"
 VISUAL="nvim"
 
+# auto install zinit
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# use zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# plugins, use turbo with "lucid"
+zinit lucid wait for zsh-users/zsh-syntax-highlighting
+zinit lucid wait for zsh-users/zsh-completions
+zinit lucid wait for zsh-users/zsh-autosuggestions
+zinit lucid wait for Aloxaf/fzf-tab
 
 # snippet plugin
 zinit snippet OMZP::git
@@ -30,7 +33,6 @@ zinit snippet OMZP::asdf
 
 # load completions
 autoload -Uz compinit && compinit
-
 zinit cdreplay -q
 
 # history
@@ -63,10 +65,26 @@ alias ls='ls --color'
 alias ll='ls -lh --color'
 alias la='ls -lah --color'
 alias vim='nvim'
-alias ksw='switch'
-alias kns='switch ns'
 alias cl='clear'
 alias awsp='source _awsp  && export AWS_PROFILE="$(cat ~/.awsp)"'
 alias ecrlogin='aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 876683363342.dkr.ecr.ap-southeast-1.amazonaws.com'
+
+# select kubernetes context
+kctx() {
+  if [ $# -eq 0 ]; then
+    kubectl config use-context $(k config get-contexts --no-headers|awk '{print $3}'|fzf)
+  else
+    kubectl config use-context $@
+  fi
+}
+
+# change kubernetes namespace
+kns() {
+  if [ $# -eq 0 ]; then
+    kubectl config set-context --current --namespace="$(kubectl get ns --no-headers|grep -v \"Terminating\"|awk '{print $1}'|fzf)"
+  else
+    kubectl config set-context --current --namespace="$@"
+  fi
+}
 
 # fastfetch

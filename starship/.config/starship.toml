@@ -34,6 +34,9 @@ disabled = false
 [aws]
 disabled = true
 
+[gcloud]
+disabled = true
+
 [custom.kubie]
 command = "echo '[kubie]'"
 when = '''kubie info ctx'''
