@@ -24,14 +24,12 @@
           pkgs.coreutils
           pkgs.discord
           pkgs.dive
-          pkgs.docker
-          pkgs.docker-buildx
-          pkgs.docker-compose
           pkgs.elixir
           pkgs.fastfetch
           pkgs.fd
           pkgs.fzf
           pkgs.ghostty
+          pkgs.google-chrome
           pkgs.htop
           pkgs.jq
           pkgs.kubectl
@@ -49,6 +47,7 @@
           pkgs.nmap
           pkgs.obsidian
           pkgs.opentofu
+          pkgs.openvpn
           pkgs.p7zip
           pkgs.rectangle-pro
           pkgs.ripgrep
@@ -63,8 +62,6 @@
           pkgs.wget
           pkgs.yazi
           pkgs.zoom-us
-          pkgs.openvpn
-          pkgs.google-chrome
         ];
 
       fonts.packages = [
@@ -78,6 +75,7 @@
         brews = [
           "mas"
           "asdf"
+          # "weaveworks/tap/eksctl"
         ];
         casks = [
           "appcleaner"
@@ -92,10 +90,14 @@
           "whisky"
           "yaak"
         ];
+        taps = [
+          "weaveworks/tap"
+        ];
         masApps = {
           # "Firewatch" = 1164603847; # too big
           # "Stray" = 6451498949; # too big
           "Amphetamine" = 937984704;
+          "Peek" = 1554235898;
           "Slack" = 803453959;
           "WhatApp" = 310633997;
           "Wireguard" = 1451685025;

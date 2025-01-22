@@ -66,5 +66,7 @@ alias vim='nvim'
 alias ksw='switch'
 alias kns='switch ns'
 alias cl='clear'
+alias awsp='source _awsp  && export AWS_PROFILE="$(cat ~/.awsp)"'
+alias ecrlogin='aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 876683363342.dkr.ecr.ap-southeast-1.amazonaws.com'
 
 # fastfetch
