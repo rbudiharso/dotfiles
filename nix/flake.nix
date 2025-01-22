@@ -6,10 +6,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, mac-app-util }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util }:
   let
     configuration = { pkgs, config, ... }: {
 
@@ -75,7 +74,7 @@
         brews = [
           "mas"
           "asdf"
-          # "weaveworks/tap/eksctl"
+          "weaveworks/tap/eksctl"
         ];
         casks = [
           "appcleaner"
@@ -160,27 +159,6 @@
       modules = [
         configuration
         mac-app-util.darwinModules.default
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            # Install Homebrew under the default prefix
-            enable = true;
-
-            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-            enableRosetta = true;
-
-            # User owning the Homebrew prefix
-            user = "rahmat";
-
-            # Optional: Declarative tap management
-            # taps = {
-            # };
-
-            # Optional: Enable fully-declarative tap management
-            # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-            # mutableTaps = false;
-          };
-        }
       ];
     };
 

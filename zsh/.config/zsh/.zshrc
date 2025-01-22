@@ -59,6 +59,7 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(switcher init zsh)"
 eval "$(switch completion zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # aliases
 alias ls='ls --color'
