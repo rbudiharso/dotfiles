@@ -2165,7 +2165,7 @@ bold-is-bright = false
 # features. An option exists in vim to modify this: `:set
 # keyprotocol=ghostty:kitty`, however a bug in the implementation prevents it
 # from working properly. https://github.com/vim/vim/pull/13211 fixes this.
-term = xterm-ghostty
+term = xterm-256color
 
 # String to send when we receive `ENQ` (`0x05`) from the command that we are
 # running. Defaults to an empty string if not set.

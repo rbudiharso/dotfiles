@@ -27,7 +27,8 @@
           pkgs.fastfetch
           pkgs.fd
           pkgs.fzf
-          pkgs.ghostty
+          # pkgs.ghostty
+          pkgs.gmp
           pkgs.google-chrome
           pkgs.htop
           pkgs.jq
@@ -44,7 +45,8 @@
           pkgs.ncdu
           pkgs.neovim
           pkgs.nmap
-          pkgs.obsidian
+          # pkgs.obsidian
+          pkgs.openssl
           pkgs.opentofu
           pkgs.openvpn
           pkgs.p7zip
@@ -75,6 +77,11 @@
           "mas"
           "asdf"
           "weaveworks/tap/eksctl"
+          "coreutils"
+          "openssl"
+          "gmp"
+          "libyaml"
+          "k9s"
         ];
         casks = [
           "appcleaner"
@@ -129,8 +136,8 @@
           "/Applications/Firefox.app"
           "/Applications/Slack.app"
           "/Applications/WhatsApp.app"
-          "${pkgs.ghostty}/Applications/Ghostty.app"
-          "${pkgs.obsidian}/Applications/Obsidian.app"
+          # "${pkgs.ghostty}/Applications/Ghostty.app"
+          # "${pkgs.obsidian}/Applications/Obsidian.app"
         ];
         finder._FXSortFoldersFirst = true;
         finder.FXPreferredViewStyle = "Nlsv";
@@ -149,7 +156,8 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       # use touch id when sudo
-      security.pam.enableSudoTouchIdAuth = true;
+      # security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
     };
   in
   {

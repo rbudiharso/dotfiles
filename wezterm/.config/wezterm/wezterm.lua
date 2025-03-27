@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 -- local appearance = require("appearance")
 
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
@@ -14,7 +15,7 @@ config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_frame = {
 	font = wezterm.font("Red Hat Display", { weight = "Bold", stretch = "Normal", style = "Normal" }),
-	font_size = 12,
+	font_size = 14,
 	active_titlebar_bg = "#282a37",
 }
 config.colors = {
@@ -44,7 +45,7 @@ config.colors = {
 	},
 }
 config.font = wezterm.font("Red Hat Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
-config.font_size = 12
+config.font_size = 14
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
@@ -138,6 +139,22 @@ config.keys = {
 			one_shot = false,
 			-- Deactivate the keytable after a timeout.
 			timeout_milliseconds = 1000,
+		}),
+	},
+	{
+		-- rename tab title
+		key = "E",
+		mods = "CTRL|SHIFT",
+		action = act.PromptInputLine({
+			description = "Enter new name for tab",
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
 		}),
 	},
 }

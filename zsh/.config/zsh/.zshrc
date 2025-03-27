@@ -3,7 +3,10 @@ XDG_DATA_HOME="${HOME}/.local/share"
 ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 ZSH_CACHE_DIR="$XDG_DATA_HOME/zsh/cache"
+DIRENV_LOG_FORMAT=$'\033[2mdirenv: %s\033[0m'
 PATH=$HOME/.local/bin:$PATH
+PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+PATH="$HOME/Library/Python/3.9/bin:$PATH"
 EDITOR="nvim"
 VISUAL="nvim"
 
@@ -27,7 +30,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::asdf
 
@@ -57,9 +59,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # shell integration
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
-eval "$(switcher init zsh)"
-eval "$(switch completion zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(devbox global shellenv)"
+eval "$(direnv hook zsh)"
 
 # aliases
 alias ls='ls --color'
@@ -67,7 +69,7 @@ alias ll='ls -lh --color'
 alias la='ls -lah --color'
 alias vim='nvim'
 alias cl='clear'
-alias awsp='source _awsp  && export AWS_PROFILE="$(cat ~/.awsp)"'
+alias awsp='export AWS_PROFILE=$(sed -n "s/^\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
 alias ecrlogin='aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 876683363342.dkr.ecr.ap-southeast-1.amazonaws.com'
 
 # select kubernetes context
