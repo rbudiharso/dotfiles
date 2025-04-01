@@ -30,7 +30,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::command-not-found
 zinit snippet OMZP::asdf
 
 # load completions
@@ -62,6 +61,7 @@ eval "$(fzf --zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(devbox global shellenv)"
 eval "$(direnv hook zsh)"
+eval "$(atuin init zsh)"
 
 # aliases
 alias ls='ls --color'

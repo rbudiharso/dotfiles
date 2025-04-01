@@ -17,6 +17,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          pkgs.ast-grep
           pkgs.awscli2
           pkgs.bartender
           pkgs.bat
@@ -34,7 +35,6 @@
           pkgs.jq
           pkgs.kubectl
           pkgs.kubernetes-helm
-          pkgs.kubeswitch
           pkgs.kubie
           pkgs.lazygit
           pkgs.lens
@@ -78,9 +78,9 @@
           "asdf"
           "weaveworks/tap/eksctl"
           "coreutils"
-          "openssl"
-          "gmp"
-          "libyaml"
+          # "openssl"
+          # "gmp"
+          # "libyaml"
           "k9s"
         ];
         casks = [
@@ -117,14 +117,12 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
       programs.zsh.enable = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
       # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
       system.stateVersion = 5;
       system.defaults = {
         dock.autohide = true;
@@ -145,7 +143,6 @@
         finder.NewWindowTarget = "Home";
         finder.ShowPathbar = true;
         finder.ShowStatusBar = true;
-        loginwindow.LoginwindowText = "Here be dragon";
         loginwindow.GuestEnabled = false;
         NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
         NSGlobalDomain.KeyRepeat = 2;
@@ -156,7 +153,6 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       # use touch id when sudo
-      # security.pam.enableSudoTouchIdAuth = true;
       security.pam.services.sudo_local.touchIdAuth = true;
     };
   in
