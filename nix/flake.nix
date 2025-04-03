@@ -75,7 +75,8 @@
         enable = true;
         brews = [
           "mas"
-          "asdf"
+          "atuin"
+          # "asdf"
           "weaveworks/tap/eksctl"
           "coreutils"
           # "openssl"

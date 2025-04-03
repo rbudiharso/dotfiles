@@ -5,7 +5,7 @@ ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 ZSH_CACHE_DIR="$XDG_DATA_HOME/zsh/cache"
 DIRENV_LOG_FORMAT=$'\033[2mdirenv: %s\033[0m'
 PATH=$HOME/.local/bin:$PATH
-PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 PATH="$HOME/Library/Python/3.9/bin:$PATH"
 EDITOR="nvim"
 VISUAL="nvim"
@@ -30,7 +30,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::asdf
+# zinit snippet OMZP::asdf
 
 # load completions
 autoload -Uz compinit && compinit
