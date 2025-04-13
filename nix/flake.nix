@@ -25,6 +25,8 @@
           pkgs.discord
           pkgs.dive
           pkgs.elixir
+          pkgs.devbox
+          pkgs.direnv
           pkgs.fastfetch
           pkgs.fd
           pkgs.fzf
@@ -96,6 +98,7 @@
           "the-unarchiver"
           "whisky"
           "yaak"
+          "alt-tab"
         ];
         taps = [
           "weaveworks/tap"
