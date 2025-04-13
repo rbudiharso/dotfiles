@@ -57,6 +57,7 @@
           pkgs.sqlite
           pkgs.starship
           pkgs.stow
+          pkgs.tailscale
           pkgs.tmux
           pkgs.tree
           pkgs.unnaturalscrollwheels
