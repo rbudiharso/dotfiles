@@ -26,6 +26,7 @@
           pkgs.dive
           pkgs.elixir
           pkgs.devbox
+          pkgs.diff-so-fancy
           pkgs.direnv
           pkgs.fastfetch
           pkgs.fd
@@ -111,7 +112,7 @@
           "Peek" = 1554235898;
           "Slack" = 803453959;
           "WhatApp" = 310633997;
-          "Wireguard" = 1451685025;
+          # "Wireguard" = 1451685025;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;

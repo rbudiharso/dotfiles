@@ -32,7 +32,7 @@ format = 'on [$symbol$context \($namespace\)](dimmed yellow) '
 disabled = false
 
 [aws]
-disabled = true
+disabled = false
 
 [gcloud]
 disabled = true
@@ -40,3 +40,9 @@ disabled = true
 [custom.kubie]
 command = "echo '[kubie]'"
 when = '''kubie info ctx'''
+
+[username]
+show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[$user ]($style)'
