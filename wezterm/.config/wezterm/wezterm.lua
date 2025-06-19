@@ -8,7 +8,7 @@ config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = "Gruvbox"
+config.color_scheme = "duckbones"
 
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
@@ -44,7 +44,8 @@ config.colors = {
 		},
 	},
 }
-config.font = wezterm.font("Red Hat Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
+config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
+-- config.font = wezterm.font("Red Hat Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
 config.font_size = 14
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
