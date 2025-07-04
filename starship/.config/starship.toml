@@ -28,11 +28,12 @@ symbol = " "
 symbol = " "
 
 [kubernetes]
-format = 'on [$symbol$context \($namespace\)](dimmed yellow) '
+format = 'on [$symbol $context \($namespace\)](dimmed yellow) '
 disabled = false
 
 [aws]
 disabled = false
+symbol = "☁️ "
 
 [gcloud]
 disabled = true

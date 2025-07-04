@@ -45,7 +45,6 @@ config.colors = {
 	},
 }
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
--- config.font = wezterm.font("Red Hat Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
 config.font_size = 14
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }

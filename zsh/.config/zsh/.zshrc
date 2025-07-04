@@ -58,7 +58,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # shell integration
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(devbox global shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(atuin init zsh)"
