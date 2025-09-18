@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "starship@latest",
+    "atuin@latest",
+    "direnv@latest",
+    "nerd-fonts.fira-code@latest",
+    "nerd-fonts.space-mono@latest",
+    "nerd-fonts.jetbrains-mono@latest",
+    "redhat-official-fonts@latest",
+    "fzf@latest",
+    "ripgrep@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}

@@ -10,6 +10,11 @@ PATH="$HOME/Library/Python/3.9/bin:$PATH"
 EDITOR="nvim"
 VISUAL="nvim"
 
+if command -v devbox >/dev/null 2>&1
+then
+  eval "$(devbox global shellenv --init-hook)"
+fi
+
 # auto install zinit
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
@@ -58,7 +63,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # shell integration
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
-eval "$(devbox global shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(atuin init zsh)"
 
