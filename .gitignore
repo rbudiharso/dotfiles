@@ -24,3 +24,4 @@ sway/.config/sway/env
 .DS_Store
 zed/.config/zed/embeddings
 zed/.config/zed/prompts
+devbox/.local/share/devbox/global/current
