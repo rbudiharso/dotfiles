@@ -9,7 +9,9 @@
     "nerd-fonts.jetbrains-mono@latest",
     "redhat-official-fonts@latest",
     "fzf@latest",
-    "ripgrep@latest"
+    "ripgrep@latest",
+    "kubectl@latest",
+    "awscli2@latest"
   ],
   "shell": {
     "init_hook": [
