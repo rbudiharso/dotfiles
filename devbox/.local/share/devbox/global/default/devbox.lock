@@ -317,6 +317,54 @@
         }
       }
     },
+    "kubie@latest": {
+      "last_modified": "2025-07-28T17:09:23Z",
+      "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#kubie",
+      "source": "devbox-search",
+      "version": "0.26.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mbp01i8jmhay3nxb8840g3kqwj3z88qd-kubie-0.26.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mbp01i8jmhay3nxb8840g3kqwj3z88qd-kubie-0.26.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/14nfm9f8dqgfzd1366hk8hmr3k64i226-kubie-0.26.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/14nfm9f8dqgfzd1366hk8hmr3k64i226-kubie-0.26.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1dpi82g4cdiwmclddyvfsj3kl8cwll99-kubie-0.26.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1dpi82g4cdiwmclddyvfsj3kl8cwll99-kubie-0.26.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/psz13vcpgabpdp691prjxjba7xvvs9qg-kubie-0.26.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/psz13vcpgabpdp691prjxjba7xvvs9qg-kubie-0.26.0"
+        }
+      }
+    },
     "nerd-fonts.fira-code@latest": {
       "last_modified": "2025-07-28T17:09:23Z",
       "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#nerd-fonts.fira-code",

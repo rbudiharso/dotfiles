@@ -11,7 +11,8 @@
     "fzf@latest",
     "ripgrep@latest",
     "kubectl@latest",
-    "awscli2@latest"
+    "awscli2@latest",
+    "kubie@latest"
   ],
   "shell": {
     "init_hook": [
