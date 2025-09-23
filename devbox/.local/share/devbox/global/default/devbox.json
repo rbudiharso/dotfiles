@@ -12,11 +12,17 @@
     "ripgrep@latest",
     "kubectl@latest",
     "awscli2@latest",
-    "kubie@latest"
+    "kubie@latest",
+    "lazygit@latest",
+    "lua5_1@latest",
+    "luarocks@latest",
+    "lua51Packages.jsregexp@latest",
+    "python313@latest",
+    "python313Packages.pip@latest"
   ],
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      ". $VENV_DIR/bin/activate"
     ],
     "scripts": {
       "test": [
