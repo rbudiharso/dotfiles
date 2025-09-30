@@ -18,12 +18,11 @@
     "luarocks@latest",
     "lua51Packages.jsregexp@latest",
     "python313@latest",
-    "python313Packages.pip@latest"
+    "python313Packages.pip@latest",
+    "helm@latest"
   ],
   "shell": {
-    "init_hook": [
-      ". $VENV_DIR/bin/activate"
-    ],
+    "init_hook": [],
     "scripts": {
       "test": [
         "echo \"Error: no test specified\" && exit 1"

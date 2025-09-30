@@ -12,6 +12,8 @@ VISUAL="nvim"
 if command -v devbox >/dev/null 2>&1
 then
   eval "$(devbox global shellenv --init-hook)"
+else
+  curl -fsSL https://get.jetify.com/devbox | bash
 fi
 
 # auto install zinit
