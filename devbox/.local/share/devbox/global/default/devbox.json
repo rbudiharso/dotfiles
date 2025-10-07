@@ -19,7 +19,9 @@
     "lua51Packages.jsregexp@latest",
     "python313@latest",
     "python313Packages.pip@latest",
-    "helm@latest"
+    "dig@latest",
+    "diff-so-fancy@latest",
+    "k9s@latest"
   ],
   "shell": {
     "init_hook": [],
