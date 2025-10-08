@@ -417,6 +417,86 @@
       "last_modified": "2025-09-16T13:27:06Z",
       "resolved": "github:NixOS/nixpkgs/08b8f92ac6354983f5382124fef6006cade4a1c1?lastModified=1758029226&narHash=sha256-TjqVmbpoCqWywY9xIZLTf6ANFvDCXdctCjoYuYPYdMI%3D"
     },
+    "imagemagick@latest": {
+      "last_modified": "2025-09-21T09:21:16Z",
+      "resolved": "github:NixOS/nixpkgs/a1f79a1770d05af18111fbbe2a3ab2c42c0f6cd0#imagemagick",
+      "source": "devbox-search",
+      "version": "7.1.2-3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8dji84x7jv7qhcvn8l740ms6calxwmv8-imagemagick-7.1.2-3",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/vvmj4m5rjkqgkqf0h0a2gdfxsv2fcxa6-imagemagick-7.1.2-3-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/m0vrsldsni1000gbl6c1c5qmcdyqjhi5-imagemagick-7.1.2-3-doc"
+            }
+          ],
+          "store_path": "/nix/store/8dji84x7jv7qhcvn8l740ms6calxwmv8-imagemagick-7.1.2-3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4sd38z062bncmlraak2rqsp7jn4qmajk-imagemagick-7.1.2-3",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/cws3j1s9p1q1imxrf0jjfvqsg1bcp07f-imagemagick-7.1.2-3-doc"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/n0lxksxpy3wdf7vk8d84h5zn1x4v0bld-imagemagick-7.1.2-3-dev"
+            }
+          ],
+          "store_path": "/nix/store/4sd38z062bncmlraak2rqsp7jn4qmajk-imagemagick-7.1.2-3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v529j0m4whp3ibjkw9l856d28f1pwifl-imagemagick-7.1.2-3",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/0qyc4av18gvv9gp5z9ghsxc38mr96r6p-imagemagick-7.1.2-3-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/cpc5dl7848am5pw0d0gidd2qy9g4r9a2-imagemagick-7.1.2-3-doc"
+            }
+          ],
+          "store_path": "/nix/store/v529j0m4whp3ibjkw9l856d28f1pwifl-imagemagick-7.1.2-3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xvrvpcj3rw3fdv7chhxl39abip0mm8rj-imagemagick-7.1.2-3",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ld1vm49wcii0lsiyq7r02j4ny8yd56ji-imagemagick-7.1.2-3-doc"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/ap9f37fkd6alghkdvgp6w0xzsj75hc4i-imagemagick-7.1.2-3-dev"
+            }
+          ],
+          "store_path": "/nix/store/xvrvpcj3rw3fdv7chhxl39abip0mm8rj-imagemagick-7.1.2-3"
+        }
+      }
+    },
     "k9s@latest": {
       "last_modified": "2025-09-18T16:33:27Z",
       "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#k9s",
@@ -727,6 +807,102 @@
       "source": "devbox-search",
       "version": "3.9.1"
     },
+    "mermaid-cli@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#mermaid-cli",
+      "source": "devbox-search",
+      "version": "11.6.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zbrp54iijcpabppks7rkr3s0rrlci0yy-mermaid-cli-11.6.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zbrp54iijcpabppks7rkr3s0rrlci0yy-mermaid-cli-11.6.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y3fgqiiha66v3z6a5hq1fpavdbbrmlhz-mermaid-cli-11.6.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/y3fgqiiha66v3z6a5hq1fpavdbbrmlhz-mermaid-cli-11.6.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xndddvm5n55lhircvqclb49x2znh5bwi-mermaid-cli-11.6.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/xndddvm5n55lhircvqclb49x2znh5bwi-mermaid-cli-11.6.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4zdw4gnzj2h7v668jddlwc3nhc40h9hk-mermaid-cli-11.6.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4zdw4gnzj2h7v668jddlwc3nhc40h9hk-mermaid-cli-11.6.0"
+        }
+      }
+    },
+    "neovim@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#neovim",
+      "source": "devbox-search",
+      "version": "0.11.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vm0v91a9b9k5kch8f404c1w12lmg386p-neovim-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vm0v91a9b9k5kch8f404c1w12lmg386p-neovim-0.11.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vidxax8nj9gnd8d0va8zjbbfja4r0c99-neovim-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vidxax8nj9gnd8d0va8zjbbfja4r0c99-neovim-0.11.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/k700yk7zhiipzp6p5ixvmk2snxxn5s4y-neovim-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/k700yk7zhiipzp6p5ixvmk2snxxn5s4y-neovim-0.11.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r99hbj4brg6nr0hz7kbylns5fr6xpcjf-neovim-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/r99hbj4brg6nr0hz7kbylns5fr6xpcjf-neovim-0.11.4"
+        }
+      }
+    },
     "nerd-fonts.fira-code@latest": {
       "last_modified": "2025-07-28T17:09:23Z",
       "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#nerd-fonts.fira-code",
@@ -868,6 +1044,87 @@
             }
           ],
           "store_path": "/nix/store/20jcvb4z1i34qln94cim6iyh2x3g4pbb-nerd-fonts-space-mono-3.4.0+1.001"
+        }
+      }
+    },
+    "nodejs@latest": {
+      "last_modified": "2025-09-21T00:54:27Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/51c8f9cfaae8306d135095bcdb3df9027f95542d#nodejs_24",
+      "source": "devbox-search",
+      "version": "24.8.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cj8hvq7sqpsvjk7119w0w41sfp9606wx-nodejs-24.8.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/smybrnlm3kfrfd03nsp01j3s25rjcn32-nodejs-24.8.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/82fl9py60ms063fl5g98h9qi2c9zna9a-nodejs-24.8.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/cj8hvq7sqpsvjk7119w0w41sfp9606wx-nodejs-24.8.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/855hdyp45b2k7dksv259w3m8fifcccz1-nodejs-24.8.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/phz4mj4y3mdakkrp5334yppgs8lkkbhh-nodejs-24.8.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/bmf3w1wdxbs63vmn71pi2icwfnimzx4z-nodejs-24.8.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/855hdyp45b2k7dksv259w3m8fifcccz1-nodejs-24.8.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dzrcn8s95bfqigvyv4snpmbzlww4jb7v-nodejs-24.8.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/b8whzzkhaxi31ysx8wdx50vzv01jcqzb-nodejs-24.8.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/dhslzl533ik0maj8jiyl8rmsyv5iahig-nodejs-24.8.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/dzrcn8s95bfqigvyv4snpmbzlww4jb7v-nodejs-24.8.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/a83yhhb3dibglaj5s80pxsr19s05d071-nodejs-24.8.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/ggmz3g3yw7g5sv4j5f9lij3hxmdl2rai-nodejs-24.8.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/9qhkgknw40n8kwcd5g5pw8fm0lbsd44q-nodejs-24.8.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/a83yhhb3dibglaj5s80pxsr19s05d071-nodejs-24.8.0"
         }
       }
     },
@@ -1153,6 +1410,198 @@
             }
           ],
           "store_path": "/nix/store/6hq21mqkmdm1ds9974w9xw00blym6fh5-starship-1.23.0"
+        }
+      }
+    },
+    "tectonic-unwrapped@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#tectonic-unwrapped",
+      "source": "devbox-search",
+      "version": "0.15.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jnjlpf8zgqvgyixb0cs0k15qbmv2vf1j-tectonic-0.15.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jnjlpf8zgqvgyixb0cs0k15qbmv2vf1j-tectonic-0.15.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2gagqh5bpszhmq8f80nnp2s1svwvcank-tectonic-0.15.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2gagqh5bpszhmq8f80nnp2s1svwvcank-tectonic-0.15.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d431fxx1bjfvkxwb7axmp8161hn1flx3-tectonic-0.15.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d431fxx1bjfvkxwb7axmp8161hn1flx3-tectonic-0.15.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wnzg454cd3vbvz64kqxnc9a3igkzpb96-tectonic-0.15.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wnzg454cd3vbvz64kqxnc9a3igkzpb96-tectonic-0.15.0"
+        }
+      }
+    },
+    "tetex@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#tetex",
+      "source": "devbox-search",
+      "version": "3.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9mp7a00vwc28dqm71s7824ka20imyavs-tetex-3.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9mp7a00vwc28dqm71s7824ka20imyavs-tetex-3.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mbkdh7dpkryqb6l2xbg4kvjhy785psrk-tetex-3.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mbkdh7dpkryqb6l2xbg4kvjhy785psrk-tetex-3.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v6r1kfvz3mz0i3bnrq0s6xv8iiwwhk1x-tetex-3.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/v6r1kfvz3mz0i3bnrq0s6xv8iiwwhk1x-tetex-3.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/klp4546v7x8azrk4q3pbxxyahifx2m24-tetex-3.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/klp4546v7x8azrk4q3pbxxyahifx2m24-tetex-3.0"
+        }
+      }
+    },
+    "tree-sitter-grammars.tree-sitter-css@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#tree-sitter-grammars.tree-sitter-css",
+      "source": "devbox-search",
+      "version": "0.25.6",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vbi5gk97d3992mkcimhalkb8fcr6n1j6-tree-sitter-css-grammar-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vbi5gk97d3992mkcimhalkb8fcr6n1j6-tree-sitter-css-grammar-0.25.6"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9ga163ic85833hp9xcb0rkwrziky47kp-tree-sitter-css-grammar-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9ga163ic85833hp9xcb0rkwrziky47kp-tree-sitter-css-grammar-0.25.6"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vrwkg79akc3pb510pjndyyiip6bbl26l-tree-sitter-css-grammar-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vrwkg79akc3pb510pjndyyiip6bbl26l-tree-sitter-css-grammar-0.25.6"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/l40zsjqq98wxa4n205n1znlxmn0zfg6g-tree-sitter-css-grammar-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/l40zsjqq98wxa4n205n1znlxmn0zfg6g-tree-sitter-css-grammar-0.25.6"
+        }
+      }
+    },
+    "tree-sitter@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#tree-sitter",
+      "source": "devbox-search",
+      "version": "0.25.6",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/94d521g569s9yjjdqfpwpdbzx885knvv-tree-sitter-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/94d521g569s9yjjdqfpwpdbzx885knvv-tree-sitter-0.25.6"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lf8is5wgkdgrmjri1z6p9ccxiscs8iys-tree-sitter-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/lf8is5wgkdgrmjri1z6p9ccxiscs8iys-tree-sitter-0.25.6"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4s2242qdis9bpfjiaj5sfdnkjjbq52f2-tree-sitter-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4s2242qdis9bpfjiaj5sfdnkjjbq52f2-tree-sitter-0.25.6"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ixb7pzkjklaakcgcb43xrlsqnrdbi1fz-tree-sitter-0.25.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ixb7pzkjklaakcgcb43xrlsqnrdbi1fz-tree-sitter-0.25.6"
         }
       }
     }

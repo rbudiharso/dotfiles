@@ -21,7 +21,15 @@
     "python313Packages.pip@latest",
     "dig@latest",
     "diff-so-fancy@latest",
-    "k9s@latest"
+    "k9s@latest",
+    "neovim@latest",
+    "nodejs@latest",
+    "tree-sitter@latest",
+    "imagemagick@latest",
+    "tree-sitter-grammars.tree-sitter-css@latest",
+    "tectonic-unwrapped@latest",
+    "mermaid-cli@latest",
+    "tetex@latest"
   ],
   "shell": {
     "init_hook": [],
