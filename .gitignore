@@ -25,3 +25,8 @@ sway/.config/sway/env
 zed/.config/zed/embeddings
 zed/.config/zed/prompts
 devbox/.local/share/devbox/global/current
+devbox/.local/share/atuin
+devbox/.local/share/direnv
+devbox/.local/share/nvim
+devbox/.local/share/zinit
+devbox/.local/state

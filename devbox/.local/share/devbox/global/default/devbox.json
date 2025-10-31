@@ -1,42 +1,43 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
-    "starship@latest",
     "atuin@latest",
-    "direnv@latest",
-    "nerd-fonts.fira-code@latest",
-    "nerd-fonts.space-mono@latest",
-    "nerd-fonts.jetbrains-mono@latest",
-    "redhat-official-fonts@latest",
-    "fzf@latest",
-    "ripgrep@latest",
-    "kubectl@latest",
     "awscli2@latest",
+    "diff-so-fancy@latest",
+    "dig@latest",
+    "direnv@latest",
+    "fd@latest",
+    "fzf@latest",
+    "ghostscript@latest",
+    "imagemagick@latest",
+    "k9s@latest",
+    "kubectl@latest",
     "kubie@latest",
     "lazygit@latest",
+    "lua51Packages.jsregexp@latest",
     "lua5_1@latest",
     "luarocks@latest",
-    "lua51Packages.jsregexp@latest",
+    "mermaid-cli@latest",
+    "neovim@latest",
+    "nerd-fonts.fira-code@latest",
+    "nerd-fonts.jetbrains-mono@latest",
+    "nerd-fonts.space-mono@latest",
+    "nodejs@latest",
     "python313@latest",
     "python313Packages.pip@latest",
-    "dig@latest",
-    "diff-so-fancy@latest",
-    "k9s@latest",
-    "neovim@latest",
-    "nodejs@latest",
-    "tree-sitter@latest",
-    "imagemagick@latest",
-    "tree-sitter-grammars.tree-sitter-css@latest",
+    "redhat-official-fonts@latest",
+    "ripgrep@latest",
+    "starship@latest",
     "tectonic-unwrapped@latest",
-    "mermaid-cli@latest",
-    "tetex@latest"
+    "tetex@latest",
+    "texliveTeTeX@latest",
+    "tree-sitter-grammars.tree-sitter-css@latest",
+    "tree-sitter@latest"
   ],
   "shell": {
     "init_hook": [],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
+      "test": ["echo \"Error: no test specified\" && exit 1"]
     }
   }
 }
