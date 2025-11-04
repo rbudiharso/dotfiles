@@ -62,6 +62,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # shell integration
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(direnv hook zsh)"
@@ -79,7 +80,7 @@ alias ecrlogin='aws ecr get-login-password --region ap-southeast-1 | docker logi
 # select kubernetes context
 kctx() {
   if [ $# -eq 0 ]; then
-    kubectl config use-context $(k config get-contexts --no-headers|awk '{print $3}'|fzf)
+    kubectl config use-context $(kubectl config get-contexts --no-headers|awk '{print $3}'|fzf)
   else
     kubectl config use-context $@
   fi
