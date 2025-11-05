@@ -95,4 +95,4 @@ kns() {
   fi
 }
 
-# fastfetch
+[ -f $(which fastfetch) ] && fastfetch

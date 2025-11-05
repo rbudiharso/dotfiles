@@ -142,7 +142,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 12
+font-size = 10
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -491,7 +491,7 @@ background-image =
 # `0.5 * 1.5 = 0.75`.
 # 
 # Available since: 1.2.0
-background-image-opacity = 1
+background-image-opacity = 0.9
 
 # Background image position.
 # 
@@ -2581,7 +2581,7 @@ shell-integration = detect
 # when both `ssh-env` and `ssh-terminfo` are enabled, Ghostty will install its
 # terminfo on remote hosts and use `xterm-ghostty` as TERM, falling back to
 # `xterm-256color` with environment variables if terminfo installation fails.
-shell-integration-features = cursor,no-sudo,title,no-ssh-env,no-ssh-terminfo
+shell-integration-features = no-cursor,sudo,title,ssh-env,ssh-terminfo
 
 # Custom entries into the command palette.
 # 
@@ -3342,7 +3342,7 @@ gtk-toolbar-style = raised
 # `tabs` title bar can be used to drag the window around.
 # 
 # The default style is `native`.
-gtk-titlebar-style = native
+gtk-titlebar-style = tabs
 
 # If `true` (default), then the Ghostty GTK tabs will be "wide." Wide tabs
 # are the new typical Gnome style where tabs fill their available space.
