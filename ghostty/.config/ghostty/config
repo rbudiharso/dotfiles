@@ -142,7 +142,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 10
+font-size = 12
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -445,15 +445,15 @@ freetype-load-flags = hinting,no-force-autohint,no-monochrome,autohint
 # be fixed in a future update:
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
-theme = "Catppuccin Mocha"
+theme = "Moonfly"
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-background = #282c34
+# background = #282c34
 
 # Foreground color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-foreground = #ffffff
+# foreground = #ffffff
 
 # Background image for the terminal.
 # 
@@ -1069,7 +1069,7 @@ background-opacity-cells = false
 # need to set environment-specific settings and/or install third-party plugins
 # in order to support background blur, as there isn't a unified interface for
 # doing so.
-background-blur = false
+background-blur = 50
 
 # The opacity level (opposite of transparency) of an unfocused split.
 # Unfocused splits by default are slightly faded out to make it easier to see

@@ -62,7 +62,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # shell integration
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [[ -f /home/linuxbrew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(direnv hook zsh)"
@@ -95,4 +99,4 @@ kns() {
   fi
 }
 
-[ -f $(which fastfetch) ] && fastfetch
+# [ -f $(which fastfetch) ] && fastfetch
