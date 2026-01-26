@@ -76,6 +76,9 @@ alias vim='nvim'
 alias cl='clear'
 alias awsp='export AWS_PROFILE=$(sed -n "s/^\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
 alias ecrlogin='aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 876683363342.dkr.ecr.ap-southeast-1.amazonaws.com'
+alias nbs="netbird status"
+alias nbd="netbird down"
+alias nbu="netbird up --management-url https://net.usetada.dev:33073"
 
 # select kubernetes context
 kctx() {
