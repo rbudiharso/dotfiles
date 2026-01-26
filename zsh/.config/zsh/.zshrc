@@ -38,10 +38,6 @@ zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 # zinit snippet OMZP::asdf
 
-# load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
 # history
 HISTSIZE=5000
 HISTFILE="${XDG_DATA_HOME}/zsh/.zsh_history"
@@ -62,7 +58,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # shell integration
-if [[ -f /home/linuxbrew ]]; then
+if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -100,3 +96,7 @@ kns() {
 }
 
 # [ -f $(which fastfetch) ] && fastfetch
+
+# load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
