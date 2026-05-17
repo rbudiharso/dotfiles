@@ -19,6 +19,10 @@ set $ws3 "Web"
 set $ws4 "Chat"
 set $ws5 "Program"
 set $ws6 "Other"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # gruvbox colors
 # https://github.com/morhetz/gruvbox
@@ -409,7 +413,7 @@ exec bluetoothctl power on
 exec $HOME/.local/bin/autotiling
 
 # workaround for pipewire not starting properly
-exec rm /run/user/1000/pipewire-0.lock && systemctl --user restart "pipewire.service"
+exec rm -f $XDG_RUNTIME_DIR/pipewire-0.lock && systemctl --user restart "pipewire.service"
 exec source $HOME/.dotfiles/sway/.config/sway/env
 
 exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK

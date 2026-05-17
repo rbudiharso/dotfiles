@@ -14,7 +14,6 @@
   home.activation = {
     runStow = lib.hm.dag.entryAfter [ "installPackages" ] ''
       PATH="${config.home.path}/bin:$PATH"
-      rm -rf ~/.config/atuin
       [ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
       cd ~/.dotfiles && \
         stow atuin \

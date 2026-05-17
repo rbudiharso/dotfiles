@@ -1,31 +1,29 @@
 [character]
 success_symbol = "[▶](bold green)"
 error_symbol = "[▶](bold red)"
-# success_symbol = "[➜](bold green)"
-# error_symbol = "[➜](bold red)"
 
 [battery]
-full_symbol = ""
-charging_symbol = ""
-discharging_symbol = ""
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
-symbol = " "
+symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = " "
 
 [golang]
-symbol = " "
+symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [rust]
-symbol = " "
+symbol = " "
 
 [kubernetes]
 format = 'on [$symbol $context \($namespace\)](dimmed yellow) '
@@ -37,10 +35,6 @@ symbol = "☁️ "
 
 [gcloud]
 disabled = true
-
-[custom.kubie]
-command = "echo '[kubie]'"
-when = '''kubie info ctx'''
 
 [username]
 show_always = true
